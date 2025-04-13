@@ -1,0 +1,38 @@
+{
+  "name": "frontend_beauty_plants",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start:local": "HOST=127.0.0.1 node index.js",
+    "start:network": "HOST=0.0.0.0 node index.js",
+    "test": "jest",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:css": "stylelint 'src/css/**/*.css' --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "keywords": [
+    "frontend",
+    "responsive",
+    "design",
+    "developer"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^22.13.11",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "jest": "^29.7.0",
+    "supertest": "^7.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.24.0",
+    "stylelint": "^16.18.0",
+    "stylelint-config-standard-scss": "^14.0.0"
+  }
+}
