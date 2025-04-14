@@ -1,59 +1,58 @@
 :root {
   /* ----------- Константы ----------- */
   font-size: 16px;
-
-  /* ----------- Цвета ----------- */
-  $White_100: rgb(255, 255, 255);
-
-  $Black_100: rgb(0, 0, 0);
-  $Black_96: rgba(0, 0, 0, 0.96); // = #010101
-  $Black_40: rgba(0, 0, 0, 0.4); // = #b1b1b1
-  $Black_08: rgba(0, 0, 0, 0.08); // = #F2F2F3
-  $Black_02: rgba(0, 0, 0, 0.02);
-
-  $Green_Light_100: rgba(155, 185, 108, 1);
-  $Green_Light_08: rgba(155, 185, 108, 0.08);
-  $Green_Dark_100: rgba(103, 126, 81, 1);
-
-  $Red_100: rgba(250, 108, 89, 1);
-  $Red_80: rgba(250, 108, 89, 0.8);
-  $Red_40: rgba(250, 108, 89, 0.4);
-
-  /* ----------- Паддинги страничные ----------- */
-  $Large: 3rem;
-  $Medium: 2rem;
-  $Small: 1.5rem;
-  $xSmall: 1rem;
-  
 }
 
+/* ----------- Цвета ----------- */
+$White_100: rgb(255, 255, 255);
+
+$Black_100: rgb(0, 0, 0);
+$Black_96: rgba(0, 0, 0, 0.96); // = #010101
+$Black_40: rgba(0, 0, 0, 0.4); // = #b1b1b1
+$Black_08: rgba(0, 0, 0, 0.08); // = #F2F2F3
+$Black_02: rgba(0, 0, 0, 0.02);
+
+$Green_Light_100: rgba(155, 185, 108, 1);
+$Green_Light_08: rgba(155, 185, 108, 0.08);
+$Green_Dark_100: rgba(103, 126, 81, 1);
+$Green_Dark_08: rgba(103, 126, 81, 0.08);
+
+$Red_100: rgba(250, 108, 89, 1);
+$Red_80: rgba(250, 108, 89, 0.8);
+$Red_40: rgba(250, 108, 89, 0.4);
+
+/* ----------- Паддинги страничные ----------- */
+$Large: 3rem;
+$Medium: 2rem;
+$Small: 1.5rem;
+$xSmall: 1rem; 
 
 /* ----------- Привязанные шрифты ----------- */
 @font-face {
 	font-family: 'Montserrat';
-	src: url('/public/assets/fonts/Montserrat-SemiBold.eot');
+	src: url('../fonts/Montserrat-SemiBold.eot');
 	src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),
-		url('/public/assets/fonts/Montserrat-SemiBold.woff') format('woff'),
-		url('/public/assets/fonts/Montserrat-SemiBold.ttf') format('truetype');
+		url('../fonts//Montserrat-SemiBold.woff') format('woff'),
+		url('../fonts//Montserrat-SemiBold.ttf') format('truetype');
 	font-weight: 600;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'Montserrat';
-	src: url('/public/assets/fonts/Montserrat-Regular.eot');
+	src: url('../fonts/Montserrat-Regular.eot');
 	src: local('Montserrat Regular'), local('Montserrat-Regular'),
-		url('/public/assets/fonts/Montserrat-Regular.woff') format('woff'),
-		url('/public/assets/fonts/Montserrat-Regular.ttf') format('truetype');
+		url('../fonts/Montserrat-Regular.woff') format('woff'),
+		url('../fonts/Montserrat-Regular.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
   font-family: 'Belleza';
-  src: url('/public/assets/fonts/Belleza-Regular.eot');
+  src: url('../fonts/Belleza-Regular.eot');
   src: local('Belleza Regular'), local('Belleza-Regular'),
-      url('/public/assets/fonts/Belleza-Regular.woff2') format('woff2'),
-      url('/public/assets/fonts/Belleza-Regular.woff') format('woff'),
-      url('/public/assets/fonts/Belleza-Regular.ttf') format('truetype');
+      url('../fonts/Belleza-Regular.woff2') format('woff2'),
+      url('../fonts/Belleza-Regular.woff') format('woff'),
+      url('../fonts/Belleza-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -163,8 +162,8 @@
 
 
 /* ----------- Кнопки и ссылки ----------- */
-// В названии кнопки первый параметр: стиль, второй параметр: контент, третья цифра: высота
-@mixin btn_solid_text_52 {
+// В названии кнопки первый параметр: контент, второй: высота. Служебные миксины
+@mixin btn_text_52 {
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -174,48 +173,144 @@
   border-radius: 2.5rem;
   transition: 0.2s ease-out;
   @include montserrat_semi_16_squashed;
-  :hover
 }
-
-
-@mixin btn_size_52 {
+@mixin btn_IconOrText_40 {
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 3.25rem;
-  width: fit-content;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 3rem;
-  @include montserrat_semi_S;
+  padding: 0.5rem 1.25rem;
   border-radius: 2.5rem;
+  transition: 0.2s ease-out;
+  @include montserrat_semi_16_squashed;
+  svg{
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }
-
-@mixin btn_size_36 {
+@mixin btn_text_36 {
   box-sizing: border-box;
-  height: 2.25rem;
-  width: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  @include montserrat_regular_S;
-  border-radius: 1.5rem;
-}
-
-@mixin btn_size_36_circle {
-  box-sizing: border-box;
   height: 2.25rem;
-  width: fit-content;
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
+  transition: 0.2s ease-out;
+  @include montserrat_regular_16_squashed;
+}
+@mixin btn_textIcon_36 {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.25rem;
+  height: 2.25rem;
   padding: 0.125rem 1rem 0.125rem 0.125rem;
-  @include montserrat_regular_S;
   border-radius: 1.5rem;
+  transition: 0.2s ease-out;
+  @include montserrat_regular_16_squashed;
+  img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+}
+@mixin btn_icon_24 {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: 0.2s ease-out;
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
 }
 
+// На основе миксина добавляем цвета, стили кнопкам
+.btn_solid_text_52{
+  color: $White_100;
+  background-color: $Black_96;
+  &:hover{
+    background-color: $Green_Light_100;
+  }
+  &:active{
+    background-color: $Green_Dark_100;
+  }
+  @include btn_text_52;
+}
+.btn_opaque_text_52{
+  color: $Black_100;
+  background-color: $Black_02;
+  &:hover{
+    background-color: $Green_Light_100;
+  }
+  &:active{
+    background-color: $Green_Dark_100;
+  }
+  @include btn_text_52;
+}
+.btn_solid_TextOrIcon_40{
+  color: $White_100;
+  background-color: $Black_100;
+    svg{
+    color: $White_100;
+  }
+  &:hover{
+    background-color: $Green_Light_100;
+  }
+  &:active{
+    background-color: $Green_Dark_100;
+  }
+  @include btn_IconOrText_40;
+}
+.btn_transparent_text_36{
+  color: $Black_100;
+  background-color: transparent;
+  &:hover{
+    color: $Green_Light_100;
+    background-color: $Green_Light_08;
+  }
+  &:active{
+    color: $Green_Dark_100;
+    background-color: $Green_Dark_08;
+  }
+  @include btn_text_36;
+}
+.btn_transparent_iconText_36{
+  color: $Black_100;
+  background-color: transparent;
+  &:hover{
+    color: $Green_Light_100;
+    background-color: $Green_Light_08;
+  }
+  &:active{
+    color: $Green_Dark_100;
+    background-color: $Green_Dark_08;
+  }
+  @include btn_textIcon_36;
+}
+.btn_transparent_iconText_36.active{
+  color: $White_100;
+  background-color: $Green_Light_100;
+  @include btn_textIcon_36;
+}
+.btn_transparent_icon_24{
+  color: $Black_100;
+  background-color: transparent;
+  &:hover{
+    color: $Green_Light_100;
+  }
+  &:active{
+    color: $Green_Dark_100;
+  }
+  @include btn_icon_24;
+}
 
 
 /* ----------- Контейнеры-карточки ----------- */
