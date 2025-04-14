@@ -1,48 +1,229 @@
 @charset "UTF-8";
-
 :root {
   /* ----------- Константы ----------- */
+  font-size: 16px;
 }
 
 /* ----------- Цвета ----------- */
-
-/* ----------- Стили шрифтов ----------- */
+/* ----------- Паддинги страничные ----------- */
+/* ----------- Привязанные шрифты ----------- */
 @font-face {
-  font-family: Montserrat;
-  src: url("/public/assets/fonts/Montserrat-SemiBold.eot");
-  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url("/public/assets/fonts/Montserrat-SemiBold.woff") format("woff"), url("/public/assets/fonts/Montserrat-SemiBold.ttf") format("truetype");
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-SemiBold.eot");
+  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url("../fonts//Montserrat-SemiBold.woff") format("woff"), url("../fonts//Montserrat-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
-
 @font-face {
-  font-family: Montserrat;
-  src: url("/public/assets/fonts/Montserrat-Regular.eot");
-  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("/public/assets/fonts/Montserrat-Regular.woff") format("woff"), url("/public/assets/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.eot");
+  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("../fonts/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
-  font-family: Belleza;
-  src: url("/public/assets/fonts/Belleza-Regular.eot");
-  src: local("Belleza Regular"), local("Belleza-Regular"), url("/public/assets/fonts/Belleza-Regular.woff2") format("woff2"), url("/public/assets/fonts/Belleza-Regular.woff") format("woff"), url("/public/assets/fonts/Belleza-Regular.ttf") format("truetype");
+  font-family: "Belleza";
+  src: url("../fonts/Belleza-Regular.eot");
+  src: local("Belleza Regular"), local("Belleza-Regular"), url("../fonts/Belleza-Regular.woff2") format("woff2"), url("../fonts/Belleza-Regular.woff") format("woff"), url("../fonts/Belleza-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
-
-/* Заголовки, на макете шрифты */
-
-/* Жирные цифры */
-
-/* Заголовки, на макете шрифт Belleza */
-
-/* ----------- Размеры отступов, паддингов ----------- */
-
+/* ----------- Стили текста ----------- */
 /* ----------- Ограничения ширин, шаблоны для @media ----------- */
+/* ----------- Кнопки ----------- */
+.btn_solid_text_52 {
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.96);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.25rem;
+  padding: 1rem 3rem;
+  border-radius: 2.5rem;
+  transition: 0.2s ease-out;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+.btn_solid_text_52:hover {
+  background-color: rgb(155, 185, 108);
+}
+.btn_solid_text_52:active {
+  background-color: rgb(103, 126, 81);
+}
 
-/* ----------- Кнопки и ссылки ----------- */
+.btn_opaque_text_52 {
+  color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.02);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.25rem;
+  padding: 1rem 3rem;
+  border-radius: 2.5rem;
+  transition: 0.2s ease-out;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+.btn_opaque_text_52:hover {
+  background-color: rgb(155, 185, 108);
+}
+.btn_opaque_text_52:active {
+  background-color: rgb(103, 126, 81);
+}
 
-/* разные настройки размеров кнопок */
+.btn_solid_TextOrIcon_40 {
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.25rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 2.5rem;
+  transition: 0.2s ease-out;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+.btn_solid_TextOrIcon_40 svg {
+  color: rgb(255, 255, 255);
+}
+.btn_solid_TextOrIcon_40:hover {
+  background-color: rgb(155, 185, 108);
+}
+.btn_solid_TextOrIcon_40:active {
+  background-color: rgb(103, 126, 81);
+}
+.btn_solid_TextOrIcon_40 svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
 
-/* ----------- Контейнеры-карточки ----------- */
+.btn_transparent_text_36 {
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.25rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
+  transition: 0.2s ease-out;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+.btn_transparent_text_36:hover {
+  color: rgb(155, 185, 108);
+  background-color: rgba(155, 185, 108, 0.08);
+}
+.btn_transparent_text_36:active {
+  color: rgb(103, 126, 81);
+  background-color: rgba(103, 126, 81, 0.08);
+}
+
+.btn_transparent_iconText_36 {
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  height: 2.25rem;
+  padding: 0.125rem 1rem 0.125rem 0.125rem;
+  border-radius: 1.5rem;
+  transition: 0.2s ease-out;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+.btn_transparent_iconText_36:hover {
+  color: rgb(155, 185, 108);
+  background-color: rgba(155, 185, 108, 0.08);
+}
+.btn_transparent_iconText_36:active {
+  color: rgb(103, 126, 81);
+  background-color: rgba(103, 126, 81, 0.08);
+}
+.btn_transparent_iconText_36 img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.btn_transparent_iconText_36.active {
+  color: rgb(255, 255, 255);
+  background-color: rgb(155, 185, 108);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  height: 2.25rem;
+  padding: 0.125rem 1rem 0.125rem 0.125rem;
+  border-radius: 1.5rem;
+  transition: 0.2s ease-out;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+.btn_transparent_iconText_36.active img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.btn_transparent_icon_24 {
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: 0.2s ease-out;
+}
+.btn_transparent_icon_24:hover {
+  color: rgb(155, 185, 108);
+}
+.btn_transparent_icon_24:active {
+  color: rgb(103, 126, 81);
+}
+.btn_transparent_icon_24 svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* ----------- Ссылки ----------- */
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ----------- Инпуты ----------- *//*# sourceMappingURL=design_system.css.map */
