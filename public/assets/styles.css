@@ -1,0 +1,1888 @@
+/* Plant distribution section styles */
+.plant-distribution-section {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.plant-distribution-legend {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 0.9rem;
+}
+
+.plant-type {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    background-color: white;
+    border-radius: 6px;
+    padding: 8px 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.plant-type:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.plant-icon {
+    font-size: 1.5rem;
+}
+
+/* City marker styles */
+.city-marker:hover {
+    cursor: pointer;
+}
+
+.city-marker:hover .city-circle {
+    filter: brightness(1.2);
+}
+
+.city-marker .plant-icon {
+    transition: transform 0.3s ease;
+}
+
+.city-marker:hover .plant-icon {
+    transform: translateY(-2px);
+}
+
+/* Improved district styling */
+.district {
+    transition: fill 0.3s, stroke-width 0.3s;
+    cursor: pointer;
+}
+
+.district:hover {
+    stroke-width: 2px;
+    stroke: #333;
+}
+
+.district-border {
+    fill: none;
+    stroke: #666;
+    stroke-width: 0.75;
+    stroke-dasharray: 2,2;
+}
+
+.city-border {
+    fill: #f8f9fa;
+    stroke: #000;
+    stroke-width: 2;
+    stroke-opacity: 0.8;
+}
+
+.choropleth-map {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #f8f9fa;
+}
+
+.map-tooltip {
+    position: absolute;
+    opacity: 0;
+    background-color: white;
+    border: 1px solid #4CAF50;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    transition: opacity 0.2s;
+    z-index: 1000;
+    max-width: 250px;
+}
+
+.map-tooltip.visible {
+    opacity: 1;
+}
+
+.map-tooltip .tooltip-header {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+}
+
+.map-tooltip .tooltip-header h5 {
+    margin: 0;
+    color: #2e7d32;
+}
+
+.map-tooltip .tooltip-body p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.district-label {
+    font-size: 12px;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+.d3-map-container {
+    width: 100%;
+    min-height: 500px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.d3-map-container svg {
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease;
+}
+
+/* Ensure the tooltips are visible and properly styled */
+.map-tooltip {
+    position: absolute;
+    opacity: 0;
+    background-color: white;
+    border: 1px solid #4CAF50;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    transition: opacity 0.2s;
+    z-index: 1000;
+    max-width: 250px;
+}
+
+.map-tooltip.visible {
+    opacity: 1;
+}
+
+/* City and road styles for D3.js map */
+.city-circle {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.city-circle:hover {
+    filter: brightness(1.2);
+}
+
+.city-label {
+    pointer-events: none;
+    font-family: Arial, sans-serif;
+    paint-order: stroke;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.7);
+}
+
+.roads line {
+    transition: all 0.3s ease;
+    stroke-dasharray: 2,4;
+    stroke: #f4d03f !important;
+    z-index: 10 !important;
+    position: relative;
+}
+
+.roads {
+    pointer-events: none;
+    z-index: 100;
+}
+
+.russia-border {
+    pointer-events: none;
+}
+
+/* Layer groups for better stacking order - SVG doesn't use CSS z-index, it uses painting order */
+.d3-map-container {
+    position: relative;
+    overflow: visible;
+}
+
+.d3-map-container svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    opacity: 1;
+    overflow: visible;
+}
+
+.d3-map-container.rendered svg {
+    opacity: 1;
+}
+
+/* These classes define visual appearance but not stacking order */
+.base-map-group {
+    pointer-events: all;
+}
+
+.rivers-group {
+    pointer-events: none;
+}
+
+.districts-group {
+    pointer-events: all;
+    cursor: pointer;
+}
+
+.roads-group {
+    pointer-events: none;
+    stroke: #f4d03f !important;
+    stroke-dasharray: 2,4;
+}
+
+.cities-group {
+    pointer-events: all;
+}
+
+.labels-group {
+    pointer-events: none;
+}
+
+/* Element styles */
+.russian-city {
+    transition: all 0.3s ease;
+}
+
+.russian-city:hover {
+    stroke: #333;
+    stroke-width: 2;
+    cursor: pointer;
+}
+
+.russian-city-label,
+.city-label,
+.district-label {
+    pointer-events: none;
+}
+
+.river-path {
+    pointer-events: none;
+}
+
+.district {
+
+/* Info container visibility styles */
+.info-container {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  height: 0;
+  overflow: hidden;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+.info-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+  height: auto;
+  padding: 1rem !important;
+  margin-bottom: 0.5rem !important;
+  border: 1px solid #dee2e6 !important;
+}
+
+/* Ensure smooth transition for details container */
+.details-container {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.district:hover {
+    filter: brightness(1.05);
+}
+
+.road {
+    transition: all 0.3s ease;
+    stroke-dasharray: 2,4;
+    stroke: #f4d03f !important;
+}
+
+/* Responsive adjustments for the detailed map */
+@media (max-width: 768px) {
+    .d3-map-container {
+        min-height: 400px;
+    }
+
+    .city-label, .district-label {
+        font-size: 8px !important;
+    }
+}
+
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #27ae60;
+  --background-color: #f9f9f9;
+  --card-hover-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Map tooltip styling */
+#map-tooltip {
+  position: absolute;
+  opacity: 0;
+  background-color: white;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 1000;
+  max-width: 280px;
+  transform: translateY(10px);
+  border-left: 4px solid var(--secondary-color);
+}
+
+#map-tooltip.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Moscow map styling */
+.moscow-map-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+/* Tooltip styles */
+#map-tooltip {
+    position: absolute;
+    padding: 10px;
+    font: 12px sans-serif;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.2s;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 300px;
+    z-index: 1000;
+}
+
+#map-tooltip.visible {
+    opacity: 1;
+}
+
+.tooltip-header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.tooltip-header.planted {
+    color: #2e7d32;
+}
+
+.tooltip-header.unplanted {
+    color: #ff8f00;
+}
+
+.status-badge {
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    margin-left: 5px;
+}
+
+/* Interactive markers */
+.planting-location {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.location-marker {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 0 rgba(39, 174, 96, 0.4);
+  cursor: pointer;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(39, 174, 96, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(39, 174, 96, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(39, 174, 96, 0);
+  }
+}
+
+/* Forest stats */
+.forest-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.stats-card {
+  text-align: center;
+  background-color: rgba(39, 174, 96, 0.1);
+  border-radius: 8px;
+  padding: 1.25rem;
+  width: 30%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stats-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stats-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Globe visualization styles */
+.globe-visualization {
+  margin: 0 auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.d3-map-container {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Globe visualization containers */
+.globe-visualization-containers {
+  margin-top: 15px;
+}
+
+.info-container {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.info-container:hover {
+  background-color: #e9f7ef;
+}
+
+.legend-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.legend-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.legend-section h6 {
+  margin-bottom: 10px;
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+.legend-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.color-box {
+  width: 15px;
+  height: 15px;
+  margin-bottom: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.circle-size {
+  border-radius: 50%;
+  background-color: #2e7d32;
+  opacity: 0.8;
+  border: 1px solid white;
+  margin-bottom: 5px;
+}
+
+.area-details.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: none;
+  transition: transform 0.3s;
+}
+
+.area-details.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.area-details .card-header {
+  background-color: #2e7d32 !important;
+}
+
+.current-area-info {
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Enhanced tooltips for globe */
+.map-tooltip {
+  position: absolute;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px 15px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s, transform 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  max-width: 320px;
+  font-size: 14px;
+}
+
+.map-tooltip.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.map-tooltip .tooltip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.map-tooltip .tooltip-header h5 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.map-tooltip .badge {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 12px;
+}
+
+.map-tooltip .tooltip-body {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #555;
+}
+
+.map-tooltip .tooltip-body p {
+  margin-bottom: 6px;
+}
+
+.map-tooltip .tooltip-body .progress {
+  height: 8px;
+  margin-bottom: 12px;
+  background-color: #e9ecef;
+}
+
+.map-tooltip .tooltip-body .progress-bar {
+  background-color: #2e7d32;
+}
+
+/* Planted areas on globe */
+.planted-area {
+  cursor: pointer;
+  transition: stroke-width 0.2s, fill-opacity 0.2s;
+}
+
+.planted-area:hover {
+  stroke-width: 2px;
+  fill-opacity: 0.9;
+}
+
+/* Control buttons */
+.control-button {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.control-button:hover {
+  transform: scale(1.1);
+}
+
+/* Make sure planted areas are visible */
+.planted-area[data-visible="true"] {
+  opacity: 0.8;
+  pointer-events: all;
+}
+
+.planted-area[data-visible="false"] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.stats-count {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.stats-label {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 5px;
+}
+
+/* Density chart */
+.density-chart {
+  margin-top: 1.5rem;
+}
+
+.density-bar-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.density-label {
+  width: 30%;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.density-bar {
+  flex: 1;
+  height: 14px;
+  background-color: #eee;
+  border-radius: 7px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.density-fill {
+  height: 100%;
+  background-color: var(--secondary-color);
+  border-radius: 7px;
+  transition: width 1s ease-out;
+}
+
+.density-value {
+  width: 15%;
+  text-align: right;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+  padding-left: 10px;
+}
+
+/* Yandex Maps Container */
+.moscow-map-container {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 2rem 0;
+  background-color: #f8f9fa;
+}
+
+#yandex-map-container,
+#moscow-districts-container {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#yandex-map-frame,
+#moscow-districts-frame {
+  border-radius: 10px;
+  width: 100%;
+}
+
+.loading {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  background-color: #f8f9fa;
+}
+
+.map-loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Map Annotations & Markers */
+.map-annotations {
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 0 0 10px 10px;
+  border-top: 1px solid #e9ecef;
+}
+
+.map-marker-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.marker-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* District Statistics Cards */
+.district-stat-card {
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.district-stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.district-stat-card h5 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.district-stat-card p {
+  margin-top: 5px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .forest-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stats-card {
+    width: 80%;
+    margin-bottom: 1rem;
+  }
+
+  .density-bar-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .density-label {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .density-value {
+    width: 100%;
+    text-align: left;
+    padding-left: 0;
+    margin-top: 5px;
+  }
+}
+
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #27ae60;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.hero {
+  min-height: calc(20vh + 2rem);
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/hero-bg.jpg');
+  background-size: cover;
+  padding: 1rem;
+}
+
+.search-container {
+  width: 100%;
+  max-width: 30rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.search-container input {
+  flex: 1;
+  min-width: 0; /* Prevents flex items from overflowing */
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 2rem;
+  background: white;
+  color: var(--primary-color);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-container input:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.1);
+}
+
+#searchBtn {
+  padding: 0.8rem 1.5rem;
+  border: 2px solid var(--secondary-color);
+  background: rgba(39, 174, 96, 0.1);
+  color: var(--secondary-color);
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  margin-left: 0.5rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+#searchBtn:hover {
+  background: var(--secondary-color);
+  color: white;
+}
+
+.plants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.plant-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.plant-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0);
+  transition: background 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.plant-card:hover::before {
+  background: rgba(0,0,0,0.5);
+  z-index: 2;
+}
+
+.plant-card img {
+  width: 100%;
+  height: calc(200px + 2vw);
+  object-fit: cover;
+  border-radius: 0.4rem;
+}
+
+.add-to-cart-btn {
+  position: relative;
+  padding: 0.8rem 1.5rem;
+  background: var(--secondary-color);
+  border: 1px solid #27ae60;
+  color: white;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.plant-card .add-to-cart-btn:hover {
+  background: #219a52;
+}
+
+.quantity-controls {
+  position: relative;
+  z-index: 1;
+}
+
+.plant-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.plant-card h3 {
+  margin: 1rem 0;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+.plant-card p {
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.plant-card button {
+  width: 100%;
+  padding: 0.8rem;
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.plant-card button:hover {
+  background: #219a52;
+}
+
+.add-to-cart-btn.clicked {
+  background: rgba(39, 174, 96, 0.3) !important;
+  border-color: #27ae60;
+}
+
+.cart-link, .about-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  margin-left: 1rem;
+}
+
+.cart-link:hover, .about-link:hover {
+  color: var(--secondary-color);
+}
+
+.cart-link i, .about-link i {
+  font-size: 1.25rem;
+}
+
+.cart-link:hover i, .about-link:hover i {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-controls button.clicked {
+  border-color: #27ae60;
+  background: rgba(39, 174, 96, 0.2);
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.quantity-controls button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #27ae60;
+  color: var(--secondary-color);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  position: relative;
+}
+
+.quantity-controls button:hover {
+  background: rgba(39, 174, 96, 0.15);
+  border-color: white;
+}
+
+.quantity-controls button:active {
+  background: rgba(39, 174, 96, 0.3);
+}
+
+.plant-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(39, 174, 96, 0.15);
+}
+
+.plant-card img {
+  width: 100%;
+  height: calc(200px + 2vw);
+  object-fit: cover;
+  border-radius: 0.4rem;
+  transition: transform 0.3s ease;
+}
+
+.plant-card:hover img {
+  transform: scale(1.05);
+}
+
+.plant-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--secondary-color);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.plant-card:hover::before {
+  transform: scaleX(1);
+}
+
+.plant-card .details-btn {
+  position: absolute;
+  top: 0.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(44, 62, 80, 0.4);
+  color: white;
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  z-index: 5;
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.plant-card:hover .details-btn {
+  opacity: 1;
+  visibility: visible;
+  top: 0.5%;
+}
+
+.details-btn:hover {
+  background: var(--secondary-color);
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.plant-card.in-cart {
+  border: 2px solid var(--secondary-color);
+  box-shadow: 0 5px 15px rgba(39, 174, 96, 0.2);
+}
+
+.plant-card.in-cart::after {
+  content: '\F242';
+  font-family: 'bootstrap-icons';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  z-index: 4;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  pointer-events: none;
+}
+
+/* Remove conflicting hover state */
+
+.quantity-controls span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.categories {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+  justify-content: center;
+}
+
+.category-btn {
+  padding: 0.8rem 1.5rem;
+  border: 2px solid var(--secondary-color);
+  background: rgba(39, 174, 96, 0.1);
+  color: var(--secondary-color);
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.category-btn:hover {
+  background: rgba(39, 174, 96, 0.2);
+  transform: translateY(-2px);
+}
+
+.category-btn.active {
+  background: var(--secondary-color);
+  color: white;
+}
+
+button[type="submit"].category-btn {
+  background: var(--secondary-color);
+  color: white;
+  margin: 1rem 0;
+}
+
+button[type="submit"].category-btn:hover {
+  background: #219a52;
+  transform: translateY(-2px);
+}
+
+.cart-plant-card {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: relative;
+  align-items: center;
+}
+
+.delete-item-btn {
+  background: none;
+  border: 1px solid #dc3545;
+  color: #dc3545;
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-left: 0.5rem;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+.delete-item-btn:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+.cart-plant-image {
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.cart-plant-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cart-plant-image .details-btn {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(44, 62, 80, 0.7);
+  color: white;
+  text-decoration: none;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.cart-plant-image:hover .details-btn {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cart-plant-details {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.cart-plant-details h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--primary-color);
+}
+
+.cart-plant-actions {
+  display: flex;
+  justify-content: flex-end;align-items: center;
+  margin-top: 0.5rem;
+}
+
+.cart-quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+
+.cart-plant-price {
+  width: 120px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: rgba(39, 174, 96, 0.05);
+  border-left: 1px solid #eee;
+  align-self: stretch;
+  margin-top: auto;
+}
+
+.cart-plant-price .original-price {
+  text-decoration: line-through;
+  color: #777;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.cart-plant-price .discounted-price {
+  color: var(--secondary-color);
+  font-weight: bold;
+  margin: 0.25rem 0 0 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.discount-badge {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 0.1rem 0.4rem;
+  border-radius: 1rem;
+  font-size: 0.7rem;
+}
+
+.item-description {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .cart-plant-card {
+    flex-wrap: wrap;
+  }
+
+  .cart-plant-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .cart-plant-details {
+    width: calc(100% - 80px);
+    padding-left: 1rem;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cart-quantity-controls {
+    order: 3;
+    width: 50%;
+    justify-content: center;
+    padding: 0.5rem;
+  }
+
+  .cart-plant-price {
+    order: 4;
+    width: 50%;
+    border-left: none;
+    margin-top: auto;
+    padding-top: 1rem;
+  }
+}
+
+.cart-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 1rem;
+}
+
+.cart-quantity-controls button,
+.cart-item .quantity-controls button {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-quantity-controls button:hover,
+.cart-item .quantity-controls button:hover {
+  background: rgba(39, 174, 96, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(39, 174, 96, 0.2);
+}
+
+.carousel-section {
+  margin-bottom: 2rem;
+}
+
+.carousel-item {
+  height: 60vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  height: 60vh;
+  width: 100%;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.carousel-caption h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.carousel-caption p {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    height: 40vh;
+  }
+
+  .carousel-item img {
+    height: 40vh;
+  }
+
+  .carousel-caption {
+    padding: 8px;
+    position: absolute;
+    right: 5%;
+    left: 5%;
+    bottom: 5px;
+    z-index: 10;
+    max-width: 90%;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+  }
+
+  .carousel-caption h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.cart-item .quantity-controls button:active {
+  background: rgba(39, 174, 96, 0.3);
+  transform: translateY(0);
+}
+
+.cart-quantity-controls span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  min-width: 30px;
+  text-align: center;
+}
+
+.cart-quantity-controls .delete-item-btn {
+  margin-left: 10px;
+  color: #dc3545;
+  border-color: #dc3545;
+  background: white;
+}
+
+.cart-quantity-controls .delete-item-btn:hover {
+  background: rgba(220, 53, 69, 0.1);
+  box-shadow: 0 4px 8px rgba(220, 53, 69, 0.2);
+}
+
+.item-details {
+  flex: 1;
+}
+
+.item-details button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .plants-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+
+  .plant-card img {
+    height: calc(150px + 2vw);
+  }
+
+  .cart-item {
+    flex-direction: column;
+  }
+
+  .search-container {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .search-container input {
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  #searchBtn {
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+.cart-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.cart-link:hover {
+  color: var(--secondary-color);
+}
+
+.cart-link i {
+  font-size: 1.25rem;
+}
+
+.cart-link:hover i {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+}
+
+.return-to-shop {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+}
+
+.return-to-shop:hover {
+  color: var(--secondary-color);
+  background: none;
+}
+
+.return-to-shop i {
+  font-size1.25rem;
+}
+
+.return-to-shop:hover i {
+  transform: translateX(-2px);
+  transition: transform 0.3s ease;
+}
+
+/* Map styles */
+.moscow-map-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#map-tooltip {
+    position: absolute;
+    padding: 10px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+}
+
+#map-tooltip.visible {
+    opacity: 1;
+}
+
+/* District and border styles */
+.district {
+    transition: fill 0.3s, stroke-width 0.3s;
+    cursor: pointer;
+}
+
+.district:hover {
+    stroke-width: 2px;
+    stroke: #333;
+}
+
+.district-border {
+    fill: none;
+    stroke: #666;
+    stroke-width: 0.75;
+    stroke-dasharray: 2,2;
+}
+
+.city-border {
+    fill: #f8f9fa;
+    stroke: #000;
+    stroke-width: 2;
+    stroke-opacity: 0.8;
+}
+
+.choropleth-map {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #f8f9fa;
+}
+
+.map-tooltip {
+    position: absolute;
+    opacity: 0;
+    background-color: white;
+    border: 1px solid #4CAF50;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    transition: opacity 0.2s;
+    z-index: 1000;
+    max-width: 250px;
+}
+
+.map-tooltip.visible {
+    opacity: 1;
+}
+
+.map-tooltip .tooltip-header {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+}
+
+.map-tooltip .tooltip-header h5 {
+    margin: 0;
+    color: #2e7d32;
+}
+
+.map-tooltip .tooltip-body p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.district-label {
+    font-size: 12px;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+.d3-map-container {
+    width: 100%;
+    min-height: 500px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.d3-map-container svg {
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease;
+}
+
+/* Ensure the tooltips are visible and properly styled */
+.map-tooltip {
+    position: absolute;
+    opacity: 0;
+    background-color: white;
+    border: 1px solid #4CAF50;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    transition: opacity 0.2s;
+    z-index: 1000;
+    max-width: 250px;
+}
+
+.map-tooltip.visible {
+    opacity: 1;
+}
+
+/* City and road styles for D3.js map */
+.city-circle {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.city-circle:hover {
+    filter: brightness(1.2);
+}
+
+.city-label {
+    pointer-events: none;
+    font-family: Arial, sans-serif;
+    paint-order: stroke;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.7);
+}
+
+.roads line {
+    transition: all 0.3s ease;
+    stroke-dasharray: 2,4;
+    stroke: #f4d03f !important;
+    z-index: 10 !important;
+    position: relative;
+}
+
+.roads {
+    pointer-events: none;
+    z-index: 100;
+}
+
+.russia-border {
+    pointer-events: none;
+}
+
+/* Layer groups for better stacking order */
+.base-map-group {
+    z-index: 10;
+}
+
+.rivers-group {
+    z-index: 20;
+}
+
+.districts-group {
+    z-index: 30;
+}
+
+.roads-group {
+    z-index: 40;
+}
+
+.cities-group {
+    z-index: 50;
+}
+
+.labels-group {
+    z-index: 60;
+}
+
+/* Element styles */
+.russian-city {
+    transition: all 0.3s ease;
+}
+
+.russian-city:hover {
+    stroke: #333;
+    stroke-width: 2;
+    cursor: pointer;
+}
+
+.russian-city-label,
+.city-label,
+.district-label {
+    pointer-events: none;
+}
+
+.river-path {
+    pointer-events: none;
+}
+
+.district {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.district:hover {
+    filter: brightness(1.05);
+}
+
+.road {
+    transition: all 0.3s ease;
+    stroke-dasharray: 2,4;
+    stroke: #f4d03f !important;
+}
+
+/* Responsive adjustments for the detailed map */
+@media (max-width: 768px) {
+    .d3-map-container {
+        min-height: 400px;
+    }
+
+    .city-label, .district-label {
+        font-size: 8px !important;
+    }
+}
+
+/* Plant visualization styles */
+.plant-marker {
+    fill: var(--secondary-color);
+    stroke: white;
+    stroke-width: 2px;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.plant-marker:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.plant-label {
+    font-size: 10px;
+    font-weight: bold;
+    text-anchor: middle;
+    fill: white;
+    pointer-events: none;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}

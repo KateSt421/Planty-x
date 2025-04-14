@@ -1,0 +1,209 @@
+
+/* Button styles */
+.category-btn {
+  padding: 0.8rem 1.5rem;
+  border: 2px solid var(--secondary-color);
+  background: rgba(39, 174, 96, 0.1);
+  color: var(--secondary-color);
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  
+  &:hover {
+    background: rgba(39, 174, 96, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  &.active {
+    background: var(--secondary-color);
+    color: white;
+  }
+}
+
+/* Plant card styles */
+.plant-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.15);
+  }
+  
+  img {
+    width: 100%;
+    height: calc(200px + 2vw);
+    object-fit: cover;
+    border-radius: 0.4rem;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0);
+    transition: background 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  &:hover::before {
+    background: rgba(0,0,0,0.5);
+    z-index: 2;
+  }
+}
+
+/* Moscow map styles */
+#moscow-map {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: #f8f9fa;
+  padding: 10px;
+  position: relative;
+  height: 550px;
+  
+  .moscow-map-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+    
+    svg {
+      display: block;
+      margin: 0 auto;
+      background-color: #f0f8ff;
+    }
+  }
+  
+  .map-tooltip {
+    position: absolute;
+    visibility: visible;
+    opacity: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 0;
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    pointer-events: none;
+    font-size: 12px;
+    z-index: 1000;
+    max-width: 280px;
+    transition: opacity 0.3s ease;
+    
+    .tooltip-header {
+      padding: 10px;
+      position: relative;
+      border-radius: 5px 5px 0 0;
+      color: white;
+      
+      &.planted {
+        background: linear-gradient(to right, #27ae60, #2ecc71);
+      }
+      
+      &.unplanted {
+        background: linear-gradient(to right, #e74c3c, #f39c12);
+      }
+      
+      h5 {
+        margin: 0 0 5px 0;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      
+      .status-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-size: 10px;
+        font-weight: bold;
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+    
+    .tooltip-body {
+      padding: 10px;
+      
+      p {
+        margin: 0 0 5px 0;
+        line-height: 1.4;
+      }
+      
+      strong {
+        color: #2c3e50;
+      }
+    }
+  }
+  
+  .district {
+    transition: fill 0.3s ease, stroke 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .tree-marker, .tree-count {
+    pointer-events: none;
+  }
+  
+  .map-legend {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    z-index: 5;
+    
+    .legend-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+      font-size: 12px;
+      color: #333;
+    }
+    
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin: 3px 0;
+      
+      .legend-color {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+        border-radius: 3px;
+        
+        &.planted {
+          background-color: #27ae60;
+        }
+        
+        &.unplanted {
+          background-color: #e74c3c;
+        }
+      }
+      
+      span {
+        font-size: 11px;
+        color: #555;
+      }
+    }
+  }
+}

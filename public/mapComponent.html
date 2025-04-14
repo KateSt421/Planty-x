@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maps - Flower Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/styles.css" rel="stylesheet">
+</head>
+<body>
+    <header class="hero">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="/">Flower Shop</a>
+                <div class="search-container">
+                    <input type="text" id="search" placeholder="Search plants...">
+                    <button id="searchBtn">Search</button>
+                </div>
+                <div class="nav-links">
+                    <a href="/company.html" class="about-link">
+                        <i class="bi bi-building"></i>
+                        About Us
+                    </a>
+                    <a href="/cart.html" class="cart-link">
+                        <i class="bi bi-cart3"></i>
+                        Cart
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-5">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <h1 class="text-center mb-4">Green Places We've Planted</h1>
+                <p class="text-center">As part of our commitment to sustainability, we've planted trees and created green spaces in various locations. Explore the maps below to see our impact:</p>
+
+                <div class="row mt-5">
+                    <div class="col-md-6">
+                        <h4>Moscow Region Tree Planting Locations</h4>
+                        <div id="map-container" class="mt-4 mb-5">
+                            <div class="moscow-map-container">
+                                <div id="yandex-map-container" class="loading">
+                                    <div class="map-loading-spinner">
+                                        <div class="spinner-border text-success" role="status">
+                                            <span class="visually-hidden">Loading map...</span>
+                                        </div>
+                                        <span class="ms-2">Loading map...</span>
+                                    </div>
+                                    <iframe id="yandex-map-frame" src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae9eb50ae7956334d0d82081d01dc7614f6ea6c9d9c01b2e86c9ea8c0b37b0bfb&amp;source=constructor" width="100%" height="400" frameborder="0" style="display: none;"></iframe>
+                                </div>
+                                <div class="map-annotations mt-3">
+                                    <div class="map-marker-item">
+                                        <span class="marker-dot bg-success"></span>
+                                        <span>Gorky Park: 150 trees planted in 2022</span>
+                                    </div>
+                                    <div class="map-marker-item">
+                                        <span class="marker-dot bg-success"></span>
+                                        <span>VDNH Community Garden: Urban garden established in 2021</span>
+                                    </div>
+                                    <div class="map-marker-item">
+                                        <span class="marker-dot bg-success"></span>
+                                        <span>Sparrow Hills: Native plant sanctuary created in 2023</span>
+                                    </div>
+                                    <div class="map-marker-item">
+                                        <span class="marker-dot bg-success"></span>
+                                        <span>Botanical Garden: 200 rare plant species preserved</span>
+                                    </div>
+                                    <div class="map-marker-item">
+                                        <span class="marker-dot bg-success"></span>
+                                        <span>Sokolniki Park: Community tree planting event (500+ trees)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-3">
+                                <p class="small text-muted">Our tree planting locations across Moscow Region</p>
+                                <div class="legend-explanation mt-2">
+                                    <span class="d-inline-block me-3"><i class="bi bi-circle-fill text-success"></i> Planted locations</span>
+                                    <span class="d-inline-block"><i class="bi bi-circle text-secondary"></i> Future planting sites</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Moscow Region Forest Density</h4>
+                        <div id="moscow-forest-container" class="mt-4 mb-5">
+                            <div class="chart-container">
+                                <div class="forest-stats">
+                                    <div class="stats-card">
+                                        <div class="stats-icon">🌳</div>
+                                        <div class="stats-count">5,280</div>
+                                        <div class="stats-label">Trees Planted</div>
+                                    </div>
+                                    <div class="stats-card">
+                                        <div class="stats-icon">🌱</div>
+                                        <div class="stats-count">12</div>
+                                        <div class="stats-label">Parks Restored</div>
+                                    </div>
+                                    <div class="stats-card">
+                                        <div class="stats-icon">🏙️</div>
+                                        <div class="stats-count">8</div>
+                                        <div class="stats-label">Urban Gardens</div>
+                                    </div>
+                                </div>
+                                <div class="density-chart">
+                                    <div class="density-bar-container">
+                                        <div class="density-label">Central District</div>
+                                        <div class="density-bar">
+                                            <div class="density-fill" style="width: 35%;"></div>
+                                        </div>
+                                        <div class="density-value">35%</div>
+                                    </div>
+                                    <div class="density-bar-container">
+                                        <div class="density-label">Northern District</div>
+                                        <div class="density-bar">
+                                            <div class="density-fill" style="width: 68%;"></div>
+                                        </div>
+                                        <div class="density-value">68%</div>
+                                    </div>
+                                    <div class="density-bar-container">
+                                        <div class="density-label">Eastern District</div>
+                                        <div class="density-bar">
+                                            <div class="density-fill" style="width: 42%;"></div>
+                                        </div>
+                                        <div class="density-value">42%</div>
+                                    </div>
+                                    <div class="density-bar-container">
+                                        <div class="density-label">Southern District</div>
+                                        <div class="density-bar">
+                                            <div class="density-fill" style="width: 53%;"></div>
+                                        </div>
+                                        <div class="density-value">53%</div>
+                                    </div>
+                                    <div class="density-bar-container">
+                                        <div class="density-label">Western District</div>
+                                        <div class="density-bar">
+                                            <div class="density-fill" style="width: 76%;"></div>
+                                        </div>
+                                        <div class="density-value">76%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-3">
+                                <p class="small text-muted">Forest coverage by Moscow district</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <h4 class="text-center">Global Planting Initiatives</h4>
+
+                        <p class="text-center">Interactive rotating globe showing our global tree planting efforts and conservation projects</p>
+                        <div class="text-center mb-3">
+                            <span class="badge rounded-pill bg-success me-2">🌳 Trees</span>
+                            <span class="badge rounded-pill bg-info me-2">🌿 Native Plants</span>
+                            <span class="badge rounded-pill bg-warning me-2">🌱 Seedlings</span>
+                            <span class="badge rounded-pill bg-danger">🌸 Flowers</span>
+                        </div>
+
+                        <!-- Moscow District Map with D3.js -->
+                        <div id="moscow-districts-container" class="mt-4 mb-5">
+                            <div class="d-flex">
+                                <div class="col-12">
+                                    <div id="moscow-map" class="d3-map-container"></div>
+                                    <div id="map-tooltip" class="map-tooltip"></div>
+                                </div>
+                            </div>
+                            <!-- Globe visualization supporting containers -->
+                            <div class="globe-visualization-containers mt-3">
+                                <!-- Current area info container - hidden by default, shown on hover -->
+                                <div id="globe-info-container" class="info-container p-3 bg-light border rounded mb-2 info-hidden"></div>
+
+                                <!-- Globe legend container -->
+                                <div id="globe-legend-container" class="legend-container p-3 bg-light border rounded mb-2"></div>
+
+                                <!-- Detailed area information container -->
+                                <div id="globe-details-container" class="details-container mt-3"></div>
+                            </div>
+
+
+
+                        </div>
+
+                        <!-- District Statistics -->
+                        <div class="moscow-districts-stats container mt-4">
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="district-stat-card">
+                                        <h5>Central District</h5>
+                                        <div class="progress mb-2">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 83.5%;" aria-valuenow="83.5" aria-valuemin="0" aria-valuemax="100">83.5%</div>
+                                        </div>
+                                        <p>835 of 1000 trees planted</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="district-stat-card">
+                                        <h5>Northern District</h5>
+                                        <div class="progress mb-2">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 82.7%;" aria-valuenow="82.7" aria-valuemin="0" aria-valuemax="100">82.7%</div>
+                                        </div>
+                                        <p>1240 of 1500 trees planted</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="district-stat-card">
+                                        <h5>Western District</h5>
+                                        <div class="progress mb-2">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 99.8%;" aria-valuenow="99.8" aria-valuemin="0" aria-valuemax="100">99.8%</div>
+                                        </div>
+                                        <p>1497 of 1500 trees planted</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-3">
+                            <p class="small text-muted">Moscow districts with our tree planting initiatives</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Planty`x</h5>
+                    <p>Bringing nature into your home since 2010</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/company.html">About Us</a></li>
+                        <li><a href="/cart.html">Shopping Cart</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center mt-3">
+                    <p class="small">© 2025 Planty`x. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+    <script src="mapComponent.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize search button functionality
+            document.getElementById('searchBtn').addEventListener('click', function() {
+                const searchQuery = document.getElementById('search').value;
+                if (searchQuery) {
+                    window.location.href = `/?search=${encodeURIComponent(searchQuery)}`;
+                }
+            });
+
+            // Ensure D3.js map renders properly
+            if (typeof renderD3Map === 'function') {
+                // Try rendering immediately
+                renderD3Map();
+
+                // Also set a backup timeout to retry if needed
+                setTimeout(() => {
+                    const mapContent = document.querySelector('#moscow-map svg');
+                    if (!mapContent) {
+                        console.log("D3 map not rendered, retrying...");
+                        renderD3Map();
+                    }
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+</html>
