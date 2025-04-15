@@ -1,7 +1,7 @@
 @import 'design_system';
 
 .footer {
-  background-color: $Grey_95;
+  background-color: $Black_08;
 }
 
 .footer-flex {
@@ -10,7 +10,7 @@
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  padding: 3.125rem 0 3.125rem 0;
+  padding: 3.125rem 0;
 }
 
 .footer-logo {
@@ -21,21 +21,22 @@
 .footer-link {
   display: flex;
   justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  gap: 4rem;
 }
 
 .list-inline {
   margin: 0;
   padding: 0;
-  gap: 4rem;
 }
-.list-inline-item:not(:last-child) {
-  margin-right: 4rem;}
 
 .text-link {
-  @include montserrat_regular_S; 
-  color: $Black_00;
+  @include montserrat_regular_16; 
+  color: $Black_100;
   text-decoration: none;
 }
+
 .social-icons {
   list-style-type: none;
     display: flex;
@@ -46,13 +47,50 @@
 }
 
 .media-brands {
-  color: $Black_01;
+  color: $Black_96;
 }
 
 a:hover {
-  color: $Green_96;
+  color: $Green_Dark_100;
   text-decoration: none;
 }
 
+@media (max-width: 1024px) {
+  .footer-box-logo {
+  margin-bottom: 0.75rem;
+}
+}
 
+@media (max-width: 768px) {
+  .footer-flex {
+  height: 5.5rem;
+}
+.footer-link {
+  gap: 2rem;
+}
+.social-icons {
+    gap: 2rem;
+}
 
+}
+
+@media (max-width: 535px) {
+  .footer-flex {
+    height: 18.75rem; 
+    display: block;
+    padding: 2rem 0;
+  }
+  .footer-link {
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+    gap: 1rem;}
+  .social-icons {
+    justify-content: center;
+  }
+  .footer-box-logo {
+    margin-bottom: 3rem;
+}
+}
