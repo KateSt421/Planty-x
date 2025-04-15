@@ -321,3 +321,61 @@ a{
 }
 
 /* ----------- Инпуты ----------- */
+//это служебный миксин, который задает форму всех полей
+@mixin input_basic{
+  box-sizing: border-box;
+  padding: 0.75rem 0.75rem;
+  border-radius: 0.75rem;
+  background-color: $White_100;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+//инпут однострочное поле
+.input{
+  @include input_basic;
+  color: $Black_100;
+  border: 1px solid $Black_08;
+  ::placeholder{
+    color: $Black_40;
+  }
+  &:hover{
+    border: 1px solid $Green_Light_100;
+  }
+  &:active{
+    border: 1px solid $Green_Light_100;
+  }
+  &:disabled{
+    opacity: 0.32;
+  }
+}
+.input.error{
+  @include input_basic;
+  color: $Black_100;
+  border: 1px solid $Red_40;
+  ::placeholder{
+    color: $Red_80;
+  }
+  &:hover{
+    border: 1px solid $Red_100;
+  }
+  &:active{
+    border: 1px solid $Red_100;
+  }
+}
+
+//селект
+.select{
+  @include input_basic;
+  color: $Black_100;
+  border: 1px solid $Black_08;
+  &:hover{
+    border: 1px solid $Green_Light_100;
+  }
+  &:active{
+    border: 1px solid $Green_Light_100;
+  }
+  &:disabled{
+    opacity: 0.32;
+  }
+}

@@ -226,4 +226,72 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ----------- Инпуты ----------- *//*# sourceMappingURL=design_system.css.map */
+/* ----------- Инпуты ----------- */
+.input {
+  box-sizing: border-box;
+  padding: 0.75rem 0.75rem;
+  border-radius: 0.75rem;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: 0.2s;
+  color: rgb(0, 0, 0);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.input ::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+.input ::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+.input:hover {
+  border: 1px solid rgb(155, 185, 108);
+}
+.input:active {
+  border: 1px solid rgb(155, 185, 108);
+}
+.input:disabled {
+  opacity: 0.32;
+}
+
+.input.error {
+  box-sizing: border-box;
+  padding: 0.75rem 0.75rem;
+  border-radius: 0.75rem;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: 0.2s;
+  color: rgb(0, 0, 0);
+  border: 1px solid rgba(250, 108, 89, 0.4);
+}
+.input.error ::-moz-placeholder {
+  color: rgba(250, 108, 89, 0.8);
+}
+.input.error ::placeholder {
+  color: rgba(250, 108, 89, 0.8);
+}
+.input.error:hover {
+  border: 1px solid rgb(250, 108, 89);
+}
+.input.error:active {
+  border: 1px solid rgb(250, 108, 89);
+}
+
+.select {
+  box-sizing: border-box;
+  padding: 0.75rem 0.75rem;
+  border-radius: 0.75rem;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: 0.2s;
+  color: rgb(0, 0, 0);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.select:hover {
+  border: 1px solid rgb(155, 185, 108);
+}
+.select:active {
+  border: 1px solid rgb(155, 185, 108);
+}
+.select:disabled {
+  opacity: 0.32;
+}/*# sourceMappingURL=design_system.css.map */
