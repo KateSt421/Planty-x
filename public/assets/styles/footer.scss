@@ -1,0 +1,58 @@
+@import 'design_system';
+
+.footer {
+  background-color: $Grey_95;
+}
+
+.footer-flex {
+  height: 7.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 3.125rem 0 3.125rem 0;
+}
+
+.footer-logo {
+  max-width: 7.5rem;
+  max-height: 2rem;
+}
+
+.footer-link {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-inline {
+  margin: 0;
+  padding: 0;
+  gap: 4rem;
+}
+.list-inline-item:not(:last-child) {
+  margin-right: 4rem;}
+
+.text-link {
+  @include montserrat_regular_S; 
+  color: $Black_00;
+  text-decoration: none;
+}
+.social-icons {
+  list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 3.25rem;
+    margin: 0;
+    padding: 0;
+}
+
+.media-brands {
+  color: $Black_01;
+}
+
+a:hover {
+  color: $Green_96;
+  text-decoration: none;
+}
+
+
+
