@@ -1,0 +1,12 @@
+/* ----------- hero section ----------- */
+.hero {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.hero_wrapper {
+  display: flex;
+  justify-content: column;
+  padding: 4rem 0;
+}/*# sourceMappingURL=main_page.css.map */
