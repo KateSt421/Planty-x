@@ -10,7 +10,7 @@
 @font-face {
   font-family: "Montserrat";
   src: url("../fonts/Montserrat-SemiBold.eot");
-  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url("../fonts//Montserrat-SemiBold.woff") format("woff"), url("../fonts//Montserrat-SemiBold.ttf") format("truetype");
+  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url("../fonts/Montserrat-SemiBold.woff") format("woff"), url("../fonts/Montserrat-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
@@ -30,6 +30,27 @@
 }
 /* ----------- Стили текста ----------- */
 /* ----------- Ограничения ширин, шаблоны для @media ----------- */
+.page_block_wrapper {
+  max-width: 90rem;
+  padding: 0 3rem;
+  margin: 0 auto;
+}
+@media (max-width: 1280px) {
+  .page_block_wrapper {
+    padding: 0 2rem;
+  }
+}
+@media (max-width: 1024px) {
+  .page_block_wrapper {
+    padding: 0 1.5rem;
+  }
+}
+@media (max-width: 640px) {
+  .page_block_wrapper {
+    padding: 0 1rem;
+  }
+}
+
 /* ----------- Кнопки ----------- */
 .btn_solid_text_52 {
   color: rgb(255, 255, 255);

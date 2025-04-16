@@ -32,8 +32,8 @@ $xSmall: 1rem;
 	font-family: 'Montserrat';
 	src: url('../fonts/Montserrat-SemiBold.eot');
 	src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),
-		url('../fonts//Montserrat-SemiBold.woff') format('woff'),
-		url('../fonts//Montserrat-SemiBold.ttf') format('truetype');
+		url('../fonts/Montserrat-SemiBold.woff') format('woff'),
+		url('../fonts/Montserrat-SemiBold.ttf') format('truetype');
 	font-weight: 600;
 	font-style: normal;
 }
@@ -64,27 +64,27 @@ $xSmall: 1rem;
 // Заголовки страниц, на макете шрифт Belleza */
 @mixin page_title {
   /* служебный миксин, его использовать не надо */
-  font-family: 'Belleza';
+  font-family: 'Belleza', sans-serif;
   font-weight: 400;
   letter-spacing: -0.5px;
 }
 @mixin page_title_80 {
-  @include txt_title;
+  @include page_title;
   font-size: 5rem;
   line-height: 5.5rem;
 }
 @mixin page_title_64 {
-  @include txt_title;
+  @include page_title;
   font-size: 4rem;
   line-height: 4.5rem;
 }
 @mixin page_title_56 {
-  @include txt_title;
+  @include page_title;
   font-size: 3rem;
   line-height: 3.5rem;
 }
 @mixin page_title_32 {
-  @include txt_title;
+  @include page_title;
   font-size: 2rem;
   line-height: 2.5rem;
 }
@@ -145,7 +145,7 @@ $xSmall: 1rem;
 
 /* ----------- Ограничения ширин, шаблоны для @media ----------- */
 // Контейнер-оболочка для контента страницы, только с боковыми паддингами
-@mixin page_block_wrapper {
+.page_block_wrapper {
   max-width: 90rem;
   padding: 0 $Large;
   margin: 0 auto;
