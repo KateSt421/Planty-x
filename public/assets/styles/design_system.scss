@@ -78,7 +78,7 @@ $xSmall: 1rem;
   font-size: 4rem;
   line-height: 4.5rem;
 }
-@mixin page_title_56 {
+@mixin page_title_48 {
   @include page_title;
   font-size: 3rem;
   line-height: 3.5rem;
@@ -154,6 +154,7 @@ $xSmall: 1rem;
 }
   @media (max-width: 1024px) {
       padding: 0 $Small;
+      margin: 0;
   }
   @media (max-width: 640px) {
       padding: 0 $xSmall;
