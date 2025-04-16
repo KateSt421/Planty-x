@@ -1,0 +1,90 @@
+@import 'design_system.scss';
+/* ----------- main breakpoint  ----------- */
+/* ----------- hero section ----------- */
+.hero{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+}
+.hero_wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 4rem 0;
+    gap: 4rem;
+}
+.hero_slogan{
+    @include page_title_80;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: $Black_100;
+}
+.hero_button{
+    width: 11rem;
+}
+.hero_description{
+    @include montserrat_regular_24;
+    max-width: 25rem;
+    color: $Black_100;
+}
+.hero_reviews{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    @include montserrat_regular_16;
+}
+.hero_image{
+    max-width: 41.5rem;
+    width: 100%;
+    background-image: url('../images/main_hero_img.jpg');
+    background-size: cover;
+    background-position: bottom;
+}
+
+/* ----------- breakpoint 1280 ----------- */
+@media (max-width: 1280px) {
+    /* ----------- hero section ----------- */
+    .hero_wrapper{
+        padding: 2rem 0;
+        gap: 3rem;
+    }
+    .hero_slogan{
+        @include page_title_64;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    /* ----------- hero section ----------- */
+    .hero{
+        margin: 0;
+        background-image: url('../images/main_hero_img.jpg');
+        background-size: cover;
+        background-position: bottom;
+    }
+    .hero_wrapper{
+        max-width: none;
+        padding: 2rem 0;
+        gap: 3rem;
+    }
+    .hero_slogan{
+        @include page_title_64;
+        gap: 1rem;
+    }
+    .hero_description{
+        @include montserrat_regular_16;
+        max-width: 16.5rem;
+        color: $Black_100;
+    }
+    .hero_image{
+        display: none;
+    }
+}
+
+@media (max-width: 640px) {
+    /* ----------- hero section ----------- */
+    .hero_slogan{
+        @include page_title_48;
+    }
+}

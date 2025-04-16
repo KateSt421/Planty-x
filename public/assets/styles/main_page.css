@@ -316,4 +316,131 @@ a:hover {
 }
 .select:disabled {
   opacity: 0.32;
-}/*# sourceMappingURL=design_system.css.map */
+}
+
+/* ----------- main breakpoint  ----------- */
+/* ----------- hero section ----------- */
+.hero {
+  display: flex;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.hero_wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 4rem 0;
+  gap: 4rem;
+}
+
+.hero_slogan {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Belleza", sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  font-size: 5rem;
+  line-height: 5.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: rgb(0, 0, 0);
+}
+
+.hero_button {
+  width: 11rem;
+}
+
+.hero_description {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  max-width: 25rem;
+  color: rgb(0, 0, 0);
+}
+
+.hero_reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.hero_image {
+  max-width: 41.5rem;
+  width: 100%;
+  background-image: url("../images/main_hero_img.jpg");
+  background-size: cover;
+  background-position: bottom;
+}
+
+/* ----------- breakpoint 1280 ----------- */
+@media (max-width: 1280px) {
+  /* ----------- hero section ----------- */
+  .hero_wrapper {
+    padding: 2rem 0;
+    gap: 3rem;
+  }
+  .hero_slogan {
+    /* служебный миксин, его использовать не надо */
+    font-family: "Belleza", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    font-size: 4rem;
+    line-height: 4.5rem;
+    gap: 1rem;
+  }
+}
+@media (max-width: 1024px) {
+  /* ----------- hero section ----------- */
+  .hero {
+    margin: 0;
+    background-image: url("../images/main_hero_img.jpg");
+    background-size: cover;
+    background-position: bottom;
+  }
+  .hero_wrapper {
+    max-width: none;
+    padding: 2rem 0;
+    gap: 3rem;
+  }
+  .hero_slogan {
+    /* служебный миксин, его использовать не надо */
+    font-family: "Belleza", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    font-size: 4rem;
+    line-height: 4.5rem;
+    gap: 1rem;
+  }
+  .hero_description {
+    /* служебный миксин, его использовать не надо */
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    max-width: 16.5rem;
+    color: rgb(0, 0, 0);
+  }
+  .hero_image {
+    display: none;
+  }
+}
+@media (max-width: 640px) {
+  /* ----------- hero section ----------- */
+  .hero_slogan {
+    /* служебный миксин, его использовать не надо */
+    font-family: "Belleza", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+}/*# sourceMappingURL=main_page.css.map */
