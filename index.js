@@ -13,6 +13,7 @@ app.use(express.static('public'));
 
 // Import plants data
 const plants = require('./data/catalog.js');
+const details = require('./data/info.js');
 let cart = [];
 
 // Plant endpoints
@@ -27,8 +28,11 @@ app.get('/api/plants/search', (req, res) => {
 app.get('/api/plants/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const plant = plants.find(p => p.id === id);
-  if (plant) {
-    res.json(plant);
+  delete plant[id];
+  const detail = details.find(d => d.id === id);
+  const detailPlant = {...detail, ...plant};
+  if (detailPlant) {
+    res.json(detailPlant);
   } else {
     res.status(404).json({ error: 'Plant not found' });
   }
