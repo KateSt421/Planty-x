@@ -158,6 +158,24 @@
   background-color: rgba(103, 126, 81, 0.08);
 }
 
+.btn_transparent_text_36.active {
+  color: rgb(255, 255, 255);
+  background-color: rgb(155, 185, 108);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.25rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
+  transition: 0.2s ease-out;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+
 .btn_transparent_iconText_36 {
   color: rgb(0, 0, 0);
   background-color: transparent;
@@ -318,99 +336,29 @@ a:hover {
   opacity: 0.32;
 }
 
-.footer {
-  background-color: rgba(0, 0, 0, 0.08);
+.header {
+  background-color: rgb(255, 255, 255);
 }
 
-.footer-flex {
-  height: 7.5rem;
+.header_content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  text-align: center;
-  padding: 3.125rem 0;
+  height: 5.5rem;
 }
 
-.footer-logo {
+.logo_wrapper {
+  display: flex;
+  align-items: center;
+  height: 1.5rem;
+}
+
+.header-logo {
   max-width: 7.5rem;
   max-height: 2rem;
 }
 
-.footer-link {
+.menu_items {
   display: flex;
-  justify-content: space-between;
-  margin: 0;
-  padding: 0;
-  gap: 4rem;
-}
-
-.list-inline {
-  margin: 0;
-  padding: 0;
-}
-
-.text-link {
-  /* служебный миксин, его использовать не надо */
-  font-family: "Montserrat";
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-}
-
-.social-icons {
-  list-style-type: none;
-  display: flex;
-  align-items: center;
-  gap: 3.25rem;
-  margin: 0;
-  padding: 0;
-}
-
-.media-brands {
-  color: rgba(0, 0, 0, 0.96);
-}
-
-a:hover {
-  color: rgb(103, 126, 81);
-  text-decoration: none;
-}
-
-@media (max-width: 1024px) {
-  .footer-box-logo {
-    margin-bottom: 0.75rem;
-  }
-}
-@media (max-width: 768px) {
-  .footer-flex {
-    height: 5.5rem;
-  }
-  .footer-link {
-    gap: 2rem;
-  }
-  .social-icons {
-    gap: 2rem;
-  }
-}
-@media (max-width: 535px) {
-  .footer-flex {
-    height: 18.75rem;
-    display: block;
-    padding: 2rem 0;
-  }
-  .footer-link {
-    margin-bottom: 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-right: 0;
-    gap: 1rem;
-  }
-  .social-icons {
-    justify-content: center;
-  }
-  .footer-box-logo {
-    margin-bottom: 3rem;
-  }
-}/*# sourceMappingURL=footer.css.map */
+  gap: 0;
+}/*# sourceMappingURL=header.css.map */

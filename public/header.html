@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="./assets/styles/reset.css">
     <link rel="stylesheet" href="./assets/styles/normalize.css">
     <link rel="stylesheet" href="./assets/styles/design_system.css">
+    <link rel="stylesheet" href="./assets/styles/header.css">
     <link rel="stylesheet" href="./assets/styles/main_page.css">
     <link href="./assets/styles/styles.css" rel="stylesheet" />
     <link href="./assets/styles/footer.css" rel="stylesheet" />
@@ -31,7 +32,20 @@
   </head>
   <body>
     <header class="header">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="page_block_wrapper">
+        <menu class="header_content">
+          <div class="logo_wrapper">
+             <a href="./index.html"><img class="header-logo" src="./assets/images/Logo.svg" alt="Логотип" /></a>
+          </div>
+          <div class="menu_items">
+            <a href="./index.html" class="btn_transparent_text_36 active">Растения</a>
+            <a href="./service.html" class="btn_transparent_text_36">Услуги</a>
+            <a href="./company.html" class="btn_transparent_text_36">Компания</a>
+          </div>
+          <div class="menu_actions"></div>
+        </menu>
+      </div>
+        <!--<nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
                 <a class="navbar-brand" href="/">Flower Shop</a>
                 <div class="search-container">
@@ -39,10 +53,6 @@
                     <button id="searchBtn">Search</button>
                 </div>
                 <div class="nav-links">
-                  <a href="./header.html" class="about-link">
-                    <i class="bi bi-building"></i>
-                    Header
-                </a>
                     <a href="/company.html" class="about-link">
                         <i class="bi bi-building"></i>
                         About Us
@@ -53,10 +63,10 @@
                     </a>
                 </div>
             </div>
-        </nav>
+        </nav> -->
     </header>
     <section class="hero">
-      <div class="page_block_wrapper">
+      <div class="page_block_wrapper page_block_wrapper_hero">
         <div class="hero_wrapper">
           <div class="hero_slogan">
             Растения</br>

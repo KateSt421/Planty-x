@@ -158,6 +158,24 @@
   background-color: rgba(103, 126, 81, 0.08);
 }
 
+.btn_transparent_text_36.active {
+  color: rgb(255, 255, 255);
+  background-color: rgb(155, 185, 108);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.25rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
+  transition: 0.2s ease-out;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+
 .btn_transparent_iconText_36 {
   color: rgb(0, 0, 0);
   background-color: transparent;
@@ -325,6 +343,11 @@ a:hover {
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
+}
+
+.page_block_wrapper_hero {
+  margin: 0 !important;
+  width: 100%;
 }
 
 .hero_wrapper {

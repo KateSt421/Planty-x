@@ -1,0 +1,29 @@
+@import 'design_system';
+
+.header{
+    background-color: $White_100;
+}
+
+.header_content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5.5rem;
+}
+
+.logo_wrapper{
+    display: flex;
+    align-items: center;
+    height: 1.5rem;
+}
+
+.header-logo {
+    max-width: 7.5rem;
+    max-height: 2rem;
+  }
+
+.menu_items{
+    display: flex;
+    gap: 0;
+}
+

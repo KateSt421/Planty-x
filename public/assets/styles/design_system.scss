@@ -284,6 +284,12 @@ $xSmall: 1rem;
   }
   @include btn_text_36;
 }
+.btn_transparent_text_36.active{
+  color: $White_100;
+  background-color: $Green_Light_100;
+  @include btn_text_36;
+}
+
 .btn_transparent_iconText_36{
   color: $Black_100;
   background-color: transparent;
