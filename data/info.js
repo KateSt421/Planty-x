@@ -545,3 +545,4 @@ const details = [{
   size: "2 часа"
 },
 ]
+module.exports = details;

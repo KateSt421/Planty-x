@@ -2,15 +2,18 @@
 
 .footer {
   background-color: $Black_08;
+  position: absolute;
+  width: 100%;
+  overflow-y: hidden;
 }
 
 .footer-flex {
-  height: 7.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
   padding: 3.125rem 0;
+  height: 7.5rem;
 }
 
 .footer-logo {
