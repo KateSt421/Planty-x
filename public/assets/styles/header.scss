@@ -1,7 +1,10 @@
 @import 'design_system';
-
+/* ----------- общий контейнер ----------- */
 .header{
     background-color: $White_100;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .header_content{
@@ -11,6 +14,7 @@
     height: 5.5rem;
 }
 
+/* ----------- лого с оберткой ----------- */
 .logo_wrapper{
     display: flex;
     align-items: center;
@@ -22,8 +26,19 @@
     max-height: 2rem;
   }
 
+/* ----------- центральная часть ----------- */
 .menu_items{
     display: flex;
     gap: 0;
 }
+
+/* ----------- кнопки справа ----------- */
+.menu_actions{
+    display: flex;
+    gap: 2rem;
+}
+
+.search-toggle {
+    display: none;
+  }
 

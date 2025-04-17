@@ -341,8 +341,10 @@ a:hover {
 .hero {
   display: flex;
   width: 100%;
+  max-width: 1440px;
   height: -moz-fit-content;
   height: fit-content;
+  margin: 0 auto;
 }
 
 .page_block_wrapper_hero {

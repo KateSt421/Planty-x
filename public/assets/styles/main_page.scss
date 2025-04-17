@@ -4,7 +4,9 @@
 .hero{
     display: flex;
     width: 100%;
+    max-width: 1440px;
     height: fit-content;
+    margin: 0 auto;
 }
 .page_block_wrapper_hero{
     margin: 0 !important;
