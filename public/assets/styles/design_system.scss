@@ -240,6 +240,7 @@ $xSmall: 1rem;
   background-color: $Black_96;
   &:hover{
     background-color: $Green_Light_100;
+    border-style: none;
   }
   &:active{
     background-color: $Green_Dark_100;

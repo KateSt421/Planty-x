@@ -72,6 +72,7 @@
 }
 .btn_solid_text_52:hover {
   background-color: rgb(155, 185, 108);
+  border-style: none;
 }
 .btn_solid_text_52:active {
   background-color: rgb(103, 126, 81);
@@ -370,4 +371,8 @@ body {
   line-height: 1.8;
   color: #555;
   margin-bottom: 2rem;
+}
+
+.btn_solid_text_52 {
+  width: 21.25rem;
 }/*# sourceMappingURL=details.css.map */

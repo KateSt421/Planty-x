@@ -72,6 +72,7 @@
 }
 .btn_solid_text_52:hover {
   background-color: rgb(155, 185, 108);
+  border-style: none;
 }
 .btn_solid_text_52:active {
   background-color: rgb(103, 126, 81);
