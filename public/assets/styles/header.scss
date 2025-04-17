@@ -42,3 +42,24 @@
     display: none;
   }
 
+.search_wrapper{
+    position: relative;
+    width: 100%;
+    padding: 1rem 0;
+    z-index: 99;
+}
+
+.search_input{
+    width: 100%;
+    padding: 0.75rem 2.25rem 0.75rem 0.75rem !important;
+}
+
+#cleanSearcBtn{
+    position: absolute; 
+    right: 0.5rem; 
+    top: 50%; 
+    transform: translateY(-50%);
+}
+
+
+

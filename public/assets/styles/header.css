@@ -272,8 +272,14 @@ a:hover {
   padding: 0.75rem 0.75rem;
   border-radius: 0.75rem;
   background-color: rgb(255, 255, 255);
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1rem;
   cursor: pointer;
   transition: 0.2s;
+  height: 2.5rem;
   color: rgb(0, 0, 0);
   border: 1px solid rgba(0, 0, 0, 0.08);
 }
@@ -289,6 +295,10 @@ a:hover {
 .input:active {
   border: 1px solid rgb(155, 185, 108);
 }
+.input:focus-visible {
+  outline: none;
+  border: 1px solid rgb(155, 185, 108);
+}
 .input:disabled {
   opacity: 0.32;
 }
@@ -298,6 +308,11 @@ a:hover {
   padding: 0.75rem 0.75rem;
   border-radius: 0.75rem;
   background-color: rgb(255, 255, 255);
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1rem;
   cursor: pointer;
   transition: 0.2s;
   color: rgb(0, 0, 0);
@@ -321,6 +336,11 @@ a:hover {
   padding: 0.75rem 0.75rem;
   border-radius: 0.75rem;
   background-color: rgb(255, 255, 255);
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1rem;
   cursor: pointer;
   transition: 0.2s;
   color: rgb(0, 0, 0);
@@ -377,4 +397,23 @@ a:hover {
 
 .search-toggle {
   display: none;
+}
+
+.search_wrapper {
+  position: relative;
+  width: 100%;
+  padding: 1rem 0;
+  z-index: 99;
+}
+
+.search_input {
+  width: 100%;
+  padding: 0.75rem 2.25rem 0.75rem 0.75rem !important;
+}
+
+#cleanSearcBtn {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
 }/*# sourceMappingURL=header.css.map */

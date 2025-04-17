@@ -335,6 +335,7 @@ a{
   padding: 0.75rem 0.75rem;
   border-radius: 0.75rem;
   background-color: $White_100;
+  @include montserrat_regular_12;
   cursor: pointer;
   transition: 0.2s;
 }
@@ -342,6 +343,7 @@ a{
 //инпут однострочное поле
 .input{
   @include input_basic;
+  height: 2.5rem;
   color: $Black_100;
   border: 1px solid $Black_08;
   ::placeholder{
@@ -351,6 +353,10 @@ a{
     border: 1px solid $Green_Light_100;
   }
   &:active{
+    border: 1px solid $Green_Light_100;
+  }
+  &:focus-visible{
+    outline: none;
     border: 1px solid $Green_Light_100;
   }
   &:disabled{

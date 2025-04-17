@@ -272,6 +272,11 @@ a:hover {
   padding: 0.75rem 0.75rem;
   border-radius: 0.75rem;
   background-color: rgb(255, 255, 255);
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1rem;
   cursor: pointer;
   transition: 0.2s;
   color: rgb(0, 0, 0);
@@ -298,6 +303,11 @@ a:hover {
   padding: 0.75rem 0.75rem;
   border-radius: 0.75rem;
   background-color: rgb(255, 255, 255);
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1rem;
   cursor: pointer;
   transition: 0.2s;
   color: rgb(0, 0, 0);
@@ -321,6 +331,11 @@ a:hover {
   padding: 0.75rem 0.75rem;
   border-radius: 0.75rem;
   background-color: rgb(255, 255, 255);
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1rem;
   cursor: pointer;
   transition: 0.2s;
   color: rgb(0, 0, 0);
