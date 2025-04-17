@@ -727,8 +727,8 @@ const plants = [
   image: "./assets/images/service1.webp",
   category: "service",
   description: "Онлайн-встреча, на которой поможем определить причины проблем с растением и подскажем, как улучшить уход.",
-  comment: "Zoom, 40 минут",
-  service: "онлайн-консультация"
+  comment: "Zoom",
+  service: "Онлайн-консультация"
 },
 {
   id: 201,
@@ -747,7 +747,7 @@ const plants = [
   image: "./assets/images/service3.webp",
   category: "service",
   description: "Аккуратно пересадим ваше растение с подбором грунта, дренажа и рекомендациями по дальнейшему уходу.",
-  comment: "На дому, до 1 часа",
+  comment: "На дому",
   service: "услуга на выезде"
 },
 {

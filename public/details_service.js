@@ -62,23 +62,29 @@ class PlantDetails {
         </div>
         <div class="col-md-6">
           <h1>${plant.name}</h1>
-          
-          <p class="plant-details-description">
-            ${plant.name.toLowerCase()}
+          <p class="plant">
+            <strong>Продолжительность</strong> ${plant.size}
           </p>
-          <span>${plant.detail_description}</span>
-          <p><strong>Category:</strong> ${plant.category.charAt(0).toUpperCase() + plant.category.slice(1)}</p>
+          <p class="plant">
+            <strong>Место</strong> ${plant.comment}
+          </p>
+          <p class="plant-details-description">
+            ${plant.name}
+          </p><p class="plant-details-description"><strong>1.</strong>
+            ${plant.description}
+          </p>
+          <span><strong>2.</strong> ${plant.detail_description}</span>
 
-          <div class="plant-details-actions">
+          <div class="plant-details-actions"><div class="plant-details-price">₽${plant.price.toFixed(2)}</div>
             ${quantity === 0 ?
-              `<button class="add-to-cart-btn" onclick="plantDetails.updateQuantity(${plant.id}, 1)">Add to Cart</button>` :
+              `<button class="btn_solid_text_52" onclick="plantDetails.updateQuantity(${plant.id}, 1)">Добавить</button>` :
               `<div class="quantity-controls">
                   <button onclick="plantDetails.updateQuantity(${plant.id}, -1)">-</button>
                   <span>${quantity}</span>
 
                   <button onclick="plantDetails.updateQuantity(${plant.id}, 1)">+</button>
                </div>`
-            }<div class="plant-details-price">$${plant.price.toFixed(2)}</div>
+            }
             </div>
         </div>
       </div>
