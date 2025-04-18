@@ -1,4 +1,5 @@
 @import 'design_system';
+/* ----------- breakpoint 1440+ ----------- */
 /* ----------- общий контейнер ----------- */
 .header{
     background-color: $White_100;
@@ -12,6 +13,11 @@
     justify-content: space-between;
     align-items: center;
     height: 5.5rem;
+}
+
+/* ----------- кнопка меню ----------- */
+.burger_menu{
+    display: none !important;
 }
 
 /* ----------- лого с оберткой ----------- */
@@ -76,4 +82,63 @@
     position: absolute; 
     right: 0.5rem; 
     top: 0.5rem
+}
+
+/* ----------- заготовка под мобильное меню ----------- */
+.mobile_menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: $White_100;
+    z-index: 101;
+}
+
+.mobile_menu_top_wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.mobile_menu_items {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 0.75rem;
+}
+
+.mobile_menu_items .btn_transparent_text_36 {
+    width: fit-content;
+}
+
+/* ----------- breakpoint 1024 ----------- */
+@media (max-width: 1024px) {
+    .header_content{
+        height: 4rem;
+    }
+
+    /* ----------- кнопки справа ----------- */
+    .menu_actions{
+        gap: 1rem;
+    }
+}
+
+/* ----------- breakpoint 640 ----------- */
+
+@media (max-width: 640px) {
+    .burger_menu {
+        display: flex !important;
+    }
+
+    /* Скрыть основное меню на мобильных устройствах */
+    .menu_items {
+        display: none;
+    }
+
+    /* Когда меню открыто, его видно */
+    .mobile_menu.open {
+    display: block;
+    visibility: visible;
+    }
 }

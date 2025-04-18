@@ -35,6 +35,13 @@
       <div class="page_block_wrapper">
         <menu class="header_content">
           <div class="logo_wrapper">
+            <button class="burger_menu btn_transparent_icon_24">
+              <svg>
+                <use
+                    href="./assets/images/svg_icons/menu.svg#menu"
+                ></use>
+              </svg>
+            </button>
              <a href="./index.html"><img class="header-logo" src="./assets/images/Logo.svg" alt="Логотип" /></a>
           </div>
           <div class="menu_items">
@@ -79,26 +86,27 @@
           <!--<button id="searchBtn">Search</button>-->
         </div>
       </div>
-        <!--<nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <a class="navbar-brand" href="/">Flower Shop</a>
-                <div class="search-container">
-                    <input type="text" id="search" placeholder="Search plants...">
-                    <button id="searchBtn">Search</button>
-                </div>
-                <div class="nav-links">
-                    <a href="/company.html" class="about-link">
-                        <i class="bi bi-building"></i>
-                        About Us
-                    </a>
-                    <a href="/cart.html" class="cart-link">
-                        <i class="bi bi-cart3"></i>
-                        Cart
-                    </a>
-                </div>
-            </div>
-        </nav> -->
     </header>
+    <menu class="mobile_menu">
+      <div class="mobile_menu_top_wrapper">
+        <div class="logo_wrapper">
+          <a href="./index.html"><img class="header-logo" src="./assets/images/Logo.svg" alt="Логотип" /></a>
+       </div>
+       <button id="closeMenu" class="btn_transparent_icon_24">
+        <svg>
+          <use
+              href="./assets/images/svg_icons/close.svg#close"
+          ></use>
+        </svg>
+      </button>
+      </div>
+      <div class="mobile_menu_items">
+        <a href="./index.html" class="btn_transparent_text_36 active">Растения</a>
+        <a href="./service.html" class="btn_transparent_text_36">Услуги</a>
+        <a href="./company.html" class="btn_transparent_text_36">Компания</a>
+      </div>
+
+    </menu>
     <section class="hero">
       <div class="page_block_wrapper page_block_wrapper_hero">
         <div class="hero_wrapper">
@@ -116,6 +124,7 @@
       <div class="hero_image"></div>
     </section>
     <main class="container">
+
       <div class="categories">
         <button class="category-btn" data-category="all">Все</button>
         <button class="category-btn" data-category="orchids">

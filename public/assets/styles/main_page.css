@@ -443,6 +443,7 @@ a:hover {
     gap: 1rem;
   }
 }
+/* ----------- breakpoint 1024 ----------- */
 @media (max-width: 1024px) {
   /* ----------- hero section ----------- */
   .hero {
@@ -478,6 +479,7 @@ a:hover {
     display: none;
   }
 }
+/* ----------- breakpoint 640 ----------- */
 @media (max-width: 640px) {
   /* ----------- hero section ----------- */
   .hero_slogan {
