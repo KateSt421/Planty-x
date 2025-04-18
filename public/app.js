@@ -13,40 +13,58 @@ class PlantStore {
     const searchInput = document.getElementById('search');
     const cleanSearchBtn = document.getElementById('cleanSearcBtn');
     const searchWrapper = document.querySelector('.search_wrapper');
-
+    const targetBlock = document.querySelector('#plants-grid');
+    const offset = -24;
+    const targetPosition = targetBlock.getBoundingClientRect().top + offset;
+  
     // Enter key event for search input
     searchInput.addEventListener('keypress', (event) => {
       if (event.key === 'Enter' && searchInput.value.length >= 3) {
         event.preventDefault();
         this.searchPlants(searchInput.value);
+  
+        // smothed scroll to results
+        if (targetBlock) {
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
       }
     });
-
+  
     // Show x-button
     searchInput.addEventListener('input', () => {
       if (searchInput.value.length >= 1) {
-          cleanSearchBtn.style.display = 'block';
+        cleanSearchBtn.style.display = 'block';
       } else {
-          cleanSearchBtn.style.display = 'none';
+        cleanSearchBtn.style.display = 'none';
       }
-  });
-
+    });
+  
     // Clean search field
     cleanSearchBtn.addEventListener('click', () => {
-      if(searchInput.value.length >= 1){
+      if (searchInput.value.length >= 1) {
         searchInput.value = '';
         cleanSearchBtn.style.display = 'none';
         searchWrapper.classList.remove('active');
-
+  
         // Clear results by resetting the plant display
         this.loadPlants();
         // Reset current filter to show all plants, or reset the page
         this.currentFilter = '';
-
-
+  
+        // Плавный скролл до блока с результатами после очистки
+        if (targetBlock) {
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
       }
-     })
+    });
   }
+  
 
 
   async searchPlants(query) {

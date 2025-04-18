@@ -10,38 +10,69 @@ toggle.addEventListener("change", () => {
   }
 });
 
-
 // Menu
 const mobileMenuButton = document.querySelector('.burger_menu');
 const mobileCloseButton = document.getElementById('closeMenu');
 const mobileNavbar = document.querySelector('.mobile_menu');
+let scrollPosition = 0; // Переменная для хранения позиции скролла
 
+// Функция для блокировки прокрутки
+function blockScroll() {
+    // Сохраняем текущую позицию скролла
+    scrollPosition = window.pageYOffset;
+
+    // Отключаем прокрутку на всей странице
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollPosition}px`;
+    document.body.style.width = '100%';
+}
+
+// Функция для восстановления прокрутки
+function unblockScroll() {
+    document.documentElement.style.overflow = ''; 
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+
+    // Используем setTimeout чтобы не было анимации
+    setTimeout(() => {
+        window.scrollTo(0, scrollPosition);
+    }, 0);
+}
+
+// Открытие меню
 function openMenu() {
     if (window.innerWidth <= 640) {
         mobileNavbar.style.display = 'block';
-        mobileNavbar.style.visibility = 'visible'; // Ensure visibility
-        document.documentElement.style.overflow = 'hidden'; // Disable scrolling on the page
+        mobileNavbar.style.visibility = 'visible';
+        mobileNavbar.style.position = 'fixed';
+        mobileNavbar.style.top = '0';
+        mobileNavbar.style.width = '100%';
+        blockScroll();
     }
 }
 
-// close the menu
+// Close menu
 function closeMenu() {
     mobileNavbar.style.display = 'none';
-    mobileNavbar.style.visibility = 'hidden'; // Hide visibility
-    document.documentElement.style.overflow = ''; // Enable scrolling again
+    mobileNavbar.style.visibility = 'hidden';
+    mobileNavbar.style.position = '';
+    mobileNavbar.style.top = '';
+    unblockScroll();
 }
 
-// event launchers
+// Launch events
 mobileMenuButton.addEventListener('click', openMenu);
 mobileCloseButton.addEventListener('click', closeMenu);
 
-// hide the menu on loading the page
+// when loading the page - close menu
 window.addEventListener('load', () => {
     mobileNavbar.style.display = 'none';
     mobileNavbar.style.visibility = 'hidden';
 });
 
-// hide the menu when open new page
+// when open new page - close menu
 window.addEventListener('beforeunload', () => {
     mobileNavbar.style.display = 'none';
     mobileNavbar.style.visibility = 'hidden';
