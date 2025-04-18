@@ -399,11 +399,27 @@ a:hover {
   display: none;
 }
 
+/* ----------- поиск ----------- */
 .search_wrapper {
   position: relative;
+  top: -100%;
   width: 100%;
-  padding: 1rem 0;
-  z-index: 99;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+  transition: opacity 0.3s ease, visibility 0s 0.3s, max-height 0.3s ease;
+}
+
+.search_wrapper.active {
+  top: 0;
+  max-height: 4.5rem;
+  opacity: 1;
+  visibility: visible;
+  overflow: visible;
+  padding-bottom: 1rem;
+  transition: opacity 0.3s ease, visibility 0s 0s, max-height 0.3s ease;
 }
 
 .search_input {
@@ -412,8 +428,8 @@ a:hover {
 }
 
 #cleanSearcBtn {
+  display: none;
   position: absolute;
   right: 0.5rem;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0.5rem;
 }/*# sourceMappingURL=header.css.map */

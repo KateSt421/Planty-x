@@ -11,8 +11,12 @@ class PlantStore {
 
   async initSearch() {
     const searchInput = document.getElementById('search');
-    const cleanSearchBtn = document.getElementById('cleanSearcBtn');
-    const searchWrapper = document.querySelector('.search_wrapper');
+    //const searchBtn = document.getElementById('searchBtn');
+
+    // Click event for search button
+    /*searchBtn.addEventListener('click', () => {
+        this.searchPlants(searchInput.value);
+    });*/
 
     // Enter key event for search input
     searchInput.addEventListener('keypress', (event) => {
@@ -21,31 +25,7 @@ class PlantStore {
         this.searchPlants(searchInput.value);
       }
     });
-
-    // Show x-button
-    searchInput.addEventListener('input', () => {
-      if (searchInput.value.length >= 1) {
-          cleanSearchBtn.style.display = 'block';
-      } else {
-          cleanSearchBtn.style.display = 'none';
-      }
-  });
-
-    // Clean search field
-    cleanSearchBtn.addEventListener('click', () => {
-      if(searchInput.value.length >= 1){
-        searchInput.value = '';
-        cleanSearchBtn.style.display = 'none';
-        searchWrapper.classList.remove('active');
-
-        // if we are on the search results, return to index
-        if (window.location.pathname.includes('search-results')) {
-            window.location.href = './index';
-        }
-      }
-     })
   }
-
 
   async searchPlants(query) {
     this.currentFilter = query;
