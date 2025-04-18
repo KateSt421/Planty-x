@@ -38,10 +38,12 @@ class PlantStore {
         cleanSearchBtn.style.display = 'none';
         searchWrapper.classList.remove('active');
 
-        // if we are on the search results, return to index
-        if (window.location.pathname.includes('search-results')) {
-            window.location.href = './index';
-        }
+        // Clear results by resetting the plant display
+        this.loadPlants();
+        // Reset current filter to show all plants, or reset the page
+        this.currentFilter = '';
+
+
       }
      })
   }
