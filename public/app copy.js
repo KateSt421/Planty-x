@@ -11,61 +11,21 @@ class PlantStore {
 
   async initSearch() {
     const searchInput = document.getElementById('search');
-    const cleanSearchBtn = document.getElementById('cleanSearcBtn');
-    const searchWrapper = document.querySelector('.search_wrapper');
-    const targetBlock = document.querySelector('#plants-grid');
-    const offset = -24;
-    const targetPosition = targetBlock.getBoundingClientRect().top + offset;
-  
+    //const searchBtn = document.getElementById('searchBtn');
+
+    // Click event for search button
+    /*searchBtn.addEventListener('click', () => {
+        this.searchPlants(searchInput.value);
+    });*/
+
     // Enter key event for search input
     searchInput.addEventListener('keypress', (event) => {
       if (event.key === 'Enter' && searchInput.value.length >= 3) {
         event.preventDefault();
         this.searchPlants(searchInput.value);
-  
-        // smothed scroll to results
-        if (targetBlock) {
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-        }
-      }
-    });
-  
-    // Show x-button
-    searchInput.addEventListener('input', () => {
-      if (searchInput.value.length >= 1) {
-        cleanSearchBtn.style.display = 'block';
-      } else {
-        cleanSearchBtn.style.display = 'none';
-      }
-    });
-  
-    // Clean search field
-    cleanSearchBtn.addEventListener('click', () => {
-      if (searchInput.value.length >= 1) {
-        searchInput.value = '';
-        cleanSearchBtn.style.display = 'none';
-        searchWrapper.classList.remove('active');
-  
-        // Clear results by resetting the plant display
-        this.loadPlants();
-        // Reset current filter to show all plants, or reset the page
-        this.currentFilter = '';
-  
-        // Плавный скролл до блока с результатами после очистки
-        if (targetBlock) {
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-        }
       }
     });
   }
-  
-
 
   async searchPlants(query) {
     this.currentFilter = query;
@@ -123,11 +83,11 @@ class PlantStore {
       const cartItem = cart.find(item => item.id === plant.id);
       const quantity = cartItem ? cartItem.quantity : 0;
       const inCartClass = quantity > 0 ? 'in-cart' : '';
-      const isServiceCategory = plant.category === 'service' ? 'details_service.html' : 'details.html';
+
       return `
         <div class="plant-card ${inCartClass}" data-plant-id="${plant.id}">
           <img src="${plant.image}" alt="${plant.name}">
-          <button class="details-btn" onclick="window.location.href='/${isServiceCategory}?id=${plant.id}'">Details</button>
+          <button class="details-btn" onclick="window.location.href='/details.html?id=${plant.id}'">Details</button>
           <h3>${plant.name}</h3>
           <p>$${plant.price.toFixed(2)}</p>
           ${quantity === 0 ?

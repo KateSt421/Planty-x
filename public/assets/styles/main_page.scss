@@ -4,7 +4,13 @@
 .hero{
     display: flex;
     width: 100%;
+    max-width: 1440px;
     height: fit-content;
+    margin: 0 auto;
+}
+.page_block_wrapper_hero{
+    margin: 0 !important;
+    width: 100%;
 }
 .hero_wrapper{
     display: flex;
@@ -55,6 +61,8 @@
     }
 }
 
+
+/* ----------- breakpoint 1024 ----------- */
 @media (max-width: 1024px) {
     /* ----------- hero section ----------- */
     .hero{
@@ -82,6 +90,7 @@
     }
 }
 
+/* ----------- breakpoint 640 ----------- */
 @media (max-width: 640px) {
     /* ----------- hero section ----------- */
     .hero_slogan{
