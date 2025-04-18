@@ -22,6 +22,13 @@
   font-style: normal;
 }
 @font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-ExtraBold.eot");
+  src: local("Montserrat ExtraBold"), local("Montserrat-ExtraBold"), url("../fonts/Montserrat-ExtraBold.woff") format("woff"), url("../fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
   font-family: "Belleza";
   src: url("../fonts/Belleza-Regular.eot");
   src: local("Belleza Regular"), local("Belleza-Regular"), url("../fonts/Belleza-Regular.woff2") format("woff2"), url("../fonts/Belleza-Regular.woff") format("woff"), url("../fonts/Belleza-Regular.ttf") format("truetype");
@@ -72,6 +79,7 @@
 }
 .btn_solid_text_52:hover {
   background-color: rgb(155, 185, 108);
+  border-style: none;
 }
 .btn_solid_text_52:active {
   background-color: rgb(103, 126, 81);
@@ -404,6 +412,41 @@ a:hover {
 
 .search-toggle {
   display: none;
+}
+
+/* ----------- счетчик ----------- */
+.cart_counter {
+  display: none;
+  position: relative;
+  right: 1.75rem;
+  transform: translateX(-100%);
+  height: 0.75rem;
+  padding: 0 0.25rem;
+  border-radius: 0.25rem;
+  color: rgb(255, 255, 255);
+  background-color: rgb(250, 108, 89);
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 900;
+  font-size: 0.5rem;
+  line-height: 0.75rem;
+  animation: jump 0.3s ease-in-out;
+  animation-iteration-count: 1;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateX(-100%) scale(1);
+  }
+  50% {
+    transform: translateX(-100%) scale(1.2);
+  }
+  100% {
+    transform: translateX(-100%) scale(1);
+  }
+}
+.cart_counter.jump {
+  animation: jump 0.3s ease-in-out;
 }
 
 /* ----------- поиск ----------- */

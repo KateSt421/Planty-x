@@ -31,7 +31,7 @@
 .header-logo {
     max-width: 7.5rem;
     max-height: 2rem;
-  }
+}
 
 /* ----------- центральная часть ----------- */
 .menu_items{
@@ -47,6 +47,38 @@
 
 .search-toggle {
     display: none;
+  }
+
+/* ----------- счетчик ----------- */
+.cart_counter{
+    display: none;
+    position: relative;
+    right: 1.75rem;
+    transform: translateX(-100%);
+    height: 0.75rem;
+    padding: 0 0.25rem;
+    border-radius: 0.25rem;
+    color: $White_100;
+    background-color: $Red_100;
+    @include montserrat_extra_8;
+    animation: jump 0.3s ease-in-out;
+    animation-iteration-count: 1;
+}
+
+@keyframes jump {
+    0% {
+      transform: translateX(-100%) scale(1);
+    }
+    50% {
+      transform: translateX(-100%) scale(1.2);
+    }
+    100% {
+      transform: translateX(-100%) scale(1);
+    }
+  }
+
+  .cart_counter.jump {
+    animation: jump 0.3s ease-in-out;
   }
 
 /* ----------- поиск ----------- */
