@@ -415,6 +415,17 @@ a:hover {
 }
 
 /* ----------- счетчик ----------- */
+@keyframes jump {
+  0% {
+    transform: translateX(-100%) scale(1);
+  }
+  50% {
+    transform: translateX(-100%) scale(1.2);
+  }
+  100% {
+    transform: translateX(-100%) scale(1);
+  }
+}
 .cart_counter {
   display: none;
   position: relative;
@@ -434,17 +445,6 @@ a:hover {
   animation-iteration-count: 1;
 }
 
-@keyframes jump {
-  0% {
-    transform: translateX(-100%) scale(1);
-  }
-  50% {
-    transform: translateX(-100%) scale(1.2);
-  }
-  100% {
-    transform: translateX(-100%) scale(1);
-  }
-}
 .cart_counter.jump {
   animation: jump 0.3s ease-in-out;
 }
