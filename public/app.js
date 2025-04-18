@@ -123,11 +123,11 @@ class PlantStore {
       const cartItem = cart.find(item => item.id === plant.id);
       const quantity = cartItem ? cartItem.quantity : 0;
       const inCartClass = quantity > 0 ? 'in-cart' : '';
-
+      const isServiceCategory = plant.category === 'service' ? 'details_service.html' : 'details.html';
       return `
         <div class="plant-card ${inCartClass}" data-plant-id="${plant.id}">
           <img src="${plant.image}" alt="${plant.name}">
-          <button class="details-btn" onclick="window.location.href='/details.html?id=${plant.id}'">Details</button>
+          <button class="details-btn" onclick="window.location.href='/${isServiceCategory}?id=${plant.id}'">Details</button>
           <h3>${plant.name}</h3>
           <p>$${plant.price.toFixed(2)}</p>
           ${quantity === 0 ?
