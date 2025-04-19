@@ -7,6 +7,31 @@ class PlantStore {
     this.plants = [];
     this.currentFilter = '';
     this.currentCategory = 'all';
+    this.updateCartCount();
+  }
+
+  // Функция обновления количества товаров в корзине
+  updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0); // Подсчитываем общее количество товаров
+    const cartQuantityElement = document.querySelector('.cart_counter'); // Элемент для отображения бейджа
+
+    if (cartQuantityElement) {
+      if (totalQuantity > 0) {
+        cartQuantityElement.textContent = totalQuantity; // Отображаем количество товаров в корзине
+        cartQuantityElement.style.display = 'block'; // Показываем бейдж
+
+        // Добавляем анимацию "jump" только если количество больше нуля
+        cartQuantityElement.classList.add('move'); // Добавляем движение
+
+        // Убираем анимацию после завершения, чтобы она не повторялась
+        setTimeout(() => {
+          cartQuantityElement.classList.remove('move');
+        }, 500); // Время анимации
+      } else {
+        cartQuantityElement.style.display = 'none'; // Скрываем бейдж, если корзина пуста
+      }
+    }
   }
 
   async initSearch() {
@@ -161,6 +186,7 @@ class PlantStore {
 
       localStorage.setItem('cart', JSON.stringify(cart));
       this.filterByCategory(this.currentCategory);
+      this.updateCartCount(); // Обновляем количество товаров в корзине
 
       if (change > 0) {
         const button = document.querySelector(`[data-plant-id="${plantId}"] .add-to-cart-btn`);

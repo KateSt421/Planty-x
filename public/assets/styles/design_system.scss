@@ -48,6 +48,15 @@ $xSmall: 1rem;
 	font-style: normal;
 }
 @font-face {
+	font-family: 'Montserrat';
+	src: url('../fonts/Montserrat-ExtraBold.eot');
+	src: local('Montserrat ExtraBold'), local('Montserrat-ExtraBold'),
+		url('../fonts/Montserrat-ExtraBold.woff') format('woff'),
+		url('../fonts/Montserrat-ExtraBold.ttf') format('truetype');
+	font-weight: 900;
+	font-style: normal;
+}
+@font-face {
   font-family: 'Belleza';
   src: url('../fonts/Belleza-Regular.eot');
   src: local('Belleza Regular'), local('Belleza-Regular'),
@@ -142,6 +151,18 @@ $xSmall: 1rem;
   @include title_Montserrat_regular;
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+//Экстраболд для циферок
+@mixin title_Montserrat_extra {
+  /* служебный миксин, его использовать не надо */
+  font-family: 'Montserrat';
+  font-weight: 900;
+}
+@mixin montserrat_extra_10 {
+  @include title_Montserrat_extra;
+  font-size: 0.675rem;
+  line-height: 0.75rem;
 }
 
 /* ----------- Ограничения ширин, шаблоны для @media ----------- */

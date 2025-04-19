@@ -22,6 +22,13 @@
   font-style: normal;
 }
 @font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-ExtraBold.eot");
+  src: local("Montserrat ExtraBold"), local("Montserrat-ExtraBold"), url("../fonts/Montserrat-ExtraBold.woff") format("woff"), url("../fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
   font-family: "Belleza";
   src: url("../fonts/Belleza-Regular.eot");
   src: local("Belleza Regular"), local("Belleza-Regular"), url("../fonts/Belleza-Regular.woff2") format("woff2"), url("../fonts/Belleza-Regular.woff") format("woff"), url("../fonts/Belleza-Regular.ttf") format("truetype");
@@ -373,6 +380,11 @@ a:hover {
   width: 100%;
 }
 
+.hero_block_wrapper {
+  width: 100%;
+  padding: 0 3rem;
+}
+
 .hero_wrapper {
   display: flex;
   flex-direction: column;
@@ -434,6 +446,9 @@ a:hover {
     padding: 2rem 0;
     gap: 3rem;
   }
+  .hero_block_wrapper {
+    padding: 0 2rem;
+  }
   .hero_slogan {
     /* служебный миксин, его использовать не надо */
     font-family: "Belleza", sans-serif;
@@ -457,6 +472,9 @@ a:hover {
     max-width: none;
     padding: 2rem 0;
     gap: 3rem;
+  }
+  .hero_block_wrapper {
+    padding: 0 1.5rem;
   }
   .hero_slogan {
     /* служебный миксин, его использовать не надо */
@@ -482,6 +500,9 @@ a:hover {
 }
 /* ----------- breakpoint 640 ----------- */
 @media (max-width: 640px) {
+  .hero_block_wrapper {
+    padding: 0 1rem;
+  }
   /* ----------- hero section ----------- */
   .hero_slogan {
     /* служебный миксин, его использовать не надо */
