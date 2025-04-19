@@ -12,6 +12,10 @@
     margin: 0 !important;
     width: 100%;
 }
+.hero_block_wrapper{
+    width: 100%;
+    padding: 0 $Large;
+}
 .hero_wrapper{
     display: flex;
     flex-direction: column;
@@ -55,6 +59,9 @@
         padding: 2rem 0;
         gap: 3rem;
     }
+    .hero_block_wrapper{
+        padding: 0 $Medium;
+    }
     .hero_slogan{
         @include page_title_64;
         gap: 1rem;
@@ -76,6 +83,9 @@
         padding: 2rem 0;
         gap: 3rem;
     }
+    .hero_block_wrapper{
+        padding: 0 $Small;
+    }
     .hero_slogan{
         @include page_title_64;
         gap: 1rem;
@@ -92,6 +102,9 @@
 
 /* ----------- breakpoint 640 ----------- */
 @media (max-width: 640px) {
+    .hero_block_wrapper{
+        padding: 0 $xSmall;
+    }
     /* ----------- hero section ----------- */
     .hero_slogan{
         @include page_title_48;

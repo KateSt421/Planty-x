@@ -50,37 +50,42 @@
   }
 
 /* ----------- счетчик ----------- */
-@keyframes jump {
-    0% {
-      transform: translateX(-100%) scale(1);
-    }
-    50% {
-      transform: translateX(-100%) scale(1.2);
-    }
-    100% {
-      transform: translateX(-100%) scale(1);
-    }
-  }
 
 .cart_counter{
     display: none;
-    position: relative;
-    right: 1.75rem;
-    transform: translateX(-100%);
+    position: absolute;
+    top: 1.75rem;
+    right: calc((100vw - 1440px)/2 + $Large - 0.125rem);
     height: 0.75rem;
     padding: 0 0.25rem;
     border-radius: 0.25rem;
     color: $White_100;
     background-color: $Red_100;
-    @include montserrat_extra_8;
-    animation: jump 0.3s ease-in-out;
-    animation-iteration-count: 1;
+    @include montserrat_extra_10;
+    transition: opacity 0.3s ease;
 }
-
+  
   .cart_counter.jump {
-    animation: jump 0.3s ease-in-out;
+    animation: jumpAnimation 0.3s ease; /* Анимация прыжка */
   }
-
+  
+  /* Пульсация или сдвиг корзины при добавлении товара */
+  .cart_counter.move {
+    animation: moveAnimation 0.3s ease;
+  }
+  
+  @keyframes moveAnimation {
+    0% {
+      top: 1.5rem;
+    }
+    50% {
+      top: 1.75rem;
+    }
+    100% {
+      top: 1.5rem;
+    }
+  }
+  
 /* ----------- поиск ----------- */
 
 .search_wrapper {
@@ -147,6 +152,20 @@
     width: fit-content;
 }
 
+/* ----------- breakpoint 1440 ----------- */
+@media (max-width: 1440px) {
+    .cart_counter{
+        right: calc($Large - 0.125rem);
+    }
+}
+
+/* ----------- breakpoint 1280 ----------- */
+@media (max-width: 1280px) {
+    .cart_counter{
+        right: calc($Medium - 0.125rem);
+    }
+}
+
 /* ----------- breakpoint 1024 ----------- */
 @media (max-width: 1024px) {
     .header_content{
@@ -157,11 +176,35 @@
     .menu_actions{
         gap: 1rem;
     }
+
+    /* ----------- счетчик ----------- */
+
+    .cart_counter{
+        right: calc($Small - 0.125rem);
+        top: 1rem;
+    }
+    
+    @keyframes moveAnimation {
+        0% {
+        top: 0.75rem;
+        }
+        50% {
+        top: 1rem;
+        }
+        100% {
+        top: 0.75rem;
+        }
+    }
 }
 
 /* ----------- breakpoint 640 ----------- */
 
 @media (max-width: 640px) {
+    .cart_counter{
+        right: calc($xSmall - 0.125rem);
+        top: 1rem;
+    }
+
     .burger_menu {
         display: flex !important;
     }

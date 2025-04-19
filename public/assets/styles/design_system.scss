@@ -159,9 +159,9 @@ $xSmall: 1rem;
   font-family: 'Montserrat';
   font-weight: 900;
 }
-@mixin montserrat_extra_8 {
+@mixin montserrat_extra_10 {
   @include title_Montserrat_extra;
-  font-size: 0.5rem;
+  font-size: 0.675rem;
   line-height: 0.75rem;
 }
 

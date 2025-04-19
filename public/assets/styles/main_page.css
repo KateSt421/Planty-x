@@ -380,6 +380,11 @@ a:hover {
   width: 100%;
 }
 
+.hero_block_wrapper {
+  width: 100%;
+  padding: 0 3rem;
+}
+
 .hero_wrapper {
   display: flex;
   flex-direction: column;
@@ -441,6 +446,9 @@ a:hover {
     padding: 2rem 0;
     gap: 3rem;
   }
+  .hero_block_wrapper {
+    padding: 0 2rem;
+  }
   .hero_slogan {
     /* служебный миксин, его использовать не надо */
     font-family: "Belleza", sans-serif;
@@ -464,6 +472,9 @@ a:hover {
     max-width: none;
     padding: 2rem 0;
     gap: 3rem;
+  }
+  .hero_block_wrapper {
+    padding: 0 1.5rem;
   }
   .hero_slogan {
     /* служебный миксин, его использовать не надо */
@@ -489,6 +500,9 @@ a:hover {
 }
 /* ----------- breakpoint 640 ----------- */
 @media (max-width: 640px) {
+  .hero_block_wrapper {
+    padding: 0 1rem;
+  }
   /* ----------- hero section ----------- */
   .hero_slogan {
     /* служебный миксин, его использовать не надо */
