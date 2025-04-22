@@ -1,0 +1,522 @@
+@charset "UTF-8";
+:root {
+  /* ----------- Константы ----------- */
+  font-size: 16px;
+}
+
+/* ----------- Цвета ----------- */
+/* ----------- Паддинги страничные ----------- */
+/* ----------- Привязанные шрифты ----------- */
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-SemiBold.eot");
+  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url("../fonts/Montserrat-SemiBold.woff") format("woff"), url("../fonts/Montserrat-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.eot");
+  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("../fonts/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Belleza";
+  src: url("../fonts/Belleza-Regular.eot");
+  src: local("Belleza Regular"), local("Belleza-Regular"), url("../fonts/Belleza-Regular.woff2") format("woff2"), url("../fonts/Belleza-Regular.woff") format("woff"), url("../fonts/Belleza-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/* ----------- Стили текста ----------- */
+/* ----------- Ограничения ширин, шаблоны для @media ----------- */
+.page_block_wrapper {
+  max-width: 90rem;
+  padding: 0 3rem;
+  margin: 0 auto;
+}
+@media (max-width: 1280px) {
+  .page_block_wrapper {
+    padding: 0 2rem;
+  }
+}
+@media (max-width: 1024px) {
+  .page_block_wrapper {
+    padding: 0 1.5rem;
+    margin: 0;
+  }
+}
+@media (max-width: 640px) {
+  .page_block_wrapper {
+    padding: 0 1rem;
+  }
+}
+
+/* ----------- Кнопки ----------- */
+.btn_solid_text_52 {
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.96);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.25rem;
+  padding: 1rem 3rem;
+  border-radius: 2.5rem;
+  transition: 0.2s ease-out;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+.btn_solid_text_52:hover {
+  background-color: rgb(155, 185, 108);
+}
+.btn_solid_text_52:active {
+  background-color: rgb(103, 126, 81);
+}
+
+.btn_opaque_text_52 {
+  color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.02);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.25rem;
+  padding: 1rem 3rem;
+  border-radius: 2.5rem;
+  transition: 0.2s ease-out;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+.btn_opaque_text_52:hover {
+  background-color: rgb(155, 185, 108);
+}
+.btn_opaque_text_52:active {
+  background-color: rgb(103, 126, 81);
+}
+
+.btn_solid_TextOrIcon_40 {
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.25rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 2.5rem;
+  transition: 0.2s ease-out;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+.btn_solid_TextOrIcon_40 svg {
+  color: rgb(255, 255, 255);
+}
+.btn_solid_TextOrIcon_40:hover {
+  background-color: rgb(155, 185, 108);
+}
+.btn_solid_TextOrIcon_40:active {
+  background-color: rgb(103, 126, 81);
+}
+.btn_solid_TextOrIcon_40 svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.btn_transparent_text_36 {
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.25rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
+  transition: 0.2s ease-out;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+.btn_transparent_text_36:hover {
+  color: rgb(155, 185, 108);
+  background-color: rgba(155, 185, 108, 0.08);
+}
+.btn_transparent_text_36:active {
+  color: rgb(103, 126, 81);
+  background-color: rgba(103, 126, 81, 0.08);
+}
+
+.btn_transparent_iconText_36 {
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  height: 2.25rem;
+  padding: 0.125rem 1rem 0.125rem 0.125rem;
+  border-radius: 1.5rem;
+  transition: 0.2s ease-out;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+.btn_transparent_iconText_36:hover {
+  color: rgb(155, 185, 108);
+  background-color: rgba(155, 185, 108, 0.08);
+}
+.btn_transparent_iconText_36:active {
+  color: rgb(103, 126, 81);
+  background-color: rgba(103, 126, 81, 0.08);
+}
+.btn_transparent_iconText_36 img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.btn_transparent_iconText_36.active {
+  color: rgb(255, 255, 255);
+  background-color: rgb(155, 185, 108);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  height: 2.25rem;
+  padding: 0.125rem 1rem 0.125rem 0.125rem;
+  border-radius: 1.5rem;
+  transition: 0.2s ease-out;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+.btn_transparent_iconText_36.active img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.btn_transparent_icon_24 {
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: 0.2s ease-out;
+}
+.btn_transparent_icon_24:hover {
+  color: rgb(155, 185, 108);
+}
+.btn_transparent_icon_24:active {
+  color: rgb(103, 126, 81);
+}
+.btn_transparent_icon_24 svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* ----------- Ссылки ----------- */
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ----------- Инпуты ----------- */
+.input {
+  box-sizing: border-box;
+  padding: 0.75rem 0.75rem;
+  border-radius: 0.75rem;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: 0.2s;
+  color: rgb(0, 0, 0);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.input ::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+.input ::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+.input:hover {
+  border: 1px solid rgb(155, 185, 108);
+}
+.input:active {
+  border: 1px solid rgb(155, 185, 108);
+}
+.input:disabled {
+  opacity: 0.32;
+}
+
+.input.error {
+  box-sizing: border-box;
+  padding: 0.75rem 0.75rem;
+  border-radius: 0.75rem;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: 0.2s;
+  color: rgb(0, 0, 0);
+  border: 1px solid rgba(250, 108, 89, 0.4);
+}
+.input.error ::-moz-placeholder {
+  color: rgba(250, 108, 89, 0.8);
+}
+.input.error ::placeholder {
+  color: rgba(250, 108, 89, 0.8);
+}
+.input.error:hover {
+  border: 1px solid rgb(250, 108, 89);
+}
+.input.error:active {
+  border: 1px solid rgb(250, 108, 89);
+}
+
+.select {
+  box-sizing: border-box;
+  padding: 0.75rem 0.75rem;
+  border-radius: 0.75rem;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: 0.2s;
+  color: rgb(0, 0, 0);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.select:hover {
+  border: 1px solid rgb(155, 185, 108);
+}
+.select:active {
+  border: 1px solid rgb(155, 185, 108);
+}
+.select:disabled {
+  opacity: 0.32;
+}
+
+.about-company {
+  color: rgb(0, 0, 0);
+}
+.about-company__container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2.5rem;
+  padding-top: 3rem;
+  background: rgba(0, 0, 0, 0.02);
+}
+.about-company__left {
+  display: flex;
+  flex-direction: column;
+  max-width: 61.5rem;
+}
+.about-company__right {
+  display: flex;
+  flex-direction: column;
+  min-width: 20rem;
+  max-width: 20rem;
+}
+.about-company__stats {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 2.5rem;
+  gap: 2.5rem;
+}
+.about-company__stat {
+  flex: 1;
+  max-width: 18.8rem;
+}
+.about-company__stat-value {
+  font-family: sans-serif;
+  font-weight: 800;
+  font-size: 3.5rem;
+  line-height: 114%;
+}
+.about-company__stat-label {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.about-company__texts {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 2.5rem;
+}
+.about-company__text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.about-company__text-title {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+.about-company__text {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+}
+.about-company__benefit {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-start;
+  padding-bottom: 1.5rem;
+}
+.about-company__benefit-icon {
+  flex-shrink: 0;
+  width: 5.75rem;
+  aspect-ratio: 1;
+}
+.about-company__benefit-title {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 600;
+  padding-bottom: 0.25rem;
+}
+.about-company__benefit-text {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.64);
+}
+.about-company__map {
+  width: 100%;
+  height: 25rem;
+  padding-bottom: 2.5rem;
+}
+.about-company__map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 2rem;
+}
+.about-company__green-planet {
+  padding-top: 3rem;
+  background-color: rgb(255, 255, 255);
+}
+.about-company__title {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  padding-bottom: 1rem;
+}
+.about-company__description {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding-bottom: 2.5rem;
+}
+.about-company__map-title {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  padding-bottom: 1rem;
+}
+.about-company__map-button {
+  margin-bottom: 1rem;
+  width: 22rem;
+}
+.about-company__map-button:hover {
+  color: rgb(103, 126, 81);
+  text-decoration: none;
+}
+
+.hero-slider {
+  max-width: 90rem;
+  height: 100%;
+}
+.hero-slider__swiper {
+  height: 100%;
+  position: relative;
+}
+.hero-slider .swiper-pagination {
+  position: absolute;
+  bottom: 1.875rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 0.625rem;
+}
+.hero-slider .swiper-pagination .swiper-pagination-bullet {
+  width: 0.625rem;
+  height: 0.625rem;
+  background-color: #c5e1d4;
+  opacity: 0.7;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+.hero-slider .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #86c6a4;
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.hero-slide {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 37.68rem;
+  display: flex;
+  justify-content: flex-start;
+}
+.hero-slide__overlay {
+  padding: 3rem;
+  max-width: 37.5rem;
+}
+.hero-slide__content {
+  color: rgb(0, 0, 0);
+}
+.hero-slide__title {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Belleza", sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.5rem;
+}
+.hero-slide__text {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: rgb(0, 0, 0);
+}/*# sourceMappingURL=company.css.map */

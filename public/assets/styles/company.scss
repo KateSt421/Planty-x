@@ -1,0 +1,243 @@
+@import 'design_system';
+
+.about-company {
+  color: $Black_100;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5rem;
+    padding-top: 3rem;
+    background: rgba(0, 0, 0, 0.02);
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    max-width: 61.5rem;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    min-width: 20rem;
+    max-width: 20rem;
+  }
+
+  &__stats {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 2.5rem;
+    gap: 2.5rem;
+  }
+
+  &__stat {
+    flex: 1;
+    max-width: 18.8rem;
+// нет шрифта!!!!
+    &-value {
+      font-family: sans-serif;
+      font-weight: 800;
+      font-size: 3.5rem;
+      line-height: 114%;
+    }
+
+    &-label {
+      @include montserrat_regular_16;
+    }
+  }
+
+  &__texts {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 2.5rem;
+  }
+
+  &__text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__text-title {
+    @include title_Montserrat_semi;
+  }
+
+  &__text {
+    @include title_Montserrat_regular;
+
+  }
+
+  &__benefits {
+    // gap: 24px;
+    // list-style: none;
+    // padding: 0;
+
+    @media (min-width: 768px) {
+      // flex-direction: row;
+      // justify-content: space-between;
+    }
+  }
+
+  &__benefit {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-start;
+    padding-bottom: $Small;
+    // align-items: center;
+    
+  }
+
+  &__benefit-icon {
+    flex-shrink: 0;
+    width: 5.75rem;
+    aspect-ratio: 1;
+  }
+
+  &__benefit-title {
+    @include title_Montserrat_semi;
+    padding-bottom: 0.25rem;
+    // width: 13.5rem;
+  }
+// нет переменной на цвет!!!
+  &__benefit-text {
+    // width: 13.5rem;
+    @include title_Montserrat_regular;
+    color: rgba(0, 0, 0, 0.64);
+  }
+
+  &__map {
+    width: 100%;
+    height: 25rem;
+    padding-bottom: 2.5rem;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 2rem;
+    }
+  }
+
+  &__green-planet {
+    padding-top: $Large;
+    background-color: $White_100;
+
+    // &-title {
+    //   font-size: 24px;
+    //   font-weight: bold;
+    //   margin-bottom: 12px;
+    // }
+
+    // &-text {
+    //   font-size: 16px;
+    //   line-height: 1.6;
+    //   // color: #333;
+    //   // max-width: 700px;
+    //   margin: 0 auto;
+    // }
+  }
+  // &__chart-wrapper {
+  //   // height: 37.6rem;
+  // }
+  &__intro {
+    // margin: 2.5rem auto;
+  }
+
+  &__title {
+    @include montserrat_semi_24;
+    padding-bottom: $xSmall;
+  }
+
+  &__description {
+    @include montserrat_regular_16;
+    padding-bottom: 2.5rem;
+    // color: #444;
+  }
+
+  &__map-title {
+    @include montserrat_semi_24;
+    padding-bottom: $xSmall;
+  }
+
+  &__map-button {
+    margin-bottom: $xSmall;
+    width: 22rem;
+    &:hover {
+      color: rgb(103, 126, 81);
+      text-decoration: none;
+    }
+  }
+  
+}
+
+.hero-slider {
+  max-width: 90rem;
+  height: 100%;
+
+  &__swiper {
+    height: 100%;
+    position: relative;
+  }
+
+  .swiper-pagination {
+    position: absolute;
+    bottom: 1.875rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 0.625rem;
+
+    .swiper-pagination-bullet {
+      width: 0.625rem;
+      height: 0.625rem;
+      background-color: #c5e1d4; // светло-зелёный
+      opacity: 0.7;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+
+      &-active {
+        background-color: #86c6a4; // насыщенный зелёный
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+.hero-slide {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 37.68rem;
+  display: flex;
+  // align-items: center;
+  justify-content: flex-start;
+
+  &__overlay {
+    // background: rgba(255, 255, 255, 0.6);
+    padding: $Large;
+    // margin-left: 80px;
+    max-width: 37.5rem;
+  }
+
+  &__content {
+    color: $Black_100;
+  }
+
+  &__title {
+    @include page_title;
+    margin-bottom: 0.5rem;
+  }
+
+  &__text {
+    @include montserrat_regular_16;
+  }
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: $Black_100; // чёрный цвет
+}
