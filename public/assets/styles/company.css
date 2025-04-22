@@ -458,6 +458,7 @@ a:hover {
 .hero-slider {
   max-width: 90rem;
   height: 100%;
+  margin: 0 auto;
 }
 .hero-slider__swiper {
   height: 100%;
