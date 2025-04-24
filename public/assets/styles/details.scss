@@ -2,19 +2,17 @@
 
 body {
     height: 100%;
-  }
+}
 
 .wrapper {
     position: relative;
     min-height: 100vh;
-  }
+}
 
 .plant-details-container {
     max-width: 64.75rem;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    }
-    
+    margin: 3rem 0;
+}
 
 .plant-image-container {
     width: 100%;
@@ -37,23 +35,89 @@ body {
 
 .plant-details-actions {
     display: flex;
-    gap: 1rem;
     margin-top: 2rem;
+    background-color: $Black_02;
+    align-items: center;
+    padding: 1rem;
+    justify-content: space-between;
+    border-radius: 1.5rem;
+}
+
+.plant-text {
+    margin: 2rem 0;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.plant-grey {
+    @include montserrat_regular_12;
+    color: $Black_64;
+        &:first-of-type {
+        margin-bottom: 0.75rem;
+}
+}
+
+.plant, .plant-details-description {
+    @include montserrat_semi_16;
+    color: $Black_100;
+}
+.plant-text-grey {
+    display: flex;
+    flex-direction: column;
 }
 
 .plant-details-price {
-    font-size: 2rem;
-    color: var(--secondary-color);
-    font-weight: bold;
-    margin: 1rem 0;
+    @include montserrat_semi_24;
+    color: $Black_100;
 }
 
-.plant-details-description {
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 2rem;
+.plant-details-description-text {
+    margin-top: 1rem;
+    @include montserrat_regular_12;
+    color: $Black_100;
 }
 
 .btn_solid_text_52 {
     width:21.25rem ;
+    @include montserrat_semi_24;
+}
+
+.plant-title {
+    margin: 0;
+    @include page_title_32;
+}
+
+.card-box {
+    display: flex;
+}
+.plant-image-container {
+    margin-right: 2rem;
+    width: 27.5rem;
+}
+
+.plant-bottom-box {
+    background-color: $Black_02;
+    height: 36.5rem;
+}
+
+.condition-flex-box {
+    display: flex;
+}
+
+.condition-box {
+    width: calc(75% - 2.5rem);
+    margin: 0.5rem 0 6rem 0;
+}
+
+.condition-title {
+@include montserrat_semi_24;
+color: $Black_100;
+margin-top: 2.5rem;
+margin-bottom: 1rem;
+}
+
+.plant-condition {
+    @include montserrat_regular_16;
+    color: $Black_100;
 }
