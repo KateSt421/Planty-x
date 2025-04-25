@@ -44,7 +44,6 @@ class CartManager {
   updateQuantity(itemId, change) {
     let cart = JSON.parse(localStorage.getItem('cart') || '[]')
     const item = cart.find((item) => item.id === itemId)
-
     if (item) {
       item.quantity = Math.max(0, item.quantity + change)
       if (item.quantity === 0) {

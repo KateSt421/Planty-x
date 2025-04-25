@@ -1,202 +1,213 @@
-
 class PlantStore {
   constructor() {
-    this.initSearch();
-    this.loadPlants();
-    this.initCategories();
-    this.plants = [];
-    this.currentFilter = '';
-    this.currentCategory = 'all';
-    this.updateCartCount();
+    this.initSearch()
+    this.loadPlants()
+    this.initCategories()
+    this.plants = []
+    this.currentFilter = ''
+    this.currentCategory = 'all'
+    this.updateCartCount()
   }
 
   // Функция обновления количества товаров в корзине
   updateCartCount() {
-    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
-    const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0); // Подсчитываем общее количество товаров
-    const cartQuantityElement = document.querySelector('.cart_counter'); // Элемент для отображения бейджа
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]')
+    const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0) // Подсчитываем общее количество товаров
+    const cartQuantityElement = document.querySelector('.cart_counter') // Элемент для отображения бейджа
 
     if (cartQuantityElement) {
       if (totalQuantity > 0) {
-        cartQuantityElement.textContent = totalQuantity; // Отображаем количество товаров в корзине
-        cartQuantityElement.style.display = 'block'; // Показываем бейдж
+        cartQuantityElement.textContent = totalQuantity // Отображаем количество товаров в корзине
+        cartQuantityElement.style.display = 'block' // Показываем бейдж
 
         // Добавляем анимацию "jump" только если количество больше нуля
-        cartQuantityElement.classList.add('move'); // Добавляем движение
+        cartQuantityElement.classList.add('move') // Добавляем движение
 
         // Убираем анимацию после завершения, чтобы она не повторялась
         setTimeout(() => {
-          cartQuantityElement.classList.remove('move');
-        }, 500); // Время анимации
+          cartQuantityElement.classList.remove('move')
+        }, 500) // Время анимации
       } else {
-        cartQuantityElement.style.display = 'none'; // Скрываем бейдж, если корзина пуста
+        cartQuantityElement.style.display = 'none' // Скрываем бейдж, если корзина пуста
       }
     }
   }
 
   async initSearch() {
-    const searchInput = document.getElementById('search');
-    const cleanSearchBtn = document.getElementById('cleanSearcBtn');
-    const searchWrapper = document.querySelector('.search_wrapper');
-    const targetBlock = document.querySelector('#plants-grid');
-    const offset = -24;
-    const targetPosition = targetBlock.getBoundingClientRect().top + offset;
-  
+    const searchInput = document.getElementById('search')
+    const cleanSearchBtn = document.getElementById('cleanSearcBtn')
+    const searchWrapper = document.querySelector('.search_wrapper')
+    const targetBlock = document.querySelector('#plants-grid')
+    const offset = -24
+    const targetPosition = targetBlock.getBoundingClientRect().top + offset
+
     // Enter key event for search input
     searchInput.addEventListener('keypress', (event) => {
       if (event.key === 'Enter' && searchInput.value.length >= 3) {
-        event.preventDefault();
-        this.searchPlants(searchInput.value);
-  
+        event.preventDefault()
+        this.searchPlants(searchInput.value)
+
         // smothed scroll to results
         if (targetBlock) {
           window.scrollTo({
             top: targetPosition,
-            behavior: 'smooth'
-          });
+            behavior: 'smooth',
+          })
         }
       }
-    });
-  
+    })
+
     // Show x-button
     searchInput.addEventListener('input', () => {
       if (searchInput.value.length >= 1) {
-        cleanSearchBtn.style.display = 'block';
+        cleanSearchBtn.style.display = 'block'
       } else {
-        cleanSearchBtn.style.display = 'none';
+        cleanSearchBtn.style.display = 'none'
       }
-    });
-  
+    })
+
     // Clean search field
     cleanSearchBtn.addEventListener('click', () => {
       if (searchInput.value.length >= 1) {
-        searchInput.value = '';
-        cleanSearchBtn.style.display = 'none';
-        searchWrapper.classList.remove('active');
-  
+        searchInput.value = ''
+        cleanSearchBtn.style.display = 'none'
+        searchWrapper.classList.remove('active')
+
         // Clear results by resetting the plant display
-        this.loadPlants();
+        this.loadPlants()
         // Reset current filter to show all plants, or reset the page
-        this.currentFilter = '';
-  
+        this.currentFilter = ''
+
         // Плавный скролл до блока с результатами после очистки
         if (targetBlock) {
           window.scrollTo({
             top: targetPosition,
-            behavior: 'smooth'
-          });
+            behavior: 'smooth',
+          })
         }
       }
-    });
+    })
   }
-  
-
 
   async searchPlants(query) {
-    this.currentFilter = query;
+    this.currentFilter = query
     try {
       const response = await axios.get(`/api/plants/search`, {
-        params: { query: query }
-      });
-      this.displayPlants(response.data);
+        params: { query: query },
+      })
+      this.displayPlants(response.data)
     } catch (error) {
-      console.error('Search error:', error);
-      this.displayPlants([]);
+      console.error('Search error:', error)
+      this.displayPlants([])
     }
   }
 
   async loadPlants() {
-    const response = await axios.get('/api/plants');
-    this.plants = response.data;
-    this.displayPlants(this.plants);
+    const response = await axios.get('/api/plants')
+    this.plants = response.data
+    this.displayPlants(this.plants)
   }
 
   initCategories() {
-    document.querySelectorAll('.category-btn').forEach(btn => {
+    document.querySelectorAll('.category-btn').forEach((btn) => {
       btn.addEventListener('click', () => {
-        document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        this.filterByCategory(btn.dataset.category);
-      });
-    });
+        document
+          .querySelectorAll('.category-btn')
+          .forEach((b) => b.classList.remove('active'))
+        btn.classList.add('active')
+        this.filterByCategory(btn.dataset.category)
+      })
+    })
     // Set 'Show All' as initially active
-    document.querySelector('[data-category="all"]').classList.add('active');
+    const dataCategory = document.querySelector('[data-category="all"]')
+
+    if (dataCategory) {
+      dataCategory.classList.add('active')
+    }
   }
 
   filterByCategory(category) {
-    this.currentCategory = category;
-    let filtered = this.plants;
+    this.currentCategory = category
+    let filtered = this.plants
 
     if (category !== 'all') {
-      filtered = filtered.filter(plant => plant.category === category);
+      filtered = filtered.filter((plant) => plant.category === category)
     }
 
     if (this.currentFilter) {
-      filtered = filtered.filter(plant =>
+      filtered = filtered.filter((plant) =>
         plant.name.toLowerCase().includes(this.currentFilter.toLowerCase())
-      );
+      )
     }
 
-    this.displayPlants(filtered);
+    this.displayPlants(filtered)
   }
 
   displayPlants(plants) {
-    const grid = document.getElementById('plants-grid');
-    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const grid = document.getElementById('plants-grid')
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]')
 
-    grid.innerHTML = plants.map(plant => {
-      const cartItem = cart.find(item => item.id === plant.id);
-      const quantity = cartItem ? cartItem.quantity : 0;
-      const inCartClass = quantity > 0 ? 'in-cart' : '';
-      const isServiceCategory = plant.category === 'service' ? 'details_service.html' : 'details.html';
-      return `
+    grid.innerHTML = plants
+      .map((plant) => {
+        const cartItem = cart.find((item) => item.id === plant.id)
+        const quantity = cartItem ? cartItem.quantity : 0
+        const inCartClass = quantity > 0 ? 'in-cart' : ''
+        const isServiceCategory =
+          plant.category === 'service' ? 'details_service.html' : 'details.html'
+        return `
         <div class="plant-card ${inCartClass}" data-plant-id="${plant.id}">
           <img src="${plant.image}" alt="${plant.name}">
-          <button class="details-btn" onclick="window.location.href='/${isServiceCategory}?id=${plant.id}'">Details</button>
+          <button class="details-btn" onclick="window.location.href='/${isServiceCategory}?id=${
+          plant.id
+        }'">Details</button>
           <h3>${plant.name}</h3>
           <p>$${plant.price.toFixed(2)}</p>
-          ${quantity === 0 ?
-            `<button class="add-to-cart-btn" onclick="plantStore.updateQuantity(${plant.id}, 1)">Add to Cart</button>` :
-            `<div class="quantity-controls">
+          ${
+            quantity === 0
+              ? `<button class="add-to-cart-btn" onclick="plantStore.updateQuantity(${plant.id}, 1)">Add to Cart</button>`
+              : `<div class="quantity-controls">
                 <button onclick="plantStore.updateQuantity(${plant.id}, -1)">-</button>
                 <span>${quantity}</span>
                 <button onclick="plantStore.updateQuantity(${plant.id}, 1)">+</button>
              </div>`
           }
         </div>
-      `;
-    }).join('');
+      `
+      })
+      .join('')
   }
 
   updateQuantity(plantId, change) {
-    const plant = this.plants.find(p => p.id === plantId);
+    const plant = this.plants.find((p) => p.id === plantId)
     if (plant) {
-      const cart = JSON.parse(localStorage.getItem('cart') || '[]');
-      const existingItem = cart.find(item => item.id === plantId);
+      const cart = JSON.parse(localStorage.getItem('cart') || '[]')
+      const existingItem = cart.find((item) => item.id === plantId)
 
       if (existingItem) {
-        existingItem.quantity = Math.max(0, existingItem.quantity + change);
+        existingItem.quantity = Math.max(0, existingItem.quantity + change)
         if (existingItem.quantity === 0) {
-          const index = cart.indexOf(existingItem);
-          cart.splice(index, 1);
+          const index = cart.indexOf(existingItem)
+          cart.splice(index, 1)
         }
       } else if (change > 0) {
-        cart.push({ ...plant, quantity: 1 });
+        cart.push({ ...plant, quantity: 1 })
       }
 
-      localStorage.setItem('cart', JSON.stringify(cart));
-      this.filterByCategory(this.currentCategory);
-      this.updateCartCount(); // Обновляем количество товаров в корзине
+      localStorage.setItem('cart', JSON.stringify(cart))
+      this.filterByCategory(this.currentCategory)
+      this.updateCartCount() // Обновляем количество товаров в корзине
 
       if (change > 0) {
-        const button = document.querySelector(`[data-plant-id="${plantId}"] .add-to-cart-btn`);
+        const button = document.querySelector(
+          `[data-plant-id="${plantId}"] .add-to-cart-btn`
+        )
         if (button) {
-          button.classList.add('clicked');
-          setTimeout(() => button.classList.remove('clicked'), 1000);
+          button.classList.add('clicked')
+          setTimeout(() => button.classList.remove('clicked'), 1000)
         }
       }
     }
   }
 }
 
-const plantStore = new PlantStore();
+const plantStore = new PlantStore()
