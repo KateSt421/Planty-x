@@ -484,17 +484,21 @@ a:hover {
   line-height: 1.5rem;
   padding-bottom: 2.5rem;
 }
+.about-company__map-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2rem;
+}
 .about-company__map-title {
   /* служебный миксин, его использовать не надо */
   font-family: "Montserrat";
   font-weight: 600;
   font-size: 1.5rem;
   line-height: 2rem;
-  padding-bottom: 1rem;
 }
 .about-company__map-button {
-  margin-bottom: 1rem;
-  width: 22rem;
+  width: 16rem;
 }
 .about-company__map-button:hover {
   color: rgb(103, 126, 81);

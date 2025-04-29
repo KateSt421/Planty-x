@@ -157,14 +157,23 @@
     // color: #444;
   }
 
+  &__map-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: $Medium;
+
+    // flex-wrap: wrap мобилка
+  }
+
   &__map-title {
     @include montserrat_semi_24;
-    padding-bottom: $xSmall;
+    // padding-bottom: $xSmall;
   }
 
   &__map-button {
-    margin-bottom: $xSmall;
-    width: 22rem;
+    // margin-bottom: $xSmall;
+    width: 16rem;
     &:hover {
       color: $Green_Dark_100;
       text-decoration: none;
