@@ -2,13 +2,13 @@
 
 .about-company {
   color: $Black_100;
+  padding-top: $Large;
+  background: $Black_02;
 
   &__container {
     display: flex;
     justify-content: space-between;
     gap: 2.5rem;
-    padding-top: 3rem;
-    background: rgba(0, 0, 0, 0.02);
   }
 
   &__left {
@@ -105,7 +105,7 @@
   &__benefit-text {
     // width: 13.5rem;
     @include title_Montserrat_regular;
-    color: rgba(0, 0, 0, 0.64);
+    color: $Black_64;
   }
 
   &__map {
@@ -157,16 +157,25 @@
     // color: #444;
   }
 
+  &__map-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: $Medium;
+
+    // flex-wrap: wrap мобилка
+  }
+
   &__map-title {
     @include montserrat_semi_24;
-    padding-bottom: $xSmall;
+    // padding-bottom: $xSmall;
   }
 
   &__map-button {
-    margin-bottom: $xSmall;
-    width: 22rem;
+    // margin-bottom: $xSmall;
+    width: 16rem;
     &:hover {
-      color: rgb(103, 126, 81);
+      color: $Green_Dark_100;
       text-decoration: none;
     }
   }
@@ -195,13 +204,13 @@
     .swiper-pagination-bullet {
       width: 0.625rem;
       height: 0.625rem;
-      background-color: #c5e1d4; // светло-зелёный
+      background-color: $Green_Dark_100; // светло-зелёный #c5e1d4
       opacity: 0.7;
       border-radius: 50%;
       transition: all 0.3s ease;
 
       &-active {
-        background-color: #86c6a4; // насыщенный зелёный
+        background-color: $Green_Light_100; // насыщенный зелёный #86c6a4
         opacity: 1;
         transform: scale(1.2);
       }
