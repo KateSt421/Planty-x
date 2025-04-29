@@ -522,13 +522,13 @@ a:hover {
 .hero-slider .swiper-pagination .swiper-pagination-bullet {
   width: 0.625rem;
   height: 0.625rem;
-  background-color: #c5e1d4;
+  background-color: rgb(103, 126, 81);
   opacity: 0.7;
   border-radius: 50%;
   transition: all 0.3s ease;
 }
 .hero-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #86c6a4;
+  background-color: rgb(155, 185, 108);
   opacity: 1;
   transform: scale(1.2);
 }
