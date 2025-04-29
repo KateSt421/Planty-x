@@ -366,13 +366,13 @@ a:hover {
 
 .about-company {
   color: rgb(0, 0, 0);
+  padding-top: 3rem;
+  background: rgba(0, 0, 0, 0.02);
 }
 .about-company__container {
   display: flex;
   justify-content: space-between;
   gap: 2.5rem;
-  padding-top: 3rem;
-  background: rgba(0, 0, 0, 0.02);
 }
 .about-company__left {
   display: flex;

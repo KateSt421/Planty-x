@@ -2,13 +2,13 @@
 
 .about-company {
   color: $Black_100;
+  padding-top: $Large;
+  background: $Black_02;
 
   &__container {
     display: flex;
     justify-content: space-between;
     gap: 2.5rem;
-    padding-top: 3rem;
-    background: $Black_02;
   }
 
   &__left {
