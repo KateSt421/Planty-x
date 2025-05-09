@@ -215,30 +215,30 @@ body {
   margin-top: 1rem;
 }
 
-.quantity-controls button {
-  width: 40px;
-  height: 40px;
-  padding: 0;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid #27ae60;
-  color: var(--secondary-color);
-  transition: background-color 0.2s ease, border-color 0.2s ease;
-  position: relative;
-}
+// .quantity-controls button {
+//   width: 40px;
+//   height: 40px;
+//   padding: 0;
+//   border-radius: 50%;
+//   font-size: 1.5rem;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   background: rgba(255, 255, 255, 0.1);
+//   border: 1px solid #27ae60;
+//   color: var(--secondary-color);
+//   transition: background-color 0.2s ease, border-color 0.2s ease;
+//   position: relative;
+// }
 
-.quantity-controls button:hover {
-  background: rgba(39, 174, 96, 0.15);
-  border-color: white;
-}
+// .quantity-controls button:hover {
+//   background: rgba(39, 174, 96, 0.15);
+//   border-color: white;
+// }
 
-.quantity-controls button:active {
-  background: rgba(39, 174, 96, 0.3);
-}
+// .quantity-controls button:active {
+//   background: rgba(39, 174, 96, 0.3);
+// }
 
 .plant-card {
   border: 1px solid #ddd;
@@ -342,11 +342,11 @@ body {
 
 /* Remove conflicting hover state */
 
-.quantity-controls span {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: var(--primary-color);
-}
+// .quantity-controls span {
+//   font-size: 1.2rem;
+//   font-weight: bold;
+//   color: var(--primary-color);
+// }
 
 .categories {
   display: flex;
