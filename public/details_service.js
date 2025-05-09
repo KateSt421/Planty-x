@@ -92,10 +92,10 @@ class PlantDetails {
       quantity === 0
         ? `<button class="btn_solid_text_52" onclick="plantDetails.updateQuantity(${plant.id}, 1)">Добавить</button>`
         : `<div class="quantity-controls">
-                  <button onclick="plantDetails.updateQuantity(${plant.id}, -1)">-</button>
-                  <span>${quantity}</span>
+                  <button class="btn-pressed" onclick="plantDetails.updateQuantity(${plant.id}, -1)">-</button>
+                  <span class="item-quantity">${quantity}</span>
 
-                  <button onclick="plantDetails.updateQuantity(${plant.id}, 1)">+</button>
+                  <button class="btn-pressed" onclick="plantDetails.updateQuantity(${plant.id}, 1)">+</button>
                </div>`
     }
             </div>

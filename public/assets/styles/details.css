@@ -637,4 +637,21 @@ input:invalid:active {
   line-height: 1.5rem;
   color: rgba(0, 0, 0, 0.64);
   font-size: 0.8rem;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8rem;
+  margin-top: 0.5rem;
+}
+
+.btn-pressed {
+  background-color: transparent;
+  width: 1rem;
+}
+
+.item-quantity {
+  border: rgba(0, 0, 0, 0.08);
 }/*# sourceMappingURL=details.css.map */

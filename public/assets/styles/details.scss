@@ -220,6 +220,17 @@ margin-bottom: 1rem;
     }
 
     .quantity-controls {
-        
+        display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8rem;
+    margin-top: 0.5rem;
     }
-    
+    .btn-pressed {
+        background-color: transparent;
+        width: 1rem;
+    }
+
+    .item-quantity {
+        border: $Black_08;
+    }
