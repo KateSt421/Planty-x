@@ -141,6 +141,15 @@ margin-bottom: 1rem;
     margin-bottom: 0.75rem;
     }
 
+    input:focus {
+        outline: none;
+        overflow: hidden;
+    }
+
+    input:invalid:active {
+        border-color: $Red_100;
+      }
+
     .input_email {
     box-sizing: border-box;
     align-items: center;
@@ -155,15 +164,9 @@ margin-bottom: 1rem;
     }
     &:active {
         border-color: $Green_Light_100; 
-        background-color: transparent;
     }
-    } 
+    }
 
-    input[type=email] :focus {
-        border:none;
-        background-color:none;
-    }
-    
     .email_form-box {
       margin: 3rem 0;
       width: 24%;
@@ -214,5 +217,9 @@ margin-bottom: 1rem;
       @include montserrat_regular_16;
       color: $Black_64;
       font-size: 0.8rem;
+    }
+
+    .quantity-controls {
+        
     }
     

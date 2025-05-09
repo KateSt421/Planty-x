@@ -547,6 +547,15 @@ body {
   margin-bottom: 0.75rem;
 }
 
+input:focus {
+  outline: none;
+  overflow: hidden;
+}
+
+input:invalid:active {
+  border-color: rgb(250, 108, 89);
+}
+
 .input_email {
   box-sizing: border-box;
   align-items: center;
@@ -562,12 +571,6 @@ body {
 }
 .input_email:active {
   border-color: rgb(155, 185, 108);
-  background-color: transparent;
-}
-
-input[type=email] :focus {
-  border: none;
-  background-color: none;
 }
 
 .email_form-box {
