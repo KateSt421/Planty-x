@@ -121,3 +121,7 @@ margin-bottom: 1rem;
     @include montserrat_regular_16;
     color: $Black_100;
 }
+
+.info-plant-box {
+    display: flex;
+}
