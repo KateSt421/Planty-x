@@ -2139,7 +2139,7 @@ const plants = [
     id: 208,
     name: 'Подарочный сертификат',
     price: 3000,
-    image: './assets/images/service9.webp',
+    image: './assets/images/service9.png',
     category: 'service',
     description:
       'Подарочный сертификат на покупку растений или услуг — идеальный зелёный подарок на любой случай.',

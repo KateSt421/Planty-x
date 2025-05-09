@@ -98,18 +98,49 @@
     </div>
   
   </menu>
-    <main class="container">
+    <main class="page_block_wrapper">
         <div id="plant-details" class="plant-details-container">
             <!-- Plant details will be loaded here -->
         </div>
     </main>
     <div class="plant-bottom-box">
-      <div id="plant-conditions" class="plant-ditails-container">
-
+      <div class="page_block_wrapper">
+      <div class="condition-flex-box">
+      <div id="plant-conditions">
+      </div><div class="email_form-box">
+        <h3 class="title_email">Хотите получать свежие советы?</h3>
+        <p class="text_email">Бесплатный сервис помощи для Ваших растений</p>
+        <form
+        action="https://postmail.invotes.com/send"
+        method="post"
+        id="email_form"
+      >
+        <input type="hidden" name="subject" placeholder="Subject" />
+        <input class="input_email" type="email" name="text" placeholder="Email"required></input>
+        <input
+          type="hidden"
+          name="access_token"
+          value="8di3pg9yxh4cvk9oy4q11t6a"
+        />
+        <input
+          type="hidden"
+          name="success_url"
+          value=".?message=Email+Successfully+Sent%21&isError=0"
+        />
+        <input
+          type="hidden"
+          name="error_url"
+          value=".?message=Email+could+not+be+sent.&isError=1"
+        />
+        <button id="submit_form" type="submit" value="Send" >
+            <img class="img_send" src="./assets/images/svg_icons/IconSend.svg" alt="send">
+        </button>
+      </form>
       </div>
+    </div></div>
     </div>
     <footer class="footer">
-        <div class="container">
+        <div class="page_block_wrapper">
           <div class="footer-flex">
             <div class="footer-box-logo">
               <a href="catalog.html">
@@ -160,6 +191,7 @@
     <script src="details_service.js"></script>
     <script src="header.js"></script>
     <script src="app.js"></script>
+    <script src="email-form.js"></script>
 </body>
 </html>
 

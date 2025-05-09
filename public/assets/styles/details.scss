@@ -103,10 +103,11 @@ body {
 
 .condition-flex-box {
     display: flex;
+    gap: 2.5rem;
 }
 
-.condition-box {
-    width: calc(75% - 2.5rem);
+#plant-conditions {
+    width: 73%;
     margin: 0.5rem 0 6rem 0;
 }
 
@@ -121,3 +122,97 @@ margin-bottom: 1rem;
     @include montserrat_regular_16;
     color: $Black_100;
 }
+
+.info-plant-box {
+    display: flex;
+}
+
+//форма отправки письма на почту
+
+.title_email {
+    @include montserrat_semi_16;
+    color: $Black_100;
+    margin-bottom: 0.25rem;
+    }
+    
+    .text_email {
+    @include montserrat_regular_16;
+    color: $Black_64;
+    margin-bottom: 0.75rem;
+    }
+
+    .input_email {
+    box-sizing: border-box;
+    align-items: center;
+    padding: 0.75rem;
+    height: 2.5rem;
+    background: $White_100;
+    border: 0.0625rem solid #F2F2F3;
+    border-radius: 0.75rem;
+    width: 15.5rem;
+    &:hover {
+        border-color: $Green_Light_100;
+    }
+    &:active {
+        border-color: $Green_Light_100; 
+        background-color: transparent;
+    }
+    } 
+
+    input[type=email] :focus {
+        border:none;
+        background-color:none;
+    }
+    
+    .email_form-box {
+      margin: 3rem 0;
+      width: 24%;
+      align-items: center;
+    }
+
+    #email_form {
+        display: flex;
+        text-align: center;
+    }
+    
+    #submit_form {
+    margin-left: 0.5rem;
+    width: 4rem;
+    height: 2.5rem;
+    background: $Black_100;
+    border-radius: 2.5rem;
+    padding: 0.5rem 1.25rem;
+    &:hover {
+        background: $Green_Light_100;
+    }
+    }
+
+    .tx_1{
+      display: flex;
+      justify-content: space-between;
+    }
+    .tx_num_1{
+      font-weight: 800;
+      @include montserrat_semi_16;
+    }
+    .nt_1{
+    font-size: 20px;
+    margin: 0;
+    }
+    .section_right{
+      width: 15%;
+    }
+    .row{
+      width: 85%;
+    }
+    .container-horizontal {
+      display: flex;
+      align-items: stretch; 
+      flex-direction: row-reverse;
+    }
+    .section_text{
+      @include montserrat_regular_16;
+      color: $Black_64;
+      font-size: 0.8rem;
+    }
+    

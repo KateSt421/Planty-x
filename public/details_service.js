@@ -104,8 +104,6 @@ class PlantDetails {
     `
     const conditonsContainer = document.getElementById('plant-conditions')
     conditonsContainer.innerHTML = `
-      <div class="page_block_wrapper">
-      <div class="condition-flex-box">
       <div class="condition-box">
       <h3 class="condition-title">Подробнее про услугу</h3>
       <p class="plant-condition">
@@ -118,7 +116,7 @@ class PlantDetails {
           <h3 class="condition-title">Условия гарантии и возврата</h3>
           <p class="plant-condition">
             ${plant.guarantee}</p></div>
-            <div class="send-mail"></div></div>
+            <div class="send-mail"></div>
       </div>`
   }
 
