@@ -1,3 +1,369 @@
+@charset "UTF-8";
+:root {
+  /* ----------- Константы ----------- */
+  font-size: 16px;
+}
+
+/* ----------- Цвета ----------- */
+/* ----------- Паддинги страничные ----------- */
+/* ----------- Привязанные шрифты ----------- */
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-SemiBold.eot");
+  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url("../fonts/Montserrat-SemiBold.woff") format("woff"), url("../fonts/Montserrat-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.eot");
+  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("../fonts/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-ExtraBold.eot");
+  src: local("Montserrat ExtraBold"), local("Montserrat-ExtraBold"), url("../fonts/Montserrat-ExtraBold.woff") format("woff"), url("../fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Belleza";
+  src: url("../fonts/Belleza-Regular.eot");
+  src: local("Belleza Regular"), local("Belleza-Regular"), url("../fonts/Belleza-Regular.woff2") format("woff2"), url("../fonts/Belleza-Regular.woff") format("woff"), url("../fonts/Belleza-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/* ----------- Стили текста ----------- */
+/* ----------- Ограничения ширин, шаблоны для @media ----------- */
+.page_block_wrapper {
+  max-width: 90rem;
+  padding: 0 3rem;
+  margin: 0 auto;
+}
+@media (max-width: 1280px) {
+  .page_block_wrapper {
+    padding: 0 2rem;
+  }
+}
+@media (max-width: 1024px) {
+  .page_block_wrapper {
+    padding: 0 1.5rem;
+    margin: 0;
+  }
+}
+@media (max-width: 640px) {
+  .page_block_wrapper {
+    padding: 0 1rem;
+  }
+}
+
+/* ----------- Кнопки ----------- */
+.btn_solid_text_52 {
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.96);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.25rem;
+  padding: 1rem 3rem;
+  border-radius: 2.5rem;
+  transition: 0.2s ease-out;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+.btn_solid_text_52:hover {
+  background-color: rgb(155, 185, 108);
+  border-style: none;
+}
+.btn_solid_text_52:active {
+  background-color: rgb(103, 126, 81);
+}
+
+.btn_opaque_text_52 {
+  color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.02);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.25rem;
+  padding: 1rem 3rem;
+  border-radius: 2.5rem;
+  transition: 0.2s ease-out;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+.btn_opaque_text_52:hover {
+  background-color: rgb(155, 185, 108);
+}
+.btn_opaque_text_52:active {
+  background-color: rgb(103, 126, 81);
+}
+
+.btn_solid_TextOrIcon_40 {
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.25rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 2.5rem;
+  transition: 0.2s ease-out;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+.btn_solid_TextOrIcon_40 svg {
+  color: rgb(255, 255, 255);
+}
+.btn_solid_TextOrIcon_40:hover {
+  background-color: rgb(155, 185, 108);
+}
+.btn_solid_TextOrIcon_40:active {
+  background-color: rgb(103, 126, 81);
+}
+.btn_solid_TextOrIcon_40 svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.btn_transparent_text_36 {
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.25rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
+  transition: 0.2s ease-out;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+.btn_transparent_text_36:hover {
+  color: rgb(155, 185, 108);
+  background-color: rgba(155, 185, 108, 0.08);
+}
+.btn_transparent_text_36:active {
+  color: rgb(103, 126, 81);
+  background-color: rgba(103, 126, 81, 0.08);
+}
+
+.btn_transparent_text_36.active {
+  color: rgb(255, 255, 255);
+  background-color: rgb(155, 185, 108);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.25rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
+  transition: 0.2s ease-out;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+
+.btn_transparent_iconText_36 {
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  height: 2.25rem;
+  padding: 0.125rem 1rem 0.125rem 0.125rem;
+  border-radius: 1.5rem;
+  transition: 0.2s ease-out;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+.btn_transparent_iconText_36:hover {
+  color: rgb(155, 185, 108);
+  background-color: rgba(155, 185, 108, 0.08);
+}
+.btn_transparent_iconText_36:active {
+  color: rgb(103, 126, 81);
+  background-color: rgba(103, 126, 81, 0.08);
+}
+.btn_transparent_iconText_36 img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.btn_transparent_iconText_36.active {
+  color: rgb(255, 255, 255);
+  background-color: rgb(155, 185, 108);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  height: 2.25rem;
+  padding: 0.125rem 1rem 0.125rem 0.125rem;
+  border-radius: 1.5rem;
+  transition: 0.2s ease-out;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+.btn_transparent_iconText_36.active img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.btn_transparent_icon_24 {
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: 0.2s ease-out;
+}
+.btn_transparent_icon_24:hover {
+  color: rgb(155, 185, 108);
+}
+.btn_transparent_icon_24:active {
+  color: rgb(103, 126, 81);
+}
+.btn_transparent_icon_24 svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* ----------- Ссылки ----------- */
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ----------- Инпуты ----------- */
+.input {
+  box-sizing: border-box;
+  padding: 0.75rem 0.75rem;
+  border-radius: 0.75rem;
+  background-color: rgb(255, 255, 255);
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+  height: 2.5rem;
+  color: rgb(0, 0, 0);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.input ::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+.input ::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+.input:hover {
+  border: 1px solid rgb(155, 185, 108);
+}
+.input:active {
+  border: 1px solid rgb(155, 185, 108);
+}
+.input:focus-visible {
+  outline: none;
+  border: 1px solid rgb(155, 185, 108);
+}
+.input:disabled {
+  opacity: 0.32;
+}
+
+.input.error {
+  box-sizing: border-box;
+  padding: 0.75rem 0.75rem;
+  border-radius: 0.75rem;
+  background-color: rgb(255, 255, 255);
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+  color: rgb(0, 0, 0);
+  border: 1px solid rgba(250, 108, 89, 0.4);
+}
+.input.error ::-moz-placeholder {
+  color: rgba(250, 108, 89, 0.8);
+}
+.input.error ::placeholder {
+  color: rgba(250, 108, 89, 0.8);
+}
+.input.error:hover {
+  border: 1px solid rgb(250, 108, 89);
+}
+.input.error:active {
+  border: 1px solid rgb(250, 108, 89);
+}
+
+.select {
+  box-sizing: border-box;
+  padding: 0.75rem 0.75rem;
+  border-radius: 0.75rem;
+  background-color: rgb(255, 255, 255);
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+  color: rgb(0, 0, 0);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.select:hover {
+  border: 1px solid rgb(155, 185, 108);
+}
+.select:active {
+  border: 1px solid rgb(155, 185, 108);
+}
+.select:disabled {
+  opacity: 0.32;
+}
+
 :root {
   --primary-color: #2c3e50;
   --secondary-color: #27ae60;
@@ -104,6 +470,19 @@ body {
 }
 
 .add-to-cart-btn {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.25rem;
+  padding: 1rem 3rem;
+  border-radius: 2.5rem;
+  transition: 0.2s ease-out;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.25rem;
   position: relative;
   padding: 0.8rem 1.5rem;
   background: var(--secondary-color);
@@ -167,7 +546,8 @@ body {
   border-color: #27ae60;
 }
 
-.cart-link, .about-link {
+.cart-link,
+.about-link {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -178,15 +558,18 @@ body {
   margin-left: 1rem;
 }
 
-.cart-link:hover, .about-link:hover {
+.cart-link:hover,
+.about-link:hover {
   color: var(--secondary-color);
 }
 
-.cart-link i, .about-link i {
+.cart-link i,
+.about-link i {
   font-size: 1.25rem;
 }
 
-.cart-link:hover i, .about-link:hover i {
+.cart-link:hover i,
+.about-link:hover i {
   transform: translateY(-2px);
   transition: transform 0.3s ease;
 }
@@ -348,38 +731,6 @@ body {
   flex-wrap: wrap;
   padding: 2rem 0;
   justify-content: center;
-}
-
-.category-btn {
-  padding: 0.8rem 1.5rem;
-  border: 2px solid var(--secondary-color);
-  background: rgba(39, 174, 96, 0.1);
-  color: var(--secondary-color);
-  border-radius: 2rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 500;
-}
-
-.category-btn:hover {
-  background: rgba(39, 174, 96, 0.2);
-  transform: translateY(-2px);
-}
-
-.category-btn.active {
-  background: var(--secondary-color);
-  color: white;
-}
-
-button[type=submit].category-btn {
-  background: var(--secondary-color);
-  color: white;
-  margin: 1rem 0;
-}
-
-button[type=submit].category-btn:hover {
-  background: #219a52;
-  transform: translateY(-2px);
 }
 
 .cart-plant-card {
@@ -649,7 +1000,6 @@ button[type=submit].category-btn:hover {
     font-size: 0.9rem;
     margin-bottom: 0;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;

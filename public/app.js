@@ -118,8 +118,8 @@ class PlantStore {
         this.filterByCategory(btn.dataset.category)
       })
     })
-    // Set 'Show All' as initially active
-    const dataCategory = document.querySelector('[data-category="all"]')
+    // Set 'Show flowering' as initially active
+    const dataCategory = document.querySelector('[data-category="flowering"]')
 
     if (dataCategory) {
       dataCategory.classList.add('active')
