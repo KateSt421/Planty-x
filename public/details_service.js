@@ -104,8 +104,6 @@ class PlantDetails {
     `
     const conditonsContainer = document.getElementById('plant-conditions')
     conditonsContainer.innerHTML = `
-      <div class="page_block_wrapper">
-      
       <div class="condition-box">
       <h3 class="condition-title">Подробнее про услугу</h3>
       <p class="plant-condition">

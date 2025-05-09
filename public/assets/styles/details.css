@@ -495,10 +495,11 @@ body {
 
 .condition-flex-box {
   display: flex;
+  gap: 2.5rem;
 }
 
-.condition-box {
-  width: calc(75% - 2.5rem);
+#plant-conditions {
+  width: 73%;
   margin: 0.5rem 0 6rem 0;
 }
 
@@ -520,4 +521,117 @@ body {
   font-size: 1rem;
   line-height: 1.5rem;
   color: rgb(0, 0, 0);
+}
+
+.info-plant-box {
+  display: flex;
+}
+
+.title_email {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: rgb(0, 0, 0);
+  margin-bottom: 0.25rem;
+}
+
+.text_email {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: rgba(0, 0, 0, 0.64);
+  margin-bottom: 0.75rem;
+}
+
+.input_email {
+  box-sizing: border-box;
+  align-items: center;
+  padding: 0.75rem;
+  height: 2.5rem;
+  background: rgb(255, 255, 255);
+  border: 0.0625rem solid #F2F2F3;
+  border-radius: 0.75rem;
+  width: 15.5rem;
+}
+.input_email:hover {
+  border-color: rgb(155, 185, 108);
+}
+.input_email:active {
+  border-color: rgb(155, 185, 108);
+  background-color: transparent;
+}
+
+input[type=email] :focus {
+  border: none;
+  background-color: none;
+}
+
+.email_form-box {
+  margin: 3rem 0;
+  width: 24%;
+  align-items: center;
+}
+
+#email_form {
+  display: flex;
+  text-align: center;
+}
+
+#submit_form {
+  margin-left: 0.5rem;
+  width: 4rem;
+  height: 2.5rem;
+  background: rgb(0, 0, 0);
+  border-radius: 2.5rem;
+  padding: 0.5rem 1.25rem;
+}
+#submit_form:hover {
+  background: rgb(155, 185, 108);
+}
+
+.tx_1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tx_num_1 {
+  font-weight: 800;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.nt_1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.section_right {
+  width: 15%;
+}
+
+.row {
+  width: 85%;
+}
+
+.container-horizontal {
+  display: flex;
+  align-items: stretch;
+  flex-direction: row-reverse;
+}
+
+.section_text {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: rgba(0, 0, 0, 0.64);
+  font-size: 0.8rem;
 }/*# sourceMappingURL=details.css.map */
