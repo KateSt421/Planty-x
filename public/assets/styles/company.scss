@@ -35,12 +35,9 @@
   &__stat {
     flex: 1;
     max-width: 18.8rem;
-// нет шрифта!!!!
+
     &-value {
-      font-family: sans-serif;
-      font-weight: 800;
-      font-size: 3.5rem;
-      line-height: 114%;
+      @include montserrat_extrabold_56;
     }
 
     &-label {
@@ -62,11 +59,11 @@
   }
 
   &__text-title {
-    @include title_Montserrat_semi;
+    @include montserrat_semi_24;
   }
 
   &__text {
-    @include title_Montserrat_regular;
+    @include montserrat_regular_16;
 
   }
 
@@ -93,18 +90,19 @@
   &__benefit-icon {
     flex-shrink: 0;
     width: 5.75rem;
-    aspect-ratio: 1;
+    height: 5.75rem;
+    // aspect-ratio: 1;
   }
 
   &__benefit-title {
-    @include title_Montserrat_semi;
+    @include montserrat_semi_16;
     padding-bottom: 0.25rem;
     // width: 13.5rem;
   }
-// нет переменной на цвет!!!
+
   &__benefit-text {
     // width: 13.5rem;
-    @include title_Montserrat_regular;
+    @include montserrat_regular_16;
     color: $Black_64;
   }
 
@@ -239,7 +237,7 @@
   }
 
   &__title {
-    @include page_title;
+    @include page_title_48;
     margin-bottom: 0.5rem;
   }
 
