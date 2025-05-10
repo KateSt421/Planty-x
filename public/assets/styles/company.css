@@ -397,10 +397,11 @@ a:hover {
   max-width: 18.8rem;
 }
 .about-company__stat-value {
-  font-family: sans-serif;
-  font-weight: 800;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 900;
   font-size: 3.5rem;
-  line-height: 114%;
+  line-height: 4rem;
 }
 .about-company__stat-label {
   /* служебный миксин, его использовать не надо */
@@ -424,11 +425,15 @@ a:hover {
   /* служебный миксин, его использовать не надо */
   font-family: "Montserrat";
   font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 .about-company__text {
   /* служебный миксин, его использовать не надо */
   font-family: "Montserrat";
   font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 .about-company__benefit {
   display: flex;
@@ -439,18 +444,22 @@ a:hover {
 .about-company__benefit-icon {
   flex-shrink: 0;
   width: 5.75rem;
-  aspect-ratio: 1;
+  height: 5.75rem;
 }
 .about-company__benefit-title {
   /* служебный миксин, его использовать не надо */
   font-family: "Montserrat";
   font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
   padding-bottom: 0.25rem;
 }
 .about-company__benefit-text {
   /* служебный миксин, его использовать не надо */
   font-family: "Montserrat";
   font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
   color: rgba(0, 0, 0, 0.64);
 }
 .about-company__map {
@@ -557,6 +566,8 @@ a:hover {
   font-family: "Belleza", sans-serif;
   font-weight: 400;
   letter-spacing: -0.5px;
+  font-size: 3rem;
+  line-height: 3.5rem;
   margin-bottom: 0.5rem;
 }
 .hero-slide__text {
