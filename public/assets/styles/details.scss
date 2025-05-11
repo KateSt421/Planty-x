@@ -10,27 +10,20 @@ body {
 }
 
 .plant-details-container {
-    max-width: 64.75rem;
+    // max-width: 64.75rem;
     margin: 3rem 0;
 }
 
+.plant-image { 
+    max-width: 27.5rem;
+    overflow: hidden;
+    max-height: 27.5rem;
+    background-size: cover;
+}
 .plant-image-container {
     width: 100%;
-    float: left;
-    overflow: hidden;
-    border-radius: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.plant-image-container img {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.plant-image-container:hover img {
-    transform: scale(1.05);
+    border-radius: 1.5rem;
 }
 
 .plant-details-actions {
@@ -41,30 +34,40 @@ body {
     padding: 1rem;
     justify-content: space-between;
     border-radius: 1.5rem;
+    gap: 2rem;
 }
 
 .plant-text {
     margin: 2rem 0;
     display: flex;
-    gap: 3rem;
+    gap: 5rem;
     align-items: center;
 }
 
 .plant-grey {
     @include montserrat_regular_12;
     color: $Black_64;
-        &:first-of-type {
-        margin-bottom: 0.75rem;
-}
+    font-size: 0.9375rem;
 }
 
 .plant, .plant-details-description {
     @include montserrat_semi_16;
     color: $Black_100;
+    font-size: 0.9375rem;
 }
+
+.plant {
+    line-height: 1rem;
+}
+
+.plant-description {
+    max-width: 31rem;
+}
+
 .plant-text-grey {
     display: flex;
     flex-direction: column;
+    gap: 0.75rem;
 }
 
 .plant-details-price {
@@ -73,9 +76,9 @@ body {
 }
 
 .plant-details-description-text {
-    margin-top: 1rem;
     @include montserrat_regular_12;
     color: $Black_100;
+    line-height: 1.5rem;
 }
 
 .btn_solid_text_52 {
@@ -90,10 +93,7 @@ body {
 
 .card-box {
     display: flex;
-}
-.plant-image-container {
-    margin-right: 2rem;
-    width: 27.5rem;
+    gap: 2rem;
 }
 
 .plant-bottom-box {

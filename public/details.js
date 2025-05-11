@@ -73,23 +73,23 @@ class PlantDetails {
           <p class="plant-grey">Полив</p>
           <p class="plant-grey">Освещение</>
           <p class="plant-grey">Расположение</p>
-          <p class="plant-grey">Диаметр горшка</>
+          <p class="plant-grey">Размер горшка</>
           </div>
           <div class="plant-text-grey">
           <p class="plant">
-             ${plant.category}
+             ${plant.flower}
           </p>
           <p class="plant">
-             ${plant.comment}
+             ${plant.complexity}
           </p> <p class="plant">
-             ${plant.comment}
+             ${plant.properties}
           </p> <p class="plant">
-             ${plant.comment}
+             ${plant.water}
           </p> <p class="plant">
-             ${plant.comment}
+             ${plant.light}
           </p> 
           <p class="plant">
-             ${plant.category}
+             ${plant.location}
           </p>
           <p class="plant">
              ${plant.size}
