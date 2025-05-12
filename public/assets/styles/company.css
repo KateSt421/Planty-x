@@ -364,15 +364,19 @@ a:hover {
   opacity: 0.32;
 }
 
+.about {
+  background: white;
+}
+
 .about-company {
   color: rgb(0, 0, 0);
-  padding-top: 3rem;
-  background: rgba(0, 0, 0, 0.02);
 }
 .about-company__container {
   display: flex;
   justify-content: space-between;
   gap: 2.5rem;
+  padding-top: 3rem !important;
+  background: rgba(0, 0, 0, 0.02);
 }
 .about-company__left {
   display: flex;
@@ -474,7 +478,7 @@ a:hover {
   border-radius: 2rem;
 }
 .about-company__green-planet {
-  padding-top: 3rem;
+  padding-top: 3rem !important;
   background-color: rgb(255, 255, 255);
 }
 .about-company__title {
@@ -497,7 +501,7 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
 }
 .about-company__map-title {
   /* служебный миксин, его использовать не надо */
