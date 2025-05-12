@@ -6,13 +6,12 @@
 
 .about-company {
   color: $Black_100;
-  // background: $Black_02;
 
   &__container {
     display: flex;
     justify-content: space-between;
     gap: 2.5rem;
-    padding-top: $Large !important; // вынужденная мера не проходит паддинг
+    padding-top: $Large;
     background: $Black_02;
   }
 
@@ -125,7 +124,7 @@
   }
 
   &__green-planet {
-    padding-top: $Large !important; // вынужденая мера, перебивает контейнер
+    padding-top: $Large;
     background-color: $White_100;
   }
 
