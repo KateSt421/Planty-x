@@ -375,7 +375,7 @@ a:hover {
   display: flex;
   justify-content: space-between;
   gap: 2.5rem;
-  padding-top: 3rem !important;
+  padding-top: 3rem;
   background: rgba(0, 0, 0, 0.02);
 }
 .about-company__left {
@@ -478,7 +478,7 @@ a:hover {
   border-radius: 2rem;
 }
 .about-company__green-planet {
-  padding-top: 3rem !important;
+  padding-top: 3rem;
   background-color: rgb(255, 255, 255);
 }
 .about-company__title {
