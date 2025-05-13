@@ -1,9 +1,5 @@
 @import 'design_system';
 
-.about {
-  background: white
-}
-
 .about-company {
   color: $Black_100;
 
@@ -233,3 +229,9 @@
 .swiper-button-prev {
   color: $Black_100; // чёрный цвет
 }
+
+a:hover {
+  text-decoration: none;
+}
+
+
