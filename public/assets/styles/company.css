@@ -364,10 +364,6 @@ a:hover {
   opacity: 0.32;
 }
 
-.about {
-  background: white;
-}
-
 .about-company {
   color: rgb(0, 0, 0);
 }
@@ -585,4 +581,8 @@ a:hover {
 .swiper-button-next,
 .swiper-button-prev {
   color: rgb(0, 0, 0);
+}
+
+a:hover {
+  text-decoration: none;
 }/*# sourceMappingURL=company.css.map */
