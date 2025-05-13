@@ -366,6 +366,7 @@ a:hover {
 
 .about-company {
   color: rgb(0, 0, 0);
+  padding-bottom: 6rem;
 }
 .about-company__container {
   display: flex;
@@ -388,7 +389,6 @@ a:hover {
 .about-company__stats {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   padding-bottom: 2.5rem;
   gap: 2.5rem;
 }

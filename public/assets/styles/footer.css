@@ -386,14 +386,11 @@ a:hover {
 .footer-link {
   display: flex;
   justify-content: space-between;
-  margin: 0;
-  padding: 0;
   gap: 4rem;
 }
 
-.list-inline {
-  margin: 0;
-  padding: 0;
+.footer-box-logo {
+  margin-bottom: 0.5rem;
 }
 
 .text-link {
@@ -411,8 +408,6 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 2rem;
-  margin: 0;
-  padding: 0;
   font-size: 28px;
 }
 
@@ -425,20 +420,17 @@ a:hover {
   text-decoration: none;
 }
 
-@media (max-width: 1024px) {
-  .footer-box-logo {
-    margin-bottom: 0.5rem;
-  }
-  .footer-link {
-    gap: 1rem;
-  }
-}
 @media (max-width: 768px) {
   .footer-flex {
     height: 5.5rem;
   }
   .social-icons {
-    gap: 0.75rem;
+    gap: 1rem;
+  }
+}
+@media (max-width: 641px) {
+  .footer-link {
+    gap: 2rem;
   }
 }
 @media (max-width: 535px) {
@@ -459,6 +451,6 @@ a:hover {
     justify-content: center;
   }
   .footer-box-logo {
-    margin-bottom: 3rem;
+    margin-bottom: 2.8rem;
   }
 }/*# sourceMappingURL=footer.css.map */
