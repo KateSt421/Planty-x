@@ -648,6 +648,38 @@ const details = [
     size: '95 х 60см',
   },
   {
+    id: 82,
+    images:
+      './assets/images/plant81.jpg ./assets/images/plant81_2.jpg ./assets/images/plant81_3.jpg',
+    detail_description:
+      'Цитрусовые деревья — аромат и свежесть круглый год.Это не только украшение, но и источник свежего аромата. Компактные деревья с яркой листвой и плодами наполняют дом уютом и солнечным настроением.',
+    size: '95 х 60см',
+  },
+  {
+    id: 83,
+    images:
+      './assets/images/plant81.jpg ./assets/images/plant81_2.jpg ./assets/images/plant81_3.jpg',
+    detail_description:
+      'Цитрусовые деревья — аромат и свежесть круглый год.Это не только украшение, но и источник свежего аромата. Компактные деревья с яркой листвой и плодами наполняют дом уютом и солнечным настроением.',
+    size: '95 х 60см',
+  },
+  {
+    id: 84,
+    images:
+      './assets/images/plant81.jpg ./assets/images/plant81_2.jpg ./assets/images/plant81_3.jpg',
+    detail_description:
+      'Цитрусовые деревья — аромат и свежесть круглый год.Это не только украшение, но и источник свежего аромата. Компактные деревья с яркой листвой и плодами наполняют дом уютом и солнечным настроением.',
+    size: '95 х 60см',
+  },
+  {
+    id: 85,
+    images:
+      './assets/images/plant81.jpg ./assets/images/plant81_2.jpg ./assets/images/plant81_3.jpg',
+    detail_description:
+      'Цитрусовые деревья — аромат и свежесть круглый год.Это не только украшение, но и источник свежего аромата. Компактные деревья с яркой листвой и плодами наполняют дом уютом и солнечным настроением.',
+    size: '95 х 60см',
+  },
+  {
     id: 200,
     images:
       './assets/images/service1_1.webp ./assets/images/service1_2.webp ./assets/images/service1_3.webp ./assets/images/service1_4.webp',
