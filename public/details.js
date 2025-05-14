@@ -54,8 +54,11 @@ class PlantDetails {
     const cartItem = cart.find((item) => item.id === plant.id)
     const quantity = cartItem ? cartItem.quantity : 0
 
+    const price = new Intl.NumberFormat('ru-RU', {
+      style: 'currency',
+      currency: 'RUB',
+    }).format(plant.price)
     const detailsContainer = document.getElementById('plant-details')
-    console.log(plant)
     detailsContainer.innerHTML = `
       <div class="card-box">
         <div class="plant-image">
@@ -99,9 +102,7 @@ class PlantDetails {
           <p class="plant-details-description-text">
             ${plant.description}
           </p>
-          <div class="plant-details-actions"><div class="plant-details-price">${plant.price.toFixed(
-            2
-          )}₽</div>${
+          <div class="plant-details-actions"><div class="plant-details-price">${price}</div>${
       quantity === 0
         ? `<button class="btn_solid_text_52" onclick="plantDetails.updateQuantity(${plant.id}, 1)">Добавить</button>`
         : `<div class="quantity-controls">
