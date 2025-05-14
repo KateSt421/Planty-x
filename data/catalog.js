@@ -1705,7 +1705,7 @@ const plants = [
     id: 59,
     name: 'Крассула Овата',
     price: 1920,
-    image: 'http://localhost:7001/static/assets/images/plant/plant_59.webp',
+    image: 'http://localhost:7001/static/assets/images/plant/plant_59.png',
     category: 'succulents and cacti',
     flower: 'Суккуленты и кактусы',
     complexity: 'Простой',
@@ -2323,7 +2323,7 @@ const plants = [
   },
   {
     id: 79,
-    name: ' Мандарин',
+    name: 'Мандарин',
     price: 4190,
     image: 'http://localhost:7001/static/assets/images/plant/plant_79.jpg',
     category: 'citrus',
