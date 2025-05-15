@@ -2,59 +2,100 @@
 
 .footer {
   background-color: $Black_08;
-  // position: absolute;
-  max-width: 90rem;
-  // height: 7.5rem;
+  max-width: 100%;
   margin: 0 auto;
+  // position: absolute;
+  // height: 7.5rem;
   // overflow-y: hidden;
+
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    height: 7.5rem;
+    // padding: 3.125rem 0;
+  }
+
+  &__logo-box {
+    margin-bottom: 0.5rem;
+    // @media (max-width: 1024px) {
+    //   margin-bottom: 0.5rem;
+    // }
+    @media (max-width: 535px) {
+      margin-bottom: 2.8rem;
+    }
+  }
+
+  &__logo {
+    max-width: 7.5rem;
+    max-height: 2rem;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+    // margin: 0;
+    // padding: 0;
+
+    @media (max-width: 1024px) {
+      // gap: 1rem;
+    }
+
+    @media (max-width: 641px) {
+      gap: 2rem;
+    }
+
+    @media (max-width: 535px) {
+      margin-bottom: 3rem;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 0;
+      gap: 1rem;
+    }
+  }
+
+  &__link {
+    @include montserrat_regular_16;
+    color: $Black_100;
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    &__flex {
+      height: 5.5rem;
+    }
+  }
+
+  @media (max-width: 535px) {
+    &__flex {
+      height: 20.75rem;
+      display: block;
+      padding: 2rem 0;
+    }
+  }
 }
 
-.footer-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  // padding: 3.125rem 0;
-  height: 7.5rem;
-}
-
-.footer-logo {
-  max-width: 7.5rem;
-  max-height: 2rem;
-}
-
-.footer-link {
-  display: flex;
-  justify-content: space-between;
-  // margin: 0;
-  // padding: 0;
-  gap: 4rem;
-}
-
-.footer-box-logo {
-  margin-bottom: 0.5rem;
-}
-
-.list-inline {
-  // margin: 0;
-  // padding: 0;
-}
-
-.text-link {
-  @include montserrat_regular_16; 
-  color: $Black_100;
-  text-decoration: none;
-}
+// Вне .footer — т.к. служебные и переиспользуемые классы
 
 .social-icons {
   list-style-type: none;
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    // margin: 0;
-    // padding: 0;
-    // transform: scale3d(1.5, 1.5, 1.5);
-    font-size: 28px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 28px;
+  // margin: 0;
+  // padding: 0;
+  // transform: scale3d(1.5, 1.5, 1.5);
+
+  @media (max-width: 768px) {
+    gap: 1rem;
+  }
+
+  @media (max-width: 535px) {
+    justify-content: center;
+  }
 }
 
 .media-brands {
@@ -64,50 +105,4 @@
 a:hover {
   color: $Green_Dark_100;
   text-decoration: none;
-}
-
-@media (max-width: 1024px) {
-//   .footer-box-logo {
-//   margin-bottom: 0.5rem;
-// }
-.footer-link {
-  // gap: 1rem;
-}
-}
-
-@media (max-width: 768px) {
-  .footer-flex {
-  height: 5.5rem;
-}
-
-.social-icons {
-    gap: 1rem;
-}
-}
-
-@media (max-width: 641px) {
-  .footer-link {
-    gap: 2rem;
-  }
-}
-
-@media (max-width: 535px) {
-  .footer-flex {
-    height: 20.75rem; 
-    display: block;
-    padding: 2rem 0;
-  }
-  .footer-link {
-    margin-bottom: 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-right: 0;
-    gap: 1rem;}
-  .social-icons {
-    justify-content: center;
-  }
-  .footer-box-logo {
-    margin-bottom: 2.8rem;
-}
 }
