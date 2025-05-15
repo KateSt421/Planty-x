@@ -87,7 +87,7 @@ body {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0);
-  transition: background 0.3s ease;
+  // transition: background 0.3s ease;
   pointer-events: none;
   z-index: 1;
 }
@@ -123,10 +123,10 @@ body {
   background: #219a52;
 }
 
-.quantity-controls {
-  position: relative;
-  z-index: 1;
-}
+// .quantity-controls {
+//   position: relative;
+//   z-index: 1;
+// }
 
 .plant-card {
   display: flex;
@@ -202,18 +202,18 @@ body {
   align-items: center;
 }
 
-.quantity-controls button.clicked {
+ button.clicked {
   border-color: #27ae60;
   background: rgba(39, 174, 96, 0.2);
 }
 
-.quantity-controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
-}
+// .quantity-controls {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   gap: 1rem;
+//   margin-top: 1rem;
+// }
 
 // .quantity-controls button {
 //   width: 40px;
@@ -542,7 +542,7 @@ body {
 }
 
 .cart-quantity-controls button,
-.cart-item .quantity-controls button {
+.cart-item  button {
   width: 36px;
   height: 36px;
   padding: 0;
@@ -559,7 +559,7 @@ body {
 }
 
 .cart-quantity-controls button:hover,
-.cart-item .quantity-controls button:hover {
+.cart-item  button:hover {
   background: rgba(39, 174, 96, 0.15);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(39, 174, 96, 0.2);
@@ -640,7 +640,7 @@ body {
   }
 }
 
-.cart-item .quantity-controls button:active {
+.cart-item  button:active {
   background: rgba(39, 174, 96, 0.3);
   transform: translateY(0);
 }
