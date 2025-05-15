@@ -106,8 +106,8 @@ class PlantDetails {
       quantity === 0
         ? `<button class="btn_solid_text_52" onclick="plantDetails.updateQuantity(${plant.id}, 1)">Добавить</button>`
         : `<div class="quantity-controls">
-                  <button class="btn-pressed" onclick="plantDetails.updateQuantity(${plant.id}, -1)">-</button>
-                  <span class="item-quantity">${quantity}</span>
+                  <button class="btn-pressed" onclick="plantDetails.updateQuantity(${plant.id}, -1)">-</button><div class="item-quantity-box">
+                  <span class="item-quantity">${quantity}</span></div>
 
                   <button class="btn-pressed" onclick="plantDetails.updateQuantity(${plant.id}, 1)">+</button>
                </div>`
@@ -124,23 +124,23 @@ class PlantDetails {
              ${plant.about}
           </p>
           <h3 class="condition-title">Уход за растением</h3>
-          <h6 class="condition-title">Температурный режим</h6>
+          <h3 class="condition-title-small">Температурный режим</h3>
           <p class="plant-condition">
              ${plant.temperature}
           </p>
-          <h3 class="condition-title">Полив</h3>
+          <h3 class="condition-title-small">Полив</h3>
           <p class="plant-condition">
-            ${plant.watering}</p><h3 class="condition-title">Освещение</h3>
+            ${plant.watering}</p><h3 class="condition-title-small">Освещение</h3>
           <p class="plant-condition">
-            ${plant.lighting}</p><h3 class="condition-title">Грунт и горшок</h3>
+            ${plant.lighting}</p><h3 class="condition-title-small">Грунт и горшок</h3>
           <p class="plant-condition">
-            ${plant.soil}</p><h3 class="condition-title">Подкормки</h3>
+            ${plant.soil}</p><h3 class="condition-title-small">Подкормки</h3>
           <p class="plant-condition">
             ${plant.fertilizing}</p>
-            <h3 class="condition-title">Пересадка</h3>
+            <h3 class="condition-title-small">Пересадка</h3>
           <p class="plant-condition">
             ${plant.transplanting}</p>
-            <h3 class="condition-title">Размножение</h3>
+            <h3 class="condition-title-small">Размножение</h3>
           <p class="plant-condition">
             ${plant.propagation}</p>
             </div>

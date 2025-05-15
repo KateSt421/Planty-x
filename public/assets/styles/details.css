@@ -393,17 +393,17 @@ body {
 
 .plant-details-actions {
   display: flex;
-  margin-top: 2rem;
+  margin-top: 1.75rem;
   background-color: rgba(0, 0, 0, 0.02);
   align-items: center;
-  padding: 1rem;
+  padding: 0.85rem;
   justify-content: space-between;
   border-radius: 1.5rem;
-  gap: 2rem;
+  gap: 4.5rem;
 }
 
 .plant-text {
-  margin: 2rem 0;
+  margin: 1rem 0;
   display: flex;
   gap: 5rem;
   align-items: center;
@@ -450,6 +450,7 @@ body {
   font-size: 1.5rem;
   line-height: 2rem;
   color: rgb(0, 0, 0);
+  margin-left: 1rem;
 }
 
 .plant-details-description-text {
@@ -490,14 +491,55 @@ body {
   background-color: rgba(0, 0, 0, 0.02);
 }
 
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: center;
+}
+
+.item-quantity-box {
+  background: rgb(255, 255, 255);
+  width: 4rem;
+  box-sizing: border-box;
+  padding: 0.85rem;
+  border: 0.0625rem solid rgba(0, 0, 0, 0.08);
+  border-radius: 0.75rem;
+  width: 8rem;
+}
+
+.item-quantity {
+  border: rgba(0, 0, 0, 0.08);
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.btn-pressed {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .condition-flex-box {
   display: flex;
   gap: 2.5rem;
+  padding-top: 3rem;
 }
 
 #plant-conditions {
   width: 73%;
-  margin: 0.5rem 0 6rem 0;
+  margin: 0 0 5rem 0;
 }
 
 .condition-title {
@@ -507,8 +549,16 @@ body {
   font-size: 1.5rem;
   line-height: 2rem;
   color: rgb(0, 0, 0);
-  margin-top: 2.5rem;
   margin-bottom: 1rem;
+}
+
+.condition-title-small {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .plant-condition {
@@ -518,6 +568,7 @@ body {
   font-size: 1rem;
   line-height: 1.5rem;
   color: rgb(0, 0, 0);
+  margin-bottom: 1rem;
 }
 
 .info-plant-box {
@@ -636,19 +687,7 @@ input:invalid:active {
   font-size: 0.8rem;
 }
 
-.quantity-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8rem;
-  margin-top: 0.5rem;
-}
-
 .btn-pressed {
   background-color: transparent;
   width: 1rem;
-}
-
-.item-quantity {
-  border: rgba(0, 0, 0, 0.08);
 }/*# sourceMappingURL=details.css.map */
