@@ -1,335 +1,364 @@
 @import 'design_system';
 
 body {
-    height: 100%;
+  height: 100%;
 }
 
 .wrapper {
-    position: relative;
-    min-height: 100vh;
+  position: relative;
+  min-height: 100vh;
 }
 
 .plant-details-container {
-    // max-width: 64.75rem;
-    margin: 3rem 0;
+  // max-width: 64.75rem;
+  margin: 3rem 0;
 }
 
-.plant-image { 
-    max-width: 27.5rem;
-    overflow: hidden;
-    max-height: 27.5rem;
-    background-size: cover;
+.plant-image {
+  max-width: 27.5rem;
+  overflow: hidden;
+  max-height: 27.5rem;
+  background-size: cover;
 }
 .plant-image-container {
-    width: 100%;
-    object-fit: cover;
-    border-radius: 1.5rem;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 1.5rem;
 }
 
 .plant-details-actions {
-    display: flex;
-    margin-top: 1.75rem;
-    background-color: $Black_02;
-    align-items: center;
-    padding: 0.85rem;
-    justify-content: space-between;
-    border-radius: 1.5rem;
-    gap: 4.5rem;
+  display: flex;
+  margin-top: 1.75rem;
+  background-color: $Black_02;
+  align-items: center;
+  padding: 0.85rem;
+  justify-content: space-between;
+  border-radius: 1.5rem;
+  gap: 4.5rem;
 }
 
 .plant-text {
-    margin: 1rem 0;
-    display: flex;
-    gap: 5rem;
-    align-items: center;
+  margin: 1rem 0;
+  display: flex;
+  gap: 5rem;
+  align-items: center;
 }
 
 .plant-grey {
-    @include montserrat_regular_12;
-    color: $Black_64;
-    font-size: 0.9375rem;
+  @include montserrat_regular_12;
+  color: $Black_64;
+  font-size: 0.9375rem;
 }
 
-.plant, .plant-details-description {
-    @include montserrat_semi_16;
-    color: $Black_100;
-    font-size: 0.9375rem;
+.plant,
+.plant-details-description {
+  @include montserrat_semi_16;
+  color: $Black_100;
+  font-size: 0.9375rem;
 }
 
 .plant {
-    line-height: 1rem;
+  line-height: 1rem;
 }
 
 .plant-description {
-    max-width: 31rem;
+  max-width: 31rem;
 }
 
 .plant-text-grey {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .plant-details-price {
-    @include montserrat_semi_24;
-    color: $Black_100;
-    margin-left: 1rem;
+  @include montserrat_semi_24;
+  color: $Black_100;
+  margin-left: 1rem;
 }
 
 .plant-details-description-text {
-    @include montserrat_regular_12;
-    color: $Black_100;
-    line-height: 1.5rem;
+  @include montserrat_regular_12;
+  color: $Black_100;
+  line-height: 1.5rem;
 }
 
 .btn_solid_text_52 {
-    width:21.25rem ;
-    @include montserrat_semi_24;
+  padding: 1rem 4.5rem;
+  @include montserrat_semi_24;
 }
 
 .plant-title {
-    margin: 0;
-    @include page_title_32;
+  margin: 0;
+  @include page_title_32;
 }
 
 .card-box {
-    display: flex;
-    gap: 2rem;
+  display: flex;
+  gap: 2rem;
 }
 
 .plant-bottom-box {
-    background-color: $Black_02;
+  background-color: $Black_02;
 }
 
-.quantity-controls { 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    @include montserrat_semi_16;
-    text-align: center;
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  @include montserrat_semi_16;
+  text-align: center;
 }
 
 .item-quantity-box {
-    background: $White_100;
-    width: 4rem;
-    box-sizing: border-box;
-    padding: 0.85rem;
-    border: 0.0625rem solid $Black_08;
-    border-radius: 0.75rem;
-    width: 8rem;
+  background: $White_100;
+  width: 4rem;
+  box-sizing: border-box;
+  padding: 0.85rem;
+  border: 0.0625rem solid $Black_08;
+  border-radius: 0.75rem;
+  width: 8rem;
 }
 
 .item-quantity {
-    border: $Black_08;
-    @include montserrat_regular_16;
-    }
+  border: $Black_08;
+  @include montserrat_regular_16;
+}
 
 .btn-pressed {
-    @include montserrat_semi_24;
+  @include montserrat_semi_24;
 }
 
 .condition-flex-box {
-    display: flex;
-    gap: 2.5rem;
-    padding-top: 3rem;
+  display: flex;
+  gap: 2.5rem;
+  padding-top: 3rem;
 }
 
 #plant-conditions {
-    width: 73%;
-    margin: 0 0 5rem 0;
+  width: 73%;
+  margin: 0 0 5rem 0;
 }
 
 .condition-title {
-@include montserrat_semi_24;
-color: $Black_100;
-margin-bottom: 1rem;
+  @include montserrat_semi_24;
+  color: $Black_100;
+  margin-bottom: 1rem;
 }
 
 .condition-title-small {
-    @include montserrat_semi_16;
-    margin-bottom: 0.5rem;
+  @include montserrat_semi_16;
+  margin-bottom: 0.5rem;
 }
 
 .plant-condition {
-    @include montserrat_regular_16;
-    color: $Black_100;
-    margin-bottom: 1rem;
+  @include montserrat_regular_16;
+  color: $Black_100;
+  margin-bottom: 1rem;
 }
 
 .info-plant-box {
-    display: flex;
+  display: flex;
 }
 
 //форма отправки письма на почту
 
 .title_email {
-    @include montserrat_semi_16;
-    color: $Black_100;
-    margin-bottom: 0.25rem;
-    }
-    
-    .text_email {
-    @include montserrat_regular_16;
-    color: $Black_64;
-    margin-bottom: 0.75rem;
-    }
+  @include montserrat_semi_16;
+  color: $Black_100;
+  margin-bottom: 0.25rem;
+}
 
-    input:focus {
-        outline: none;
-        overflow: hidden;
-    }
+.text_email {
+  @include montserrat_regular_16;
+  color: $Black_64;
+  margin-bottom: 0.75rem;
+}
 
-    input:invalid:active {
-        border-color: $Red_100;
-      }
+input:focus {
+  outline: none;
+  overflow: hidden;
+}
 
-    .input_email {
-    box-sizing: border-box;
-    align-items: center;
-    padding: 0.75rem;
-    height: 2.5rem;
-    background: $White_100;
-    border: 0.0625rem solid #F2F2F3;
-    border-radius: 0.75rem;
-    width: 15.5rem;
-    &:hover {
-        border-color: $Green_Light_100;
-    }
-    &:active {
-        border-color: $Green_Light_100; 
-    }
-    }
+input:invalid:active {
+  border-color: $Red_100;
+}
 
-    .email_form-box {
-      margin: 3rem 0;
-      width: 24%;
-      align-items: center;
-    }
+.input_email {
+  box-sizing: border-box;
+  align-items: center;
+  padding: 0.75rem;
+  height: 2.5rem;
+  background: $White_100;
+  border: 0.0625rem solid #f2f2f3;
+  border-radius: 0.75rem;
+  width: 15.5rem;
+  &:hover {
+    border-color: $Green_Light_100;
+  }
+  &:active {
+    border-color: $Green_Light_100;
+  }
+}
 
-    #email_form {
-        display: flex;
-        text-align: center;
-    }
-    
-    #submit_form {
-    margin-left: 0.5rem;
-    width: 4rem;
-    height: 2.5rem;
-    background: $Black_100;
-    border-radius: 2.5rem;
-    padding: 0.5rem 1.25rem;
-    &:hover {
-        background: $Green_Light_100;
-    }
-    }
+.email_form-box {
+  margin: 3rem 0;
+  width: 24%;
+  align-items: center;
+}
 
-    .tx_1{
-      display: flex;
-      justify-content: space-between;
-    }
-    .tx_num_1{
-      font-weight: 800;
-      @include montserrat_semi_16;
-    }
-    .nt_1{
-    font-size: 20px;
-    margin: 0;
-    }
-    .section_right{
-      width: 15%;
-    }
-    .row{
-      width: 85%;
-    }
-    .container-horizontal {
-      display: flex;
-      align-items: stretch; 
-      flex-direction: row-reverse;
-    }
-    .section_text{
-      @include montserrat_regular_16;
-      color: $Black_64;
-      font-size: 0.8rem;
-    }
+#email_form {
+  display: flex;
+  text-align: center;
+}
 
-    .btn-pressed {
-        background-color: transparent;
-        width: 1rem;
-    }
+#submit_form {
+  margin-left: 0.5rem;
+  width: 4rem;
+  height: 2.5rem;
+  background: $Black_100;
+  border-radius: 2.5rem;
+  padding: 0.5rem 1.25rem;
+  &:hover {
+    background: $Green_Light_100;
+  }
+}
 
-    // слайдер
-      body {
-        font-family: Arial, sans-serif;
-      }
-      .slider-wrapper {
-        position: relative;
-        width: 1340px; /* ширина видимой части */
-        overflow: hidden;
-        padding-bottom: 6rem;
-      }
-      .cards-container {
-        display: flex;
-        transition: transform 0.4s ease;
-      }
-      .card {
-        min-width: 19.5rem;
-        max-width: 20rem;
-        height: 33.5rem;
-        margin: 0 0.5rem;
-        border: 1px solid #ccc;
-        padding: 1rem;
-        box-sizing: border-box;
-        background: #fff;
-        flex-shrink: 0; /* чтобы не сжимались */
-      }
-      .card img {
-        width: 100%;
-        height: auto;
-      }
+.tx_1 {
+  display: flex;
+  justify-content: space-between;
+}
+.tx_num_1 {
+  font-weight: 800;
+  @include montserrat_semi_16;
+}
+.nt_1 {
+  font-size: 20px;
+  margin: 0;
+}
+.section_right {
+  width: 15%;
+}
+.row {
+  width: 85%;
+}
+.container-horizontal {
+  display: flex;
+  align-items: stretch;
+  flex-direction: row-reverse;
+}
+.section_text {
+  @include montserrat_regular_16;
+  color: $Black_64;
+  font-size: 0.8rem;
+}
 
-      .card p {
-        margin-top: 1rem 0;
-      }
-      .arrow {
-        transform: translateY(-50%);
-        border: none;
-        cursor: pointer;
-        padding: 1rem;
-        font-size: 2rem;
-      }
-      .arrow.left, .arrow.right {
-        float: right;
-        background-color: transparent;
-      }
+.btn-pressed {
+  background-color: transparent;
+  width: 1rem;
+}
 
-      .buttons {
-        height: 0.5rem;
-      }
+// слайдер
 
-      .slider-title {
-        @include page_title_32;
-        margin: 1rem;
-      }
-      
-      .slider-title-arrow-box {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
+.cards-container {
+  display: flex;
+  justify-content: space-between;
+  transition: transform 0.4s ease;
+}
 
-      .card-price {
-        @include montserrat_semi_24;
-      }
+.slider-wrapper {
+  position: relative;
+  width: 1340px; /* ширина видимой части */
+  overflow: hidden;
+  padding-bottom: 1rem;
+}
 
-      .card-name {
-        @include montserrat_regular_16;
-      }
+.similar-plants-container {
+  margin-top: 40px;
+  position: relative;
+}
 
-      .card-properties {
-        @include montserrat_regular_16;
-        color: $Black_40;
-      }
+.similar-plants-title {
+  font-family: 'Belleza', sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  margin: 1rem;
+}
 
+.similar-plants-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
 
-    
+.similar-plants-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.card {
+  min-width: 19.5rem;
+  max-width: 20rem;
+  height: 33.5rem;
+  margin: 0 0.5rem;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  box-sizing: border-box;
+  background: #fff;
+  flex-shrink: 0; /* чтобы не сжимались */
+}
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card-price {
+  @include montserrat_semi_24;
+  margin: 1rem 0;
+}
+
+.card-name {
+  @include montserrat_regular_16;
+}
+
+.card-properties {
+  @include montserrat_regular_16;
+  color: $Black_40;
+  margin: 1.8rem 0 1rem 0;
+}
+
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 1rem;
+}
+
+.arrow-left,
+.arrow-right {
+  transform: translateY(-50%);
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
+  font-size: 2rem;
+  float: right;
+  background-color: transparent;
+}
+
+.buttons {
+  height: 0.5rem;
+}
+
+.slider-title {
+  @include page_title_32;
+  margin: 1rem;
+}
+
+.slider-title-arrow-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
