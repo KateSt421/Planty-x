@@ -70,6 +70,7 @@ class PlantDetails {
           <img class="plant-image-container" src="${plant.image}" alt="${
       plant.name
     }">
+          ${quantity > 0 ? '<div class="cart-badge">В КОРЗИНЕ</div>' : ''}
         </div>
         <div class="plant-description">
           <h1 class="plant-title">${plant.name}</h1>
@@ -98,7 +99,7 @@ class PlantDetails {
             <div class="plant-details-price">${price}</div>
             ${
               quantity === 0
-                ? `<button class="btn_solid_text_52" onclick="plantDetails.updateQuantity(${plant.id}, 1)">Добавить</button>`
+                ? `<button class="btn_add" onclick="plantDetails.updateQuantity(${plant.id}, 1)">Добавить</button>`
                 : `<div class="quantity-controls">
                     <button class="btn-pressed" onclick="plantDetails.updateQuantity(${plant.id}, -1)">-</button>
                     <div class="item-quantity-box">
@@ -140,12 +141,11 @@ class PlantDetails {
 
   displaySimilarPlants(plants) {
     const cart = JSON.parse(localStorage.getItem('cart') || '[]')
-    const cartItem = cart.map((item) => {
-      plants.find((plant) => {
-        plant.cartQuantity = item.id === plant.id ? item.quantity : 0
-      })
+    plants.forEach((plant) => {
+      const cartItem = cart.find((item) => item.id === plant.id)
+      plant.cartQuantity = cartItem ? cartItem.quantity : 0
     })
-    // const quantity = cartItem ? cartItem.quantity : 0
+
     const similarContainer = document.createElement('div')
     similarContainer.className = 'similar-plants-container'
     similarContainer.innerHTML = `
@@ -168,29 +168,35 @@ class PlantDetails {
     document.querySelector('.slider-wrapper').appendChild(similarContainer)
     this.initSlider()
   }
-  // function
+
   createSimilarPlantCard(plant) {
-    // const cart = JSON.parse(localStorage.getItem('cart') || '[]')
-    // const cartItem = cart.find((item) => item.id === plant.id)
-    // const quantity = cartItem ? cartItem.quantity : 0
     const price = new Intl.NumberFormat('ru-RU', {
       style: 'currency',
       currency: 'RUB',
     }).format(plant.price)
 
     return `
-      <div class="card">
-        <img src="${plant.image}" alt="${plant.name}">
+      <div class="card" data-plant-id="${plant.id}">
+        <div class="card-image-container">
+          <img src="${plant.image}" alt="${plant.name}">
+          ${
+            plant.cartQuantity > 0
+              ? '<div class="cart-badge">В КОРЗИНЕ</div>'
+              : ''
+          }
+        </div>
         <p class="card-price">${price}</p>
         <h3 class="card-name">${plant.name}</h3>
         <h3 class="card-properties">${plant.properties}</h3>
         ${
           plant.cartQuantity === 0
-            ? `<button class="btn_solid_text_52" onclick="plantDetails.updateQuantity(${plant.id}, 1)">Добавить</button>`
+            ? `<button class="btn_add_slider btn_opaque_text_52" onclick="plantDetails.updateCartButton(${plant.id}, 1)">Добавить</button>`
             : `<div class="quantity-controls">
-                <button onclick="plantDetails.updateQuantity(${plant.id}, -1)">-</button>
-                <span>${plant.cartQuantity}</span>
-                <button onclick="plantDetails.updateQuantity(${plant.id}, 1)">+</button>
+                <button class="btn-pressed" onclick="plantDetails.updateCartButton(${plant.id}, -1)">-</button> 
+                <div class="item-quantity-box">
+                <span class="item-quantity">${plant.cartQuantity}</span>
+                </div>
+                <button class="btn-pressed" onclick="plantDetails.updateCartButton(${plant.id}, 1)">+</button>
               </div>`
         }
       </div>
@@ -206,7 +212,6 @@ class PlantDetails {
 
     if (!track || !nextBtn || !prevBtn || !slider || cards.length === 0) return
 
-    // Очищаем предыдущий интервал, если он был
     if (this.sliderInterval) {
       clearInterval(this.sliderInterval)
     }
@@ -218,27 +223,22 @@ class PlantDetails {
 
     const updateSlider = () => {
       track.style.transform = `translateX(${currentPosition}px)`
-
-      // Обновляем видимость кнопок
       prevBtn.style.display = currentPosition === 0 ? 'none' : 'block'
       nextBtn.style.display = currentPosition <= maxPosition ? 'none' : 'block'
     }
 
-    // Автоматическая прокрутка
     this.sliderInterval = setInterval(() => {
       if (currentPosition <= maxPosition) {
-        currentPosition = 0 // Возвращаемся в начало
+        currentPosition = 0
       } else {
-        currentPosition -= cardWidth // Прокручиваем вперед
+        currentPosition -= cardWidth
       }
       updateSlider()
     }, 3000)
 
-    // Обработчики для кнопок
     nextBtn.addEventListener('click', () => {
       currentPosition = Math.max(currentPosition - cardWidth, maxPosition)
       updateSlider()
-      // Сбрасываем таймер при ручном управлении
       clearInterval(this.sliderInterval)
       this.sliderInterval = setInterval(() => {
         if (currentPosition <= maxPosition) {
@@ -253,7 +253,6 @@ class PlantDetails {
     prevBtn.addEventListener('click', () => {
       currentPosition = Math.min(currentPosition + cardWidth, 0)
       updateSlider()
-      // Сбрасываем таймер при ручном управлении
       clearInterval(this.sliderInterval)
       this.sliderInterval = setInterval(() => {
         if (currentPosition <= maxPosition) {
@@ -265,12 +264,10 @@ class PlantDetails {
       }, 3000)
     })
 
-    // Остановка автоматической прокрутки при наведении
     slider.addEventListener('mouseenter', () => {
       clearInterval(this.sliderInterval)
     })
 
-    // Возобновление автоматической прокрутки при уходе курсора
     slider.addEventListener('mouseleave', () => {
       clearInterval(this.sliderInterval)
       this.sliderInterval = setInterval(() => {
@@ -283,9 +280,8 @@ class PlantDetails {
       }, 3000)
     })
 
-    // Инициализация видимости кнопок
     updateSlider()
-    prevBtn.style.display = 'none' // Скрываем кнопку "назад" в начале
+    prevBtn.style.display = 'none'
   }
 
   showError(message) {
@@ -296,6 +292,77 @@ class PlantDetails {
       </div>
       <a href="/" class="btn btn-primary">Back to Shop</a>
     `
+  }
+
+  updateCartButton(plantId, change) {
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]')
+    const existingItem = cart.find((item) => item.id === plantId)
+    let newQuantity = 0
+
+    if (existingItem) {
+      existingItem.quantity = Math.max(0, existingItem.quantity + change)
+      newQuantity = existingItem.quantity
+      if (existingItem.quantity === 0) {
+        const index = cart.indexOf(existingItem)
+        cart.splice(index, 1)
+      }
+    } else if (change > 0) {
+      newQuantity = 1
+      axios.get(`/api/plants/${plantId}`).then((response) => {
+        cart.push({ ...response.data, quantity: 1 })
+        localStorage.setItem('cart', JSON.stringify(cart))
+      })
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart))
+    this.updateCartButtonUI(plantId, newQuantity)
+  }
+
+  updateCartButtonUI(plantId, quantity) {
+    const card = document.querySelector(`.card[data-plant-id="${plantId}"]`)
+    if (!card) return
+
+    // Update badge
+    const badge = card.querySelector('.cart-badge')
+    const imageContainer = card.querySelector('.card-image-container')
+
+    if (quantity > 0) {
+      if (!badge) {
+        const newBadge = document.createElement('div')
+        newBadge.className = 'cart-badge'
+        newBadge.textContent = 'В КОРЗИНЕ'
+        imageContainer.appendChild(newBadge)
+      }
+    } else {
+      badge?.remove()
+    }
+
+    // Update button/quantity controls
+    if (quantity === 0) {
+      card.querySelector('.quantity-controls')?.remove()
+      const addButton = document.createElement('button')
+      addButton.className = 'btn_add_slider btn_opaque_text_52'
+      addButton.textContent = 'Добавить'
+      addButton.onclick = () => this.updateCartButton(plantId, 1)
+      card.appendChild(addButton)
+    } else {
+      const existingControls = card.querySelector('.quantity-controls')
+      if (existingControls) {
+        existingControls.querySelector('.item-quantity').textContent = quantity
+      } else {
+        card.querySelector('.btn_add_slider')?.remove()
+        const controls = document.createElement('div')
+        controls.className = 'quantity-controls'
+        controls.innerHTML = `
+          <button class="btn-pressed" onclick="plantDetails.updateCartButton(${plantId}, -1)">-</button>
+          <div class="item-quantity-box">
+          <span class="item-quantity">${quantity}</span>
+          </div>
+          <button class="btn-pressed" onclick="plantDetails.updateCartButton(${plantId}, 1)">+</button>
+        `
+        card.appendChild(controls)
+      }
+    }
   }
 
   updateQuantity(plantId, change) {

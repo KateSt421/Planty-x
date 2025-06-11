@@ -464,13 +464,34 @@ body {
   line-height: 1.5rem;
 }
 
-.btn_solid_text_52 {
-  padding: 1rem 4.5rem;
+.btn_add {
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.96);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.25rem;
+  padding: 1rem 3rem;
+  border-radius: 2.5rem;
+  transition: 0.2s ease-out;
   /* служебный миксин, его использовать не надо */
   font-family: "Montserrat";
   font-weight: 600;
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  padding: 1rem 4.5rem;
+}
+.btn_add:hover {
+  background-color: rgb(155, 185, 108);
+  border-style: none;
+}
+.btn_add:active {
+  background-color: rgb(103, 126, 81);
+}
+
+.btn_add_slider:hover {
+  color: rgb(255, 255, 255);
 }
 
 .plant-title {
@@ -660,7 +681,7 @@ input:invalid:active {
 }
 
 .nt_1 {
-  font-size: 20px;
+  font-size: 1.25rem;
   margin: 0;
 }
 
@@ -811,4 +832,30 @@ input:invalid:active {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.cart-badge {
+  color: rgb(255, 255, 255);
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 900;
+  font-size: 0.675rem;
+  line-height: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 4px;
+  position: absolute;
+  width: 5rem;
+  height: 1rem;
+  left: calc(50% - 2.5rem);
+  top: 0;
+  background: rgb(250, 108, 89);
+  border-radius: 0.25rem;
+}
+
+.card-image-container,
+.plant-image {
+  position: relative;
+  display: inline-block;
 }/*# sourceMappingURL=details.css.map */
