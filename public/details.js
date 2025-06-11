@@ -139,6 +139,13 @@ class PlantDetails {
   }
 
   displaySimilarPlants(plants) {
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]')
+    const cartItem = cart.map((item) => {
+      plants.find((plant) => {
+        plant.cartQuantity = item.id === plant.id ? item.quantity : 0
+      })
+    })
+    // const quantity = cartItem ? cartItem.quantity : 0
     const similarContainer = document.createElement('div')
     similarContainer.className = 'similar-plants-container'
     similarContainer.innerHTML = `
@@ -161,11 +168,11 @@ class PlantDetails {
     document.querySelector('.slider-wrapper').appendChild(similarContainer)
     this.initSlider()
   }
-
+  // function
   createSimilarPlantCard(plant) {
-    const cart = JSON.parse(localStorage.getItem('cart') || '[]')
-    const cartItem = cart.find((item) => item.id === plant.id)
-    const quantity = cartItem ? cartItem.quantity : 0
+    // const cart = JSON.parse(localStorage.getItem('cart') || '[]')
+    // const cartItem = cart.find((item) => item.id === plant.id)
+    // const quantity = cartItem ? cartItem.quantity : 0
     const price = new Intl.NumberFormat('ru-RU', {
       style: 'currency',
       currency: 'RUB',
@@ -178,11 +185,11 @@ class PlantDetails {
         <h3 class="card-name">${plant.name}</h3>
         <h3 class="card-properties">${plant.properties}</h3>
         ${
-          quantity === 0
+          plant.cartQuantity === 0
             ? `<button class="btn_solid_text_52" onclick="plantDetails.updateQuantity(${plant.id}, 1)">Добавить</button>`
             : `<div class="quantity-controls">
                 <button onclick="plantDetails.updateQuantity(${plant.id}, -1)">-</button>
-                <span>${quantity}</span>
+                <span>${plant.cartQuantity}</span>
                 <button onclick="plantDetails.updateQuantity(${plant.id}, 1)">+</button>
               </div>`
         }
