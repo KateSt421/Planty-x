@@ -90,7 +90,7 @@ class PlantDetails {
 
           <div class="plant-details-actions"><div class="plant-details-price">${price}</div>${
       quantity === 0
-        ? `<button class="btn_solid_text_52" onclick="plantDetails.updateQuantity(${plant.id}, 1)">Добавить</button>`
+        ? `<button class="btn_add" onclick="plantDetails.updateQuantity(${plant.id}, 1)">Добавить</button>`
         : `<div class="quantity-controls">
                   <button class="btn-pressed" onclick="plantDetails.updateQuantity(${plant.id}, -1)">-</button><div class="item-quantity-box">
                   <span class="item-quantity">${quantity}</span></div>
