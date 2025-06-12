@@ -174,10 +174,14 @@ class PlantDetails {
       style: 'currency',
       currency: 'RUB',
     }).format(plant.price)
+    const isServiceCategory =
+      plant.category === 'service' ? 'details_service.html' : 'details.html'
 
     return `
       <div class="card" data-plant-id="${plant.id}">
-        <div class="card-image-container">
+        <div class="card-image-container"onclick="window.location.href='/${isServiceCategory}?id=${
+      plant.id
+    }'">
           <img src="${plant.image}" alt="${plant.name}">
           ${
             plant.cartQuantity > 0
