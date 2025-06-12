@@ -20,13 +20,13 @@ class PlantStore {
         cartQuantityElement.textContent = totalQuantity // Отображаем количество товаров в корзине
         cartQuantityElement.style.display = 'block' // Показываем бейдж
 
-        // Добавляем анимацию "jump" только если количество больше нуля
-        cartQuantityElement.classList.add('move') // Добавляем движение
+        // // Добавляем анимацию "jump" только если количество больше нуля
+        // cartQuantityElement.classList.add('move') // Добавляем движение
 
-        // Убираем анимацию после завершения, чтобы она не повторялась
-        setTimeout(() => {
-          cartQuantityElement.classList.remove('move')
-        }, 500) // Время анимации
+        // // Убираем анимацию после завершения, чтобы она не повторялась
+        // setTimeout(() => {
+        //   cartQuantityElement.classList.remove('move')
+        // }, 500) // Время анимации
       } else {
         cartQuantityElement.style.display = 'none' // Скрываем бейдж, если корзина пуста
       }
@@ -154,22 +154,32 @@ class PlantStore {
         const inCartClass = quantity > 0 ? 'in-cart' : ''
         const isServiceCategory =
           plant.category === 'service' ? 'details_service.html' : 'details.html'
+        const price = new Intl.NumberFormat('ru-RU', {
+          style: 'currency',
+          currency: 'RUB',
+        }).format(plant.price)
+
         return `
-        <div class="plant-card ${inCartClass}" data-plant-id="${plant.id}">
-          <img src="${plant.image}" alt="${plant.name}">
-          <button class="details-btn" onclick="window.location.href='/${isServiceCategory}?id=${
+        <div class="card ${inCartClass}" data-plant-id="${plant.id}">
+          <div class="card-image-container" onclick="window.location.href='/${isServiceCategory}?id=${
           plant.id
-        }'">Details</button>
-          <h3>${plant.name}</h3>
-          <p>$${plant.price.toFixed(2)}</p>
+        }'">
+            <img src="${plant.image}" alt="${plant.name}">
+            ${quantity > 0 ? '<div class="cart-badge">В КОРЗИНЕ</div>' : ''}
+          </div>
+          <p class="card-price">${price}</p>
+          <h3 class="card-name">${plant.name}</h3>
+          <h3 class="card-properties">${plant.properties}</h3>
           ${
             quantity === 0
-              ? `<button class="add-to-cart-btn" onclick="plantStore.updateQuantity(${plant.id}, 1)">Add to Cart</button>`
+              ? `<button class="btn_add_slider btn_opaque_text_52" onclick="plantStore.updateQuantity(${plant.id}, 1)">Добавить</button>`
               : `<div class="quantity-controls">
-                <button onclick="plantStore.updateQuantity(${plant.id}, -1)">-</button>
-                <span>${quantity}</span>
-                <button onclick="plantStore.updateQuantity(${plant.id}, 1)">+</button>
-             </div>`
+                  <button class="btn-pressed" onclick="plantStore.updateQuantity(${plant.id}, -1)">-</button>
+                  <div class="item-quantity-box">
+                    <span>${quantity}</span>
+                  </div>
+                  <button class="btn-pressed" onclick="plantStore.updateQuantity(${plant.id}, 1)">+</button>
+                </div>`
           }
         </div>
       `
